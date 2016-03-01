@@ -12,6 +12,29 @@
             android:name=".FormActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".ElementoActivity"
+            android:label="@string/title_activity_elemento"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BandaSonoraActivity"
+            android:label="@string/title_activity_banda_sonora"
+            android:parentActivityName=".ElementoActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.manu.filmparrot.ElementoActivity" />
+        </activity>
+        <activity
+            android:name=".SerieActivity"
+            android:label="@string/title_activity_serie"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PersonaActivity"
+            android:label="@string/title_activity_persona"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

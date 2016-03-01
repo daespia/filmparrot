@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">FilmParrot</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_banda_sonora">BandaSonoraActivity</string>
+    <string name="title_activity_elemento">ElementoActivity</string>
+    <string name="title_activity_serie">SerieActivity</string>
+    <string name="title_activity_persona">PersonaActivity</string>
 </resources>

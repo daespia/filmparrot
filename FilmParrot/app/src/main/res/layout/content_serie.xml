@@ -9,18 +9,15 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.manu.filmparrot.FormActivity"
-    tools:showIn="@layout/activity_form">
+    tools:context="com.example.manu.filmparrot.SerieActivity"
+    tools:showIn="@layout/activity_serie">
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/tableLayout"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentStart="true">
 
         <TableRow
             android:layout_width="match_parent"
@@ -31,20 +28,16 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Nombre"
+                android:id="@+id/textView4"
+                android:layout_column="0" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/nombre"
-                android:layout_alignTop="@+id/titulo"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_column="0" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/titulo"
-                android:layout_column="8"
-                android:text="Inserte titulo"
+                android:layout_column="3"
+                android:text="Introduce nombre"
                 android:selectAllOnFocus="true" />
-
         </TableRow>
 
         <TableRow
@@ -55,18 +48,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Duración"
-                android:id="@+id/textDuracion"
+                android:text="País"
+                android:id="@+id/textView5"
                 android:layout_column="0" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/duracion"
-                android:layout_column="8"
-                android:text="Inserte duración"
+                android:id="@+id/pais"
+                android:layout_column="3"
                 android:selectAllOnFocus="true"
-                android:singleLine="true" />
+                android:text="Introduce país" />
         </TableRow>
 
         <TableRow
@@ -77,18 +69,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Género"
-                android:id="@+id/textView"
+                android:text="Imagen"
+                android:id="@+id/textView6"
                 android:layout_column="0" />
 
-            <Spinner
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/genero"
-                android:layout_column="8"
-                android:spinnerMode="dropdown"
-                android:focusable="false" />
-
         </TableRow>
 
         <TableRow
@@ -99,8 +83,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Año"
-                android:id="@+id/textView2"
+                android:text="Año comienzo"
+                android:id="@+id/textView9"
                 android:layout_column="0" />
 
             <EditText
@@ -108,8 +92,77 @@
                 android:layout_height="wrap_content"
                 android:inputType="date"
                 android:ems="10"
-                android:id="@+id/anio"
-                android:layout_column="8" />
+                android:id="@+id/comienzo"
+                android:layout_column="3"
+                android:text="Introduce comienzo"
+                android:selectAllOnFocus="true" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Año fin"
+                android:id="@+id/textView10"
+                android:layout_column="0" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:ems="10"
+                android:id="@+id/fin"
+                android:layout_column="3"
+                android:text="Introduce fin"
+                android:selectAllOnFocus="true" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Número capítulos"
+                android:id="@+id/textView11"
+                android:layout_column="0" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/capitulos"
+                android:layout_column="3"
+                android:text="Añade capítulos" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Número temporadas"
+                android:id="@+id/textView12"
+                android:layout_column="0" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/editText"
+                android:layout_column="3"
+                android:text="Añade temporadas" />
         </TableRow>
 
         <TableRow
@@ -121,34 +174,13 @@
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
                 android:ems="10"
-                android:id="@+id/sinopsis"
+                android:id="@+id/descripcion"
                 android:layout_column="0"
-                android:text="Introduce la sinopsis"
+                android:text="Introduce una breve descripción"
                 android:selectAllOnFocus="true"
-                android:layout_span="9" />
+                android:singleLine="false"
+                android:layout_span="4" />
         </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Productora"
-                android:id="@+id/textView3"
-                android:layout_column="0" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/productora"
-                android:layout_column="8"
-                android:text="Introduce productora"
-                android:selectAllOnFocus="true" />
-        </TableRow>
-
     </TableLayout>
 
 </RelativeLayout>
