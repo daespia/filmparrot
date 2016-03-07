@@ -76,7 +76,7 @@ public class PrincipalActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.home_item) {
-            this.setTitle("Inicio");
+            this.setTitle("FilmParrot");
 
         } else if (id == R.id.releases_item) {
 
@@ -96,12 +96,12 @@ public class PrincipalActivity extends AppCompatActivity
                     .setNegativeButton("NO", new LogoutDialogListener())
                     .setPositiveButton("SÍ", new LogoutDialogListener()).show();
 
-        } else if (id == R.id.viewprofile_item){
+        } else if (id == R.id.viewprofile_item) {
             intent = new Intent(this, ProfileActivity.class);
-            startActivity(intent);
         }
 
-        drawer.closeDrawer(GravityCompat.START);
+        if(intent != null) startActivity(intent);
+        else drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
