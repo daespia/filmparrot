@@ -1,0 +1,68 @@
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/l_username"
+            android:id="@+id/userLabel"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="30dp"
+            android:textSize="18sp" />
+
+        <EditText
+            android:inputType="text"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:id="@+id/usernameText"
+            android:layout_below="@+id/userLabel"
+            android:layout_alignParentStart="true"
+            android:background="#ffffff"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/l_password"
+            android:id="@+id/passwordLabel"
+            android:layout_below="@+id/usernameText"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="30dp"
+            android:textSize="18sp" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:inputType="textPassword"
+            android:layout_height="40dp"
+            android:id="@+id/passwordText"
+            android:layout_below="@+id/passwordLabel"
+            android:layout_alignParentStart="true"
+            android:background="#ffffff"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:text="@string/l_login"
+            android:id="@+id/loginButton"
+            android:background="@android:color/holo_blue_dark"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginTop="25dp"
+            android:layout_below="@+id/passwordText"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>

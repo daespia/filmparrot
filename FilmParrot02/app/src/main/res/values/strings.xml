@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">FilmParrot</string>
+    <string name="title_activity_principal">Inicio</string>
+    <string name="title_activity_profile">Mi perfil</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="logotext">¡Estáte al loro!</string>
+
+    <!-- Image descriptions. -->
+    <string name="logo_description">El logo de FilmParrot. Un papagayo sobre letras negras.</string>
+
+    <!-- Menú lateral. -->
+    <string name="m_login">Iniciar sesión</string>
+    <string name="m_logout">Cerrar sesión</string>
+    <string name="m_viewprofile">Ver perfil</string>
+    <string name="m_signin">Registarse</string>
+    <string name="m_userzone">Zona de usuario</string>
+    <string name="m_home">Inicio</string>
+    <string name="m_releases">Estrenos</string>
+    <string name="m_search">Buscar</string>
+    <string name="m_lists">Listas</string>
+
+    <!-- LoginFragment. -->
+    <string name="l_username">Nombre de usuario</string>
+    <string name="l_password">Contraseña</string>
+    <string name="l_login">INICIAR SESIÓN</string>
+
+    <!-- EelementFormFragment. -->
+    <string name="ef_name">Nombre:</string>
+    <string name="ef_country">País</string>
+    <string name="ef_description">Descripción</string>
+    <string name="ef_descriptionHint">Introduzca una descripción o sinopsis</string>
+    <string name="ef_film">Película</string>
+    <string name="ef_serie">Serie</string>
+    <string name="ef_bso">BSO</string>
+    <string name="ef_actor">Actor</string>
+    <string name="ef_director">Director</string>
+    <string name="ef_send">ENVIAR</string>
+
+</resources>
