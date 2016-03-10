@@ -54,8 +54,8 @@ public class PrincipalActivity extends AppCompatActivity
 
     @Override
     public void onResume(){
-        super.onResume();
         session_manager.onSharedPreferenceChanged(sharedPref, null);
+        super.onResume();
     }
 
     @Override

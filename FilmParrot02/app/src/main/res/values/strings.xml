@@ -1,11 +1,8 @@
 <resources>
     <string name="app_name">FilmParrot</string>
-    <string name="title_activity_principal">Film</string>
     <string name="title_activity_profile">Mi perfil</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="logotext">¡Estáte al loro!</string>
 
     <!-- Image descriptions. -->
     <string name="logo_description">El logo de FilmParrot. Un papagayo sobre letras negras.</string>
@@ -28,14 +25,16 @@
 
     <!-- EelementFormFragment. -->
     <string name="ef_name">Nombre:</string>
-    <string name="ef_country">País</string>
-    <string name="ef_description">Descripción</string>
+    <string name="ef_country">País:</string>
+    <string name="ef_description">Descripción:</string>
     <string name="ef_descriptionHint">Introduzca una descripción o sinopsis</string>
-    <string name="ef_film">Película</string>
-    <string name="ef_serie">Serie</string>
-    <string name="ef_bso">BSO</string>
-    <string name="ef_actor">Actor</string>
-    <string name="ef_director">Director</string>
     <string name="ef_send">ENVIAR</string>
 
+    <string-array name="elementType_array">
+        <item>Película</item>
+        <item>Serie</item>
+        <item>BSO</item>
+        <item>Actor</item>
+        <item>Director</item>
+    </string-array>
 </resources>

@@ -64,7 +64,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/ef_description"
         android:id="@+id/descriptionLabel"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_below="@+id/editText"
         android:layout_alignParentStart="true" />
 
@@ -89,51 +89,21 @@
         android:paddingBottom="5dp"
         android:padding="5dp" />
 
-    <RadioGroup
-        android:layout_width="fill_parent"
+    <Spinner
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/elementType"
-        android:orientation="horizontal"
-        android:layout_below="@+id/descriptionText"
-        android:layout_alignEnd="@+id/editText"
-        android:layout_marginTop="10dp">
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/radio_film"
-            android:text="@string/ef_film"/>
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/radio_serie"
-            android:text="@string/ef_serie"/>
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/radio_bso"
-            android:text="@string/ef_bso"/>
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/radio_actor"
-            android:text="@string/ef_actor"/>
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/radio_director"
-            android:text="@string/ef_director"/>
-    </RadioGroup>
+        android:layout_alignTop="@+id/elementView"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_alignParentEnd="true"
+        android:gravity="end">
+    </Spinner>
 
     <RelativeLayout
         android:id="@+id/spec_element_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/elementType"/>
+        android:layout_below="@id/elementType" />
 
     <Button
         android:layout_width="match_parent"
@@ -147,5 +117,16 @@
         android:layout_below="@+id/spec_element_content"
         android:layout_alignEnd="@+id/editText"
         android:layout_marginTop="37dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Seleccione un tipo:"
+            android:id="@+id/elementView"
+            android:layout_below="@+id/descriptionText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp" />
     </RelativeLayout>
 </ScrollView>
