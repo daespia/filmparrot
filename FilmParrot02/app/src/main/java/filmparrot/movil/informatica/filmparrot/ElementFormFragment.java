@@ -1,5 +1,6 @@
 package filmparrot.movil.informatica.filmparrot;
 
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,9 +14,12 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+
 public class ElementFormFragment extends Fragment {
 
     Spinner spinner;
+    private FragmentManager fragmentManager;
+    private ElementSpinnerListener e;
 
     public ElementFormFragment() {
     }
@@ -32,6 +36,28 @@ public class ElementFormFragment extends Fragment {
         array_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(array_adapter);
 
+        spinner.setOnItemSelectedListener(new ElementSpinnerListener());
         return view;
+    }
+
+
+
+    private class ElementSpinnerListener implements AdapterView.OnItemSelectedListener{
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            switch (spinner.getSelectedItem()){
+                case 'Película':
+                    getChildFragmentManager().beginTransaction().replace(R.id.spec_element_content,new FilmFormFragment()).commit();
+                    break;
+            }
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+
+        }
+
+
     }
 }

@@ -1,0 +1,142 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:scrollbars="none"
+    android:overScrollMode="never"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="false">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="500dp">
+
+
+        <EditText
+            android:id="@+id/duration"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:inputType="text"
+            android:background="#ffffff"
+            android:singleLine="true"
+            android:maxLength="40"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:padding="5dp"
+            android:layout_alignTop="@+id/textView2"
+            android:layout_toRightOf="@+id/textView2"
+            android:layout_toEndOf="@+id/textView2"
+            android:layout_marginLeft="20dp" />
+
+        <TextView
+            android:text="@string/ff_duration"
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginTop="24dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/ff_genre"
+            android:id="@+id/textView"
+            android:layout_below="@+id/textView2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/genre"
+            android:layout_alignWithParentIfMissing="false"
+            android:gravity="end"
+            android:layout_alignTop="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/ff_year"
+            android:id="@+id/textView3"
+            android:layout_alignBottom="@+id/genre"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:id="@+id/year"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:inputType="text"
+            android:background="#ffffff"
+            android:singleLine="true"
+            android:maxLength="4"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:padding="5dp"
+            android:layout_alignBottom="@+id/genre"
+            android:layout_alignLeft="@+id/duration"
+            android:layout_alignStart="@+id/duration" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/ff_producer"
+            android:id="@+id/textView4"
+            android:layout_below="@+id/genre"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/ff_bso"
+            android:id="@+id/textView5"
+            android:layout_below="@+id/textView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:id="@+id/producer"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:inputType="text"
+            android:background="#ffffff"
+            android:singleLine="true"
+            android:maxLength="40"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:padding="5dp"
+            android:layout_alignTop="@+id/textView4"
+            android:layout_alignLeft="@+id/year"
+            android:layout_alignStart="@+id/year" />
+
+        <EditText
+            android:id="@+id/bso"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:inputType="text"
+            android:background="#ffffff"
+            android:singleLine="true"
+            android:maxLength="40"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:padding="5dp"
+            android:layout_alignBottom="@+id/textView5"
+            android:layout_alignLeft="@+id/producer"
+            android:layout_alignStart="@+id/producer" />
+
+    </RelativeLayout>
+</ScrollView>

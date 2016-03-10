@@ -30,6 +30,15 @@
     <string name="ef_descriptionHint">Introduzca una descripción o sinopsis</string>
     <string name="ef_send">ENVIAR</string>
 
+    <!-- FilmFormFragment. -->
+    <string name="ff_duration">Duración:</string>
+    <string name="ff_genre">Género:</string>
+    <string name="ff_year">Año:</string>
+    <string name="ff_producer">Productora:</string>
+    <string name="ff_bso">Bso:</string>
+
+
+
     <string-array name="elementType_array">
         <item>Película</item>
         <item>Serie</item>
@@ -37,4 +46,17 @@
         <item>Actor</item>
         <item>Director</item>
     </string-array>
+
+    <string-array name="film_genre_array">
+        <item>Terror</item>
+        <item>Animacíon</item>
+        <item>Acción</item>
+        <item>Humor</item>
+        <item>Ciencia-ficción</item>
+        <item>Aventuras</item>
+        <item>Drama</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
