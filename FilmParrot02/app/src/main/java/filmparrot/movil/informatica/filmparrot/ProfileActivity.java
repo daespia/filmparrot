@@ -61,7 +61,6 @@ public class ProfileActivity extends AppCompatActivity {
         tabLayout.getTabAt(0).setIcon(R.drawable.eye);
         tabLayout.getTabAt(1).setIcon(R.drawable.pencil);
         tabLayout.getTabAt(2).setIcon(R.drawable.file_add);
-
     }
 
     @Override
