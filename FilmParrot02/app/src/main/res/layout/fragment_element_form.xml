@@ -24,7 +24,7 @@
         android:layout_alignParentRight="false"/>
 
     <EditText
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="30dp"
         android:inputType="text"
         android:id="@+id/nameText"
@@ -55,7 +55,7 @@
         android:layout_marginTop="10dp" />
 
     <EditText
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:inputType="text"
         android:layout_height="30dp"
         android:id="@+id/editText"
@@ -84,7 +84,7 @@
         android:layout_alignParentLeft="true"/>
 
     <EditText
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
@@ -120,7 +120,7 @@
 
     <RelativeLayout
         android:id="@+id/spec_element_content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/elementType" />
 

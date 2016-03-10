@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:overScrollMode="never">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".ElementViewActivity">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="210dp"
+            android:id="@+id/coverImage"
+            android:layout_marginTop="33dp"
+            android:background="#f21313"
+            android:layout_below="@+id/filmLabel"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Nombre de elemento"
+            android:id="@+id/filmLabel"
+            android:textSize="25sp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="5.8"
+            android:id="@+id/pointAverage"
+            android:textColor="#ffffff"
+            android:background="@color/colorPrimary"
+            android:padding="10dp"
+            android:textSize="30sp"
+            android:layout_alignTop="@+id/coverImage"
+            android:layout_toRightOf="@+id/coverImage"
+            android:layout_toEndOf="@+id/coverImage"
+            android:layout_marginLeft="20dp" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/pointsIcon"
+            android:src="@drawable/view"
+            android:layout_below="@+id/pointAverage"
+            android:layout_alignLeft="@+id/pointAverage"
+            android:layout_alignStart="@+id/pointAverage"
+            android:layout_marginTop="15dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="27 votos"
+            android:id="@+id/pointsLabel"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:layout_above="@+id/reviewsIcon"
+            android:layout_toRightOf="@+id/pointsIcon"
+            android:layout_marginLeft="10dp" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/reviewsIcon"
+            android:src="@drawable/review"
+            android:layout_below="@+id/pointsIcon"
+            android:layout_alignLeft="@+id/pointsIcon"
+            android:layout_alignStart="@+id/pointsIcon"
+            android:layout_marginTop="15dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="2 críticas"
+            android:id="@+id/reviewsLabel"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:layout_alignTop="@+id/reviewsIcon"
+            android:layout_alignLeft="@+id/pointsLabel"
+            android:layout_alignStart="@+id/pointsLabel" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VOTAR"
+            android:id="@+id/PointsButton"
+            android:layout_alignBottom="@+id/coverImage"
+            android:layout_alignLeft="@+id/reviewsIcon"
+            android:layout_alignStart="@+id/reviewsIcon"
+            android:background="@color/colorPrimary"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Sinopsis"
+            android:id="@+id/descriptionLabel"
+            android:layout_below="@+id/coverImage"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="30dp"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resumen muy breve y general de una cosa, especialmente de una novela, película u obra teatral. Resumen muy breve y general de una cosa, especialmente de una novela, película u obra teatral."
+            android:id="@+id/durationLabel"
+            android:layout_below="@+id/descriptionLabel"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="País:"
+            android:id="@+id/genreLabel"
+            android:textSize="20sp"
+            android:layout_below="@+id/durationLabel"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="España"
+            android:id="@+id/textView3"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:layout_alignBottom="@+id/genreLabel"
+            android:layout_toRightOf="@+id/genreLabel"
+            android:layout_toEndOf="@+id/genreLabel"
+            android:layout_marginLeft="10dp" />
+    </RelativeLayout>
+
+</ScrollView>

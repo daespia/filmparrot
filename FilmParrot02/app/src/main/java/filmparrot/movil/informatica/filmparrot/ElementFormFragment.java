@@ -18,11 +18,8 @@ import android.widget.TextView;
 public class ElementFormFragment extends Fragment {
 
     Spinner spinner;
-    private FragmentManager fragmentManager;
-    private ElementSpinnerListener e;
 
-    public ElementFormFragment() {
-    }
+    public ElementFormFragment() { }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,28 +33,24 @@ public class ElementFormFragment extends Fragment {
         array_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(array_adapter);
 
-        spinner.setOnItemSelectedListener(new ElementSpinnerListener());
-        return view;
-    }
-
-
-
-    private class ElementSpinnerListener implements AdapterView.OnItemSelectedListener{
-        @Override
-        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-            switch (spinner.getSelectedItem()){
-                case 'Película':
-                    getChildFragmentManager().beginTransaction().replace(R.id.spec_element_content,new FilmFormFragment()).commit();
-                    break;
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem = spinner.getSelectedItem().toString();
+                switch (selectedItem){
+                    case "Película":
+                        getChildFragmentManager().beginTransaction().replace(R.id.spec_element_content,
+                                new FilmFormFragment()).commit();
+                        break;
+                }
             }
-        }
 
-        @Override
-        public void onNothingSelected(AdapterView<?> parent) {
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
 
-        }
+            }
+        });
 
-
+        return view;
     }
 }

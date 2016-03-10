@@ -76,13 +76,17 @@ public class PrincipalActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.home_item) {
-            this.setTitle("FilmParrot");
+            setTitle("FilmParrot");
 
         } else if (id == R.id.releases_item) {
+            setTitle("Estrenos");
+            intent = new Intent(this, ElementViewActivity.class);
 
         } else if (id == R.id.search_item) {
+            setTitle("Buscar");
 
         } else if (id == R.id.lists_item) {
+            setTitle("Listas");
 
         } else if (id == R.id.login_item) {
             fragmentManager.beginTransaction().replace(R.id.content_frame, new LoginActivity()).commit();
