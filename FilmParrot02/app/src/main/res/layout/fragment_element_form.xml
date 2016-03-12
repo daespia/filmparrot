@@ -112,10 +112,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/elementType"
-        android:layout_alignTop="@+id/elementView"
         android:layout_alignWithParentIfMissing="false"
-        android:layout_alignParentEnd="true"
-        android:gravity="end">
+        android:gravity="end"
+        android:layout_alignTop="@+id/elementView"
+        android:layout_toRightOf="@+id/elementView"
+        android:layout_toEndOf="@+id/elementView">
     </Spinner>
 
     <RelativeLayout
