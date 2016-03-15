@@ -34,7 +34,7 @@
     <string name="ff_duration">Duración:</string>
     <string name="ff_genre">Género:</string>
     <string name="ff_year">Año:</string>
-    <string name="ff_producer">Productora:</string>
+    <string name="ff_producer">Product.:</string>
     <string name="ff_bso">BSO:</string>
 
     <string-array name="elementType_array">
