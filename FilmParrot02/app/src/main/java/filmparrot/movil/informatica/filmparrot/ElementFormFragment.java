@@ -15,9 +15,17 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+
 public class ElementFormFragment extends Fragment {
 
     Spinner spinner;
+    private Connection conexionMySQL;
 
     public ElementFormFragment() { }
 
@@ -53,4 +61,38 @@ public class ElementFormFragment extends Fragment {
 
         return view;
     }
+
+
+
+    public void conectarBDMySQL (String usuario, String contrasena,
+                                 String ip, String puerto, String catalogo)
+    {
+        if (conexionMySQL == null)
+        {
+            String urlConexionMySQL = "";
+            if (catalogo != "")
+                urlConexionMySQL = "jdbc:mysql://" + ip + ":" +	puerto + "/" + catalogo;
+            else
+                urlConexionMySQL = "jdbc:mysql://" + ip + ":" + puerto;
+            if (usuario != "" & contrasena != "" & ip != "" & puerto != "")
+            {
+                try
+                {
+                    Class.forName("com.mysql.jdbc.Driver");
+                    conexionMySQL =	DriverManager.getConnection(urlConexionMySQL,
+                            usuario, contrasena);
+                }
+                catch (ClassNotFoundException e)
+                {
+                    e.getMessage();
+                }
+                catch (SQLException e)
+                {
+                    e.getMessage();
+                }
+            }
+        }
+    }
+
+
 }
