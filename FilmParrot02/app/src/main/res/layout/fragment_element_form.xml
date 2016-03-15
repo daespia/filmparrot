@@ -115,6 +115,8 @@
         android:layout_alignTop="@+id/elementView"
         android:layout_alignWithParentIfMissing="false"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+
         android:gravity="end">
     </Spinner>
 

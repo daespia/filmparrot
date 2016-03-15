@@ -12,7 +12,9 @@
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         tools:context=".ElementViewActivity">
 
@@ -51,7 +53,10 @@
             android:layout_alignTop="@+id/coverImage"
             android:layout_toRightOf="@+id/coverImage"
             android:layout_toEndOf="@+id/coverImage"
-            android:layout_marginStart="20dp" />
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+
+            />
 
         <ImageView
             android:layout_width="25dp"
@@ -73,7 +78,10 @@
             android:textColor="#000000"
             android:layout_above="@+id/reviewsIcon"
             android:layout_toEndOf="@+id/pointsIcon"
-            android:layout_marginStart="10dp" />
+            android:layout_toRightOf="@+id/pointsIcon"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            />
 
         <ImageView
             android:layout_width="25dp"
@@ -97,7 +105,7 @@
             android:layout_alignLeft="@+id/pointsLabel"
             android:layout_alignStart="@+id/pointsLabel" />
 
-        <Button
+        k¡<Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="VOTAR"
