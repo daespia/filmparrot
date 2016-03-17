@@ -34,8 +34,23 @@
     <string name="ff_duration">Duración:</string>
     <string name="ff_genre">Género:</string>
     <string name="ff_year">Año:</string>
-    <string name="ff_producer">Product.:</string>
+    <string name="ff_producer">Productora:</string>
     <string name="ff_bso">BSO:</string>
+
+    <!-- BsoFormFragment. -->
+    <string name="bf_year">Año:</string>
+    <string name="bf_compositor">Compositor:</string>
+
+    <!-- PersonFormFragment. -->
+    <string name="pf_surname">Apellidos:</string>
+    <string name="pf_birthdate">Fecha ncto:</string>
+
+    <!-- SerieFormFragment. -->
+    <string name="sf_startyear">Año comienzo:</string>
+    <string name="sf_endyear">Año fin:</string>
+    <string name="sf_season">Temporada:</string>
+    <string name="sf_chapter">Capítulos:</string>
+
 
     <string-array name="elementType_array">
         <item>Ninguno</item>

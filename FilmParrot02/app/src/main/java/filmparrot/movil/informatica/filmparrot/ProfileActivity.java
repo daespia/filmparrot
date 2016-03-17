@@ -25,9 +25,9 @@ public class ProfileActivity extends AppCompatActivity {
 
         pager = (ViewPager) this.findViewById(R.id.profile_viewpager);
         adapter = new ProfileFragmentAdapter(getSupportFragmentManager());
-        adapter.addFragment(new ElementFormFragment());
-        adapter.addFragment(new ElementFormFragment());
-        adapter.addFragment(new ElementFormFragment());
+        adapter.addFragment(new FilmFormFragment());
+        adapter.addFragment(new PersonFormFragment());
+        adapter.addFragment(new BsoFormFragment());
         pager.setAdapter(adapter);
 
         tabLayout = (TabLayout) findViewById(R.id.profile_tabs);

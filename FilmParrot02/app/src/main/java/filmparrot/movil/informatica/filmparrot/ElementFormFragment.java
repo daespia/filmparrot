@@ -58,7 +58,7 @@ public class ElementFormFragment extends Fragment {
         });
 
 
-        conectarBDMySQL("root","fp3b*","193.146.250.87","3306","filmparrot");
+       /* conectarBDMySQL("root","fp3b*","193.146.250.87","3306","filmparrot");
         Statement stmt = null;
         try {
             stmt = conexionMySQL.createStatement();
@@ -72,15 +72,7 @@ public class ElementFormFragment extends Fragment {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-
-
-
-
-
-
-
-
+*/
         return view;
     }
 
