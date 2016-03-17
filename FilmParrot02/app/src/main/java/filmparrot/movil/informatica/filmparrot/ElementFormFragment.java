@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -45,19 +46,40 @@ public class ElementFormFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem = spinner.getSelectedItem().toString();
-                switch (selectedItem){
+                switch (selectedItem) {
                     case "Película":
                         getChildFragmentManager().beginTransaction().replace(R.id.spec_element_content,
                                 new FilmFormFragment()).commit();
                         break;
                 }
             }
-
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
+            public void onNothingSelected(AdapterView<?> parent) {}
         });
+
+
+        conectarBDMySQL("root","fp3b*","193.146.250.87","3306","filmparrot");
+        Statement stmt = null;
+        try {
+            stmt = conexionMySQL.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM elemento");
+
+            if(rs.next()){
+                EditText text = (EditText) view.findViewById(R.id.descriptionText);
+                text.setText((String) rs.getString(1));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+
+
+
+
+
+
 
         return view;
     }
