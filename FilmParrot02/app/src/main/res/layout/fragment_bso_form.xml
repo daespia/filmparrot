@@ -123,16 +123,17 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:layout_below="@+id/spec_element_content"
+            android:layout_below="@+id/CompositorText"
             android:layout_alignEnd="@+id/editText"
             android:layout_alignRight="@+id/editText"
+            android:layout_alignParentEnd="true"
 
 
-            android:layout_marginTop="200dp" />
+            android:layout_marginTop="10dp" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/bf_year"
             android:id="@+id/surnameLabel"
@@ -142,25 +143,21 @@
             android:layout_below="@+id/descriptionText" />
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/surnameText"
+            android:id="@+id/YearText"
             android:background="#ffffff"
-            android:layout_toRightOf="@+id/surnameLabel"
 
 
             android:singleLine="true"
             android:maxLength="4"
             android:textAlignment="center"
             android:padding="5dp"
-            android:layout_alignLeft="@+id/editText"
-            android:layout_alignStart="@+id/editText"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/descriptionText" />
+            android:layout_alignTop="@+id/surnameLabel"
+            android:layout_toRightOf="@+id/birthDateLabel"
+            android:layout_toEndOf="@+id/birthDateLabel" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -169,23 +166,23 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/bf_compositor"
-            android:id="@+id/textView"
-            android:layout_below="@+id/surnameText"
+            android:id="@+id/birthDateLabel"
+            android:layout_below="@+id/YearText"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
             android:id="@+id/CompositorText"
-            android:layout_below="@+id/surnameText"
+            android:layout_below="@+id/YearText"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="10dp"
 
             android:background="#ffffff"
-            android:layout_toRightOf="@+id/textView"
-            android:layout_toEndOf="@+id/textView" />
+            android:layout_toRightOf="@+id/birthDateLabel"
+            android:layout_toEndOf="@+id/birthDateLabel" />
 
     </RelativeLayout>
 </ScrollView>

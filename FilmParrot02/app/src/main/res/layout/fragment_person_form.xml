@@ -123,11 +123,11 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
 
 
 
-            android:layout_below="@+id/textView"
+            android:layout_below="@+id/birthdateText"
             android:layout_alignParentLeft="true" />
 
         <TextView
@@ -136,20 +136,20 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/pf_surname"
             android:id="@+id/surnameLabel"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
 
             android:layout_below="@+id/descriptionText"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+
 
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/surnameText"
+            android:id="@+id/YearText"
             android:background="#ffffff"
 
 
@@ -157,34 +157,32 @@
             android:maxLength="4"
             android:textAlignment="center"
             android:padding="5dp"
-            android:layout_alignTop="@+id/spec_element_content"
-            android:layout_alignRight="@+id/birthdateText"
-            android:layout_alignEnd="@+id/birthdateText"
+            android:layout_alignTop="@+id/surnameLabel"
             android:layout_alignLeft="@+id/birthdateText"
             android:layout_alignStart="@+id/birthdateText" />
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
 
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/pf_birthdate"
-            android:id="@+id/textView"
-            android:layout_below="@+id/surnameText"
+            android:id="@+id/birthDateLabel"
+            android:layout_below="@+id/YearText"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
             android:inputType="date"
             android:ems="10"
 
             android:id="@+id/birthdateText"
             android:background="#ffffff"
             android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/textView"
+            android:layout_alignTop="@+id/birthDateLabel"
             android:layout_toRightOf="@+id/descriptionLabel"
             android:layout_toEndOf="@+id/descriptionLabel" />
 

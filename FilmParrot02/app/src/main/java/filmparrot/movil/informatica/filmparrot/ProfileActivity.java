@@ -28,6 +28,7 @@ public class ProfileActivity extends AppCompatActivity {
         adapter.addFragment(new FilmFormFragment());
         adapter.addFragment(new PersonFormFragment());
         adapter.addFragment(new BsoFormFragment());
+        adapter.addFragment(new SerieFragment());
         pager.setAdapter(adapter);
 
         tabLayout = (TabLayout) findViewById(R.id.profile_tabs);
@@ -45,7 +46,8 @@ public class ProfileActivity extends AppCompatActivity {
 
         pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
 
             @Override
             public void onPageSelected(int position) {
@@ -54,13 +56,15 @@ public class ProfileActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onPageScrollStateChanged(int state) {}
+            public void onPageScrollStateChanged(int state) {
+            }
         });
 
         tabLayout.setupWithViewPager(pager);
         tabLayout.getTabAt(0).setIcon(R.drawable.eye);
         tabLayout.getTabAt(1).setIcon(R.drawable.pencil);
         tabLayout.getTabAt(2).setIcon(R.drawable.file_add);
+        tabLayout.getTabAt(3).setIcon(R.drawable.file_add);
     }
 
     @Override

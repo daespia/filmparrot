@@ -120,6 +120,7 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:textSize="20sp"
+            android:layout_marginTop="10dp"
 
             android:layout_below="@+id/bsoText"
             android:layout_alignRight="@+id/editText"
@@ -142,7 +143,7 @@
             android:id="@+id/durationLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:text="@string/ff_duration"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_below="@+id/descriptionText"
@@ -151,6 +152,7 @@
 
         <TextView
             android:id="@+id/yearLabel"
+            android:layout_marginTop="18dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sf_startyear"
@@ -160,10 +162,10 @@
             android:layout_alignParentLeft="true" />
 
         <TextView
-            android:id="@+id/producerLabel"
+            android:id="@+id/endYearLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="18dp"
 
             android:text="@string/sf_endyear"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -175,7 +177,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/ff_bso"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="18dp"
 
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_below="@+id/chapterText"
@@ -193,10 +195,9 @@
             android:maxLength="4"
             android:singleLine="true"
             android:textAlignment="center"
-            android:layout_above="@+id/producerLabel"
+            android:layout_alignTop="@+id/yearLabel"
             android:layout_toRightOf="@+id/yearLabel"
-            android:layout_toEndOf="@+id/yearLabel"
-            android:layout_below="@+id/durationLabel" />
+            android:layout_toEndOf="@+id/yearLabel" />
 
         <EditText
             android:layout_width="match_parent"
@@ -215,17 +216,17 @@
             android:layout_alignStart="@+id/startyearText" />
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
             android:inputType="date"
             android:ems="10"
             android:id="@+id/endyearText"
             android:background="#ffffff"
-            android:layout_alignTop="@+id/producerLabel"
-            android:layout_toRightOf="@+id/yearLabel"
+            android:layout_alignTop="@+id/endYearLabel"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignBottom="@+id/producerLabel" />
+            android:layout_alignLeft="@+id/startyearText"
+            android:layout_alignStart="@+id/startyearText" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -233,24 +234,23 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/sf_season"
             android:id="@+id/seasonLabel"
-            android:layout_below="@+id/producerLabel"
+            android:layout_below="@+id/endYearLabel"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="18dp" />
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/editText2"
+            android:background="#ffffff"
             android:layout_alignTop="@+id/seasonLabel"
             android:layout_alignLeft="@+id/endyearText"
             android:layout_alignStart="@+id/endyearText"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignBottom="@+id/seasonLabel"
-            android:background="#ffffff" />
+            android:layout_alignParentEnd="true" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -261,21 +261,18 @@
             android:layout_below="@+id/seasonLabel"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="18dp"/>
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/editText3"
-            android:layout_alignLeft="@+id/editText2"
-            android:layout_alignStart="@+id/editText2"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
             android:background="#ffffff"
-            android:layout_alignBottom="@+id/chapterText"
-            android:layout_alignTop="@+id/chapterText" />
+            android:layout_alignTop="@+id/chapterText"
+            android:layout_alignLeft="@+id/bsoText"
+            android:layout_alignStart="@+id/bsoText" />
 
     </RelativeLayout>
 </ScrollView>
