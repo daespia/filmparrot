@@ -41,6 +41,11 @@
                     android:icon="@drawable/logout"
                     android:title="@string/m_logout"
                     android:checkable="false"/>
+                <item
+                    android:id="@+id/new_element_item"
+                    android:icon="@drawable/file_add"
+                    android:title="@string/m_new_element"
+                    android:checkable="false"/>
             </group>
         </menu>
     </item>

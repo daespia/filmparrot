@@ -104,6 +104,10 @@ public class PrincipalActivity extends AppCompatActivity
             intent = new Intent(this, ProfileActivity.class);
         }
 
+        else if (id == R.id.new_element_item) {
+        intent = new Intent(this, NewElementActivity.class);
+        }
+
         if(intent != null) startActivity(intent);
         else drawer.closeDrawer(GravityCompat.START);
         return true;

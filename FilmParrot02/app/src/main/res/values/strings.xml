@@ -17,6 +17,8 @@
     <string name="m_releases">Estrenos</string>
     <string name="m_search">Buscar</string>
     <string name="m_lists">Listas</string>
+    <string name="m_new_element">Nuevo elemento</string>
+
 
     <!-- LoginFragment. -->
     <string name="l_username">Nombre de usuario</string>
