@@ -1,10 +1,13 @@
 package filmparrot.movil.informatica.filmparrot;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -34,6 +37,24 @@ public class ElementViewActivity extends AppCompatActivity {
         } else if (points > 5.0 && points < 7.5){
             pointAverage.setBackgroundColor(ContextCompat.getColor(this,R.color.colorBetween5));
         } else if (points > 7.5) pointAverage.setBackgroundColor(ContextCompat.getColor(this,R.color.colorMore7_5));
+
+
+
+        Button vote = (Button) findViewById(R.id.PointsButton);
+
+        vote.setOnClickListener(new View.OnClickListener(){
+                                 @Override
+                                 public void onClick(View v) {
+                                     Intent i = new Intent(ElementViewActivity.this, VoteActivity.class);
+                                     startActivity(i);
+                                 }
+                             }
+
+
+        );
+
+
+
 
     }
 
