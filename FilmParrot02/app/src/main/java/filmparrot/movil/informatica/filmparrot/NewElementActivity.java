@@ -61,10 +61,10 @@ public class NewElementActivity extends AppCompatActivity {
         });
 
         tabLayout.setupWithViewPager(pager);
-        tabLayout.getTabAt(0).setIcon(R.drawable.eye);
-        tabLayout.getTabAt(1).setIcon(R.drawable.pencil);
-        tabLayout.getTabAt(2).setIcon(R.drawable.file_add);
-        tabLayout.getTabAt(3).setIcon(R.drawable.file_add);
+        tabLayout.getTabAt(0).setIcon(R.drawable.film);
+        tabLayout.getTabAt(1).setIcon(R.drawable.person);
+        tabLayout.getTabAt(2).setIcon(R.drawable.bso);
+        tabLayout.getTabAt(3).setIcon(R.drawable.serie);
     }
 
     @Override

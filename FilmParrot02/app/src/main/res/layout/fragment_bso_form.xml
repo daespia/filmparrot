@@ -132,14 +132,14 @@
             android:layout_marginTop="10dp" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/bf_year"
             android:id="@+id/surnameLabel"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:layout_below="@+id/descriptionText" />
 
         <EditText
@@ -156,8 +156,8 @@
             android:textAlignment="center"
             android:padding="5dp"
             android:layout_alignTop="@+id/surnameLabel"
-            android:layout_toRightOf="@+id/birthDateLabel"
-            android:layout_toEndOf="@+id/birthDateLabel" />
+            android:layout_toRightOf="@+id/composerLabel"
+            android:layout_toEndOf="@+id/composerLabel" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -166,7 +166,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/bf_compositor"
-            android:id="@+id/birthDateLabel"
+            android:id="@+id/composerLabel"
             android:layout_below="@+id/YearText"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
@@ -181,8 +181,9 @@
             android:layout_marginTop="10dp"
 
             android:background="#ffffff"
-            android:layout_toRightOf="@+id/birthDateLabel"
-            android:layout_toEndOf="@+id/birthDateLabel" />
+            android:layout_toRightOf="@+id/composerLabel"
+            android:layout_toEndOf="@+id/composerLabel"
+            android:layout_marginLeft="15dp" />
 
     </RelativeLayout>
 </ScrollView>

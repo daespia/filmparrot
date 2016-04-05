@@ -122,7 +122,7 @@
         android:textSize="20sp"
 
         android:layout_marginTop="10dp"
-        android:layout_below="@+id/bsoLabel"
+        android:layout_below="@+id/bsoText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"/>
@@ -144,7 +144,7 @@
         android:id="@+id/durationLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:text="@string/ff_duration"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_below="@+id/descriptionText"
@@ -156,7 +156,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
 
         android:text="@string/ff_genre"
         android:textAppearance="?android:attr/textAppearanceMedium"

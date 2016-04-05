@@ -136,7 +136,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/pf_surname"
             android:id="@+id/surnameLabel"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
 
             android:layout_below="@+id/descriptionText"
             android:layout_alignParentLeft="true"
@@ -168,7 +168,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/pf_birthdate"
-            android:id="@+id/birthDateLabel"
+            android:id="@+id/composerLabel"
             android:layout_below="@+id/YearText"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
@@ -182,7 +182,7 @@
             android:id="@+id/birthdateText"
             android:background="#ffffff"
             android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/birthDateLabel"
+            android:layout_alignTop="@+id/composerLabel"
             android:layout_toRightOf="@+id/descriptionLabel"
             android:layout_toEndOf="@+id/descriptionLabel" />
 
