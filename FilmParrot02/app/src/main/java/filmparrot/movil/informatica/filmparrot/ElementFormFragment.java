@@ -1,27 +1,24 @@
 package filmparrot.movil.informatica.filmparrot;
 
-import android.content.DialogInterface;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+<<<<<<< Updated upstream
 import android.widget.RadioGroup;
+=======
+>>>>>>> Stashed changes
 import android.widget.Spinner;
-import android.widget.TextView;
-
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 
 public class ElementFormFragment extends Fragment {
 
@@ -69,10 +66,28 @@ public class ElementFormFragment extends Fragment {
                 text.setText((String) rs.getString(1));
             }
 
+<<<<<<< Updated upstream
         } catch (SQLException e) {
             e.printStackTrace();
         }
 */
+=======
+        conectarBDMySQL("invitado","fp3b*","filmparrot.unirioja.es","3306","filmparrot");
+        Statement stmt = null;
+        try {
+            stmt = conexionMySQL.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM elemento");
+
+            if(rs.next()){
+                EditText text = (EditText) view.findViewById(R.id.descriptionText);
+                text.setText(rs.getString(1));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+>>>>>>> Stashed changes
         return view;
     }
 

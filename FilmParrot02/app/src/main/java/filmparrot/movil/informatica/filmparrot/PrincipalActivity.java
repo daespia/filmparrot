@@ -45,6 +45,7 @@ public class PrincipalActivity extends AppCompatActivity
         // Listener que detecta un click sobre los elementos del menú.
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.getMenu().getItem(0).setChecked(true);
 
         // Listener que detecta si el almacenamiento de preferencias ha cambiado.
         session_manager = new SessionManager();
@@ -95,7 +96,7 @@ public class PrincipalActivity extends AppCompatActivity
         } else if (id == R.id.logout_item){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Cerrar sesión");
-            builder.setIcon(R.drawable.logout);
+            builder.setIcon(R.drawable.logout_mini);
             builder.setMessage("¿Estás seguro de que quieres cerrar sesión?")
                     .setNegativeButton("NO", new LogoutDialogListener())
                     .setPositiveButton("SÍ", new LogoutDialogListener()).show();

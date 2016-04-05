@@ -23,7 +23,6 @@
             android:layout_height="210dp"
             android:id="@+id/coverImage"
             android:layout_marginTop="33dp"
-            android:background="#f21313"
             android:layout_below="@+id/filmLabel"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
@@ -44,7 +43,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="5.8"
             android:id="@+id/pointAverage"
             android:textColor="#ffffff"
             android:background="@color/colorPrimary"
@@ -66,7 +64,7 @@
             android:layout_below="@+id/pointAverage"
             android:layout_alignLeft="@+id/pointAverage"
             android:layout_alignStart="@+id/pointAverage"
-            android:layout_marginTop="15dp" />
+            android:layout_marginTop="20dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -74,20 +72,19 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="27 votos"
             android:id="@+id/pointsLabel"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textColor="#000000"
             android:layout_above="@+id/reviewsIcon"
             android:layout_toEndOf="@+id/pointsIcon"
             android:layout_toRightOf="@+id/pointsIcon"
             android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            />
+            android:layout_marginLeft="10dp" />
 
         <ImageView
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:id="@+id/reviewsIcon"
-            android:src="@drawable/review"
+            android:src="@drawable/tick_icon"
             android:layout_below="@+id/pointsIcon"
             android:layout_alignLeft="@+id/pointsIcon"
             android:layout_alignStart="@+id/pointsIcon"
