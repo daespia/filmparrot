@@ -1,7 +1,5 @@
-package filmparrot.movil.informatica.filmparrot;
+package filmparrot.movil.informatica.filmparrot.profile;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;

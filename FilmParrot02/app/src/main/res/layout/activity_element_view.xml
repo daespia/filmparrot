@@ -163,7 +163,7 @@
             android:layout_alignBottom="@+id/genreLabel"
             android:layout_toRightOf="@+id/genreLabel"
             android:layout_toEndOf="@+id/genreLabel"
-            android:layout_marginStart="10dp" />
+            android:layout_marginLeft="10dp" />
     </RelativeLayout>
 
 </ScrollView>

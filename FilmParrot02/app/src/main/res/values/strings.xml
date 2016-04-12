@@ -7,6 +7,9 @@
     <!-- Image descriptions. -->
     <string name="logo_description">El logo de FilmParrot. Un papagayo sobre letras negras.</string>
 
+    <string name="searchLabel">Buscar</string>
+    <string name="searchHint">Buscar elemento</string>
+
     <!-- Menú lateral. -->
     <string name="m_login">Iniciar sesión</string>
     <string name="m_logout">Cerrar sesión</string>

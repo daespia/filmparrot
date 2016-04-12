@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class LoginActivity extends Fragment {
+public class LoginFragment extends Fragment {
 
     private EditText userText;
     private EditText passwordText;
@@ -23,13 +23,13 @@ public class LoginActivity extends Fragment {
     private OnLoginInteractionListener mListener;
 
     // Constructor público vacío. NO BORRAR. Da error.
-    public LoginActivity() {
+    public LoginFragment() {
     }
 
     // Constructor personalizado por si necesitamos pasar parámetros desde la actividad al fragmento
     // en el momento de crearlo.
-    public static LoginActivity newInstance() {
-        return new LoginActivity();
+    public static LoginFragment newInstance() {
+        return new LoginFragment();
     }
 
     @Override

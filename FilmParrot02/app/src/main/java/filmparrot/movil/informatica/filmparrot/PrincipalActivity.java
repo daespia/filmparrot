@@ -1,5 +1,8 @@
 package filmparrot.movil.informatica.filmparrot;
 
+import android.app.SearchManager;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,13 +15,19 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import filmparrot.movil.informatica.filmparrot.profile.NewElementActivity;
+import filmparrot.movil.informatica.filmparrot.profile.ProfileActivity;
 
 public class PrincipalActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
-        LoginActivity.OnLoginInteractionListener {
+        LoginFragment.OnLoginInteractionListener {
 
     private DrawerLayout drawer;
     private NavigationView navigationView;
@@ -54,7 +63,7 @@ public class PrincipalActivity extends AppCompatActivity
     }
 
     @Override
-    public void onResume(){
+    protected void onResume(){
         session_manager.onSharedPreferenceChanged(sharedPref, null);
         super.onResume();
     }
@@ -81,16 +90,12 @@ public class PrincipalActivity extends AppCompatActivity
 
         } else if (id == R.id.releases_item) {
             setTitle("Estrenos");
-            intent = new Intent(this, ElementViewActivity.class);
-
-        } else if (id == R.id.search_item) {
-            setTitle("Buscar");
 
         } else if (id == R.id.lists_item) {
             setTitle("Listas");
 
         } else if (id == R.id.login_item) {
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new LoginActivity()).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new LoginFragment()).commit();
             setTitle("Iniciar sesión");
 
         } else if (id == R.id.logout_item){
@@ -124,6 +129,7 @@ public class PrincipalActivity extends AppCompatActivity
             menu.findItem(R.id.logout_item).setVisible(condition);
             menu.findItem(R.id.viewprofile_item).setVisible(condition);
             menu.findItem(R.id.logout_item).setVisible(condition);
+            menu.findItem(R.id.new_element_item).setVisible(condition);
         }
     }
 
@@ -142,6 +148,22 @@ public class PrincipalActivity extends AppCompatActivity
 
     @Override
     public void onLoginSuccess(){
-        //fragmentManager.beginTransaction().replace(R.id.content_frame, null).commit();
+        Toast.makeText(this, "Bienvenido, administrador", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options_menu, menu);
+
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
+
+        ComponentName cn = new ComponentName(this, SearchActivity.class);
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(cn));
+        searchView.setIconifiedByDefault(true);
+        searchView.setQueryRefinementEnabled(true);
+
+        return true;
     }
 }

@@ -1,4 +1,4 @@
-package filmparrot.movil.informatica.filmparrot;
+package filmparrot.movil.informatica.filmparrot.profile;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+
+import filmparrot.movil.informatica.filmparrot.R;
 
 public class FilmFormFragment extends Fragment {
 

@@ -108,8 +108,7 @@
     <RelativeLayout
         android:id="@+id/spec_element_content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/elementType" />
+        android:layout_height="wrap_content"/>
 
     <Button
         android:layout_width="match_parent"

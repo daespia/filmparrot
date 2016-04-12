@@ -1,13 +1,13 @@
-package filmparrot.movil.informatica.filmparrot;
+package filmparrot.movil.informatica.filmparrot.profile;
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.AppCompatSpinner;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+
+import filmparrot.movil.informatica.filmparrot.R;
+import filmparrot.movil.informatica.filmparrot.auxiliar.ProfileFragmentAdapter;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -27,8 +27,6 @@ public class ProfileActivity extends AppCompatActivity {
         adapter = new ProfileFragmentAdapter(getSupportFragmentManager());
         adapter.addFragment(new FilmFormFragment());
         adapter.addFragment(new PersonFormFragment());
-        adapter.addFragment(new BsoFormFragment());
-        adapter.addFragment(new SerieFragment());
         pager.setAdapter(adapter);
 
         tabLayout = (TabLayout) findViewById(R.id.profile_tabs);
@@ -63,8 +61,6 @@ public class ProfileActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(pager);
         tabLayout.getTabAt(0).setIcon(R.drawable.eye);
         tabLayout.getTabAt(1).setIcon(R.drawable.pencil);
-        tabLayout.getTabAt(2).setIcon(R.drawable.file_add);
-        tabLayout.getTabAt(3).setIcon(R.drawable.file_add);
     }
 
     @Override
