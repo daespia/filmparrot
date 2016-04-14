@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.provider.SearchRecentSuggestions;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -22,6 +23,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import filmparrot.movil.informatica.filmparrot.auxiliar.SuggestionsProvider;
 import filmparrot.movil.informatica.filmparrot.profile.NewElementActivity;
 import filmparrot.movil.informatica.filmparrot.profile.ProfileActivity;
 
@@ -34,6 +36,8 @@ public class PrincipalActivity extends AppCompatActivity
     private SharedPreferences sharedPref;
     private SessionManager session_manager;
     private FragmentManager fragmentManager;
+
+    protected static SearchRecentSuggestions suggestions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +64,9 @@ public class PrincipalActivity extends AppCompatActivity
         session_manager = new SessionManager();
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         sharedPref.registerOnSharedPreferenceChangeListener(session_manager);
+
+        // Proveedor de sugerencias bajo el buscador.
+        suggestions = new SearchRecentSuggestions(this, SuggestionsProvider.AUTHORITY, SuggestionsProvider.MODE);
     }
 
     @Override
@@ -164,6 +171,13 @@ public class PrincipalActivity extends AppCompatActivity
         searchView.setIconifiedByDefault(true);
         searchView.setQueryRefinementEnabled(true);
 
+        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+            @Override
+            public boolean onClose() {
+                suggestions.clearHistory();
+                return true;
+            }
+        });
         return true;
     }
 }
