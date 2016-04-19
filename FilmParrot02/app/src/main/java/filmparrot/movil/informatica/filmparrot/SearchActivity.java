@@ -49,10 +49,10 @@ public class SearchActivity extends AppCompatActivity {
         ListView lista = (ListView) findViewById(R.id.ResultList);
 
         List items = new ArrayList();
-        items.add(new ListItem(R.drawable.cover, "Deadpool"));
-        items.add(new ListItem(R.drawable.cover, "Deadpool returns"));
-        items.add(new ListItem(R.drawable.cover, "Deadpool II"));
-        items.add(new ListItem(R.drawable.cover, "X-MEN: primera generación"));
+        items.add(new ListItem(R.drawable.cover, "Deadpool", 9.8));
+        items.add(new ListItem(R.drawable.cover, "Deadpool returns", 2.5));
+        items.add(new ListItem(R.drawable.cover, "Deadpool II", 7.6));
+        items.add(new ListItem(R.drawable.cover, "X-MEN: primera generación", 5.1));
         // Sets the data behind this ListView
         lista.setAdapter(new ListItemAdapter(this, items));
 

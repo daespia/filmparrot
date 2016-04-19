@@ -2,6 +2,7 @@ package filmparrot.movil.informatica.filmparrot.auxiliar;
 
 import android.content.ClipData;
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,8 +56,18 @@ public class ListItemAdapter extends BaseAdapter {
         // Set data into the view.
         ImageView ivItem = (ImageView) rowView.findViewById(R.id.listImage);
         TextView tvTitle = (TextView) rowView.findViewById(R.id.listTitle);
+        TextView points = (TextView) rowView.findViewById(R.id.listPoints);
 
         ListItem item = this.items.get(position);
+
+        if(item.getPoints() < 5.0){
+            points.setBackgroundColor(ContextCompat.getColor(rowView.getContext(), R.color.colorLess5));
+        } else if (item.getPoints() > 5.0 && item.getPoints() < 7.5){
+            points.setBackgroundColor(ContextCompat.getColor(rowView.getContext(),R.color.colorBetween5));
+        } else if (item.getPoints() > 7.5) points.setBackgroundColor(ContextCompat.getColor(rowView.getContext(), R.color.colorMore7_5));
+
+        points.setText("" + item.getPoints());
+
         tvTitle.setText(item.getTitle());
         ivItem.setImageResource(item.getImage());
 

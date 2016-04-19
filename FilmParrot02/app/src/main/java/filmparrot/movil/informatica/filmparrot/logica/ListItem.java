@@ -5,15 +5,17 @@ public class ListItem {
 
         private int image;
         private String title;
+        private double points;
 
         public ListItem() {
             super();
         }
 
-        public ListItem(int image, String title) {
+        public ListItem(int image, String title, double points) {
             super();
             this.image = image;
             this.title = title;
+            this.points = points;
         }
 
         public int getImage() {
@@ -31,4 +33,8 @@ public class ListItem {
         public void setTitle(String title) {
             this.title = title;
         }
+
+        public double getPoints() {
+        return points;
+    }
 }
