@@ -37,8 +37,6 @@ public class PrincipalActivity extends AppCompatActivity
     private SessionManager session_manager;
     private FragmentManager fragmentManager;
 
-    protected static SearchRecentSuggestions suggestions;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,9 +62,6 @@ public class PrincipalActivity extends AppCompatActivity
         session_manager = new SessionManager();
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         sharedPref.registerOnSharedPreferenceChangeListener(session_manager);
-
-        // Proveedor de sugerencias bajo el buscador.
-        suggestions = new SearchRecentSuggestions(this, SuggestionsProvider.AUTHORITY, SuggestionsProvider.MODE);
     }
 
     @Override
@@ -170,14 +165,6 @@ public class PrincipalActivity extends AppCompatActivity
         searchView.setSearchableInfo(searchManager.getSearchableInfo(cn));
         searchView.setIconifiedByDefault(true);
         searchView.setQueryRefinementEnabled(true);
-
-        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
-            @Override
-            public boolean onClose() {
-                suggestions.clearHistory();
-                return true;
-            }
-        });
         return true;
     }
 }
