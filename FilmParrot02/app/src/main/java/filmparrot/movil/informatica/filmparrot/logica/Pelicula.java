@@ -16,8 +16,8 @@ public class Pelicula extends Elemento {
     private List<Persona> directores;
     private List<Persona> actores;
 
-    public Pelicula(String titulo, String descripcion, String pais, int imagen, int duracion,
-                    String genero, Date fechaEstreno, String productora, Bso bso, List<Persona> directores, List<Persona> actores) {
+    public Pelicula(String titulo, String descripcion, String pais, int imagen, int duracion, String genero,
+                    Date fechaEstreno, String productora, Bso bso, List<Persona> directores, List<Persona> actores) {
         super(titulo, descripcion, pais, imagen);
         this.duracion = duracion;
         this.genero=genero;

@@ -6,21 +6,17 @@ import java.util.List;
  * Created by Manu on 21/04/2016.
  */
 public class Serie extends Elemento {
+
     private int anioComienzo;
     private int anioFinal;
     private int temporadas;
     private int capitulos;
     private Bso bso;
-<<<<<<< HEAD
-
-    public Serie(String titulo, String descripcion, String pais, int imagen,int anioComienzo, int anioFinal, int temporadas,  int capitulos, Bso bso) {
-=======
     private List<Persona> directores;
     private List<Persona> actores;
 
     public Serie(String titulo, String descripcion, String pais, int imagen,int anioComienzo,
                  int anioFinal, int temporadas,  int capitulos, Bso bso, List<Persona> directores, List<Persona> actores) {
->>>>>>> 62a21d513658ba731b7f4a27fd9c80209baa4bb7
         super(titulo, descripcion, pais, imagen);
         this.anioComienzo=anioComienzo;
         this.anioFinal= anioFinal;
