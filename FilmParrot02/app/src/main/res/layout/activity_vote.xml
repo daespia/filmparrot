@@ -41,7 +41,8 @@
         android:layout_below="@+id/view"
         android:layout_alignParentLeft="false"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="0dp" />
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -50,7 +51,7 @@
         android:id="@+id/reviewTitleText"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:background="#e4e4e4"
+        android:background="@drawable/textborder"
         android:singleLine="true"
         android:maxLength="40"
         android:textStyle="bold"
@@ -64,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Crítica"
+        android:text="Crítica:"
         android:id="@+id/textView"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/reviewTitleText"
@@ -77,19 +78,20 @@
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/reviewBodyText"
-        android:background="#e4e4e4"
+        android:background="@drawable/textborder"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:gravity="top|start"
         android:maxLength="5000"
-        android:hint="Cuerpo de la crítica"
         android:minHeight="70dp"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
         android:padding="5dp"
         android:layout_below="@+id/textView"
         android:layout_alignLeft="@+id/titleText"
+        android:layout_alignStart="@+id/titleText"
         android:layout_marginTop="10dp" />
 
     <Button

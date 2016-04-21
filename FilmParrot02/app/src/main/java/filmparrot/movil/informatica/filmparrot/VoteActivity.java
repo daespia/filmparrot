@@ -37,11 +37,11 @@ public class VoteActivity extends AppCompatActivity
             acceptButton.setBackgroundColor(Color.RED);
 
             ratingBar.setRating(sharedPref.getFloat("puntos", 0.0f));
-            titulo.setEnabled(false);;
+            titulo.setEnabled(false);
             titulo.setText(sharedPref.getString("titulo", ""));
             cuerpo.setEnabled(false);;
             cuerpo.setText(sharedPref.getString("cuerpo", ""));
-            ratingBar.setEnabled(false);
+            ratingBar.setIsIndicator(true);
         }
 
         acceptButton.setOnClickListener(new View.OnClickListener() {
