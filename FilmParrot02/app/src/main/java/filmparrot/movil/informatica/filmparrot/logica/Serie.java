@@ -1,7 +1,7 @@
 package filmparrot.movil.informatica.filmparrot.logica;
 
 /**
- * Created by usuario on 21/04/2016.
+ * Created by Manu on 21/04/2016.
  */
 public class Serie extends Elemento {
     private int anioComienzo;
