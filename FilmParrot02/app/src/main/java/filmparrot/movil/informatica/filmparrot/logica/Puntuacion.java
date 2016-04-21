@@ -13,6 +13,7 @@ public class Puntuacion {
         this.valor = valor;
         this.critica = critica;
         this.usuario = usuario;
+        usuario.anadirPuntuacion(this);
     }
 
     public double getValor() {

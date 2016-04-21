@@ -9,6 +9,7 @@ public class Serie extends Elemento {
     private int temporadas;
     private int capitulos;
     private Bso bso;
+
     public Serie(String titulo, String descripcion, String pais, int imagen,int anioComienzo, int anioFinal, int temporadas,  int capitulos, Bso bso) {
         super(titulo, descripcion, pais, imagen);
         this.anioComienzo=anioComienzo;
