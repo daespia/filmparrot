@@ -1,7 +1,9 @@
 package filmparrot.movil.informatica.filmparrot.logica;
 
+import java.util.List;
+
 /**
- * Created by usuario on 21/04/2016.
+ * Created by Manu on 21/04/2016.
  */
 public class Serie extends Elemento {
     private int anioComienzo;
@@ -9,14 +11,24 @@ public class Serie extends Elemento {
     private int temporadas;
     private int capitulos;
     private Bso bso;
+<<<<<<< HEAD
 
     public Serie(String titulo, String descripcion, String pais, int imagen,int anioComienzo, int anioFinal, int temporadas,  int capitulos, Bso bso) {
+=======
+    private List<Persona> directores;
+    private List<Persona> actores;
+
+    public Serie(String titulo, String descripcion, String pais, int imagen,int anioComienzo,
+                 int anioFinal, int temporadas,  int capitulos, Bso bso, List<Persona> directores, List<Persona> actores) {
+>>>>>>> 62a21d513658ba731b7f4a27fd9c80209baa4bb7
         super(titulo, descripcion, pais, imagen);
         this.anioComienzo=anioComienzo;
         this.anioFinal= anioFinal;
         this.temporadas = temporadas;
         this.capitulos= capitulos;
         this.bso=bso;
+        this.directores = directores;
+        this.actores = actores;
     }
 
     public int getAnioComienzo() {
@@ -38,4 +50,8 @@ public class Serie extends Elemento {
     public Bso getBso() {
         return bso;
     }
+
+    public List<Persona> getDirectores() { return directores; }
+
+    public List<Persona> getActores() { return actores; }
 }

@@ -1,21 +1,31 @@
 package filmparrot.movil.informatica.filmparrot.logica;
 
+import java.util.Date;
+import java.util.List;
+
 /**
- * Created by usuario on 21/04/2016.
+ * Created by Manu on 21/04/2016.
  */
 public class Pelicula extends Elemento {
+
     private int duracion;
     private String genero;
-    private int anio;
+    private Date fechaEstreno;
     private String productora;
     private Bso bso;
-    public Pelicula(String titulo, String descripcion, String pais, int imagen, int duracion,String genero, int anio, String productora, Bso bso) {
+    private List<Persona> directores;
+    private List<Persona> actores;
+
+    public Pelicula(String titulo, String descripcion, String pais, int imagen, int duracion,
+                    String genero, Date fechaEstreno, String productora, Bso bso, List<Persona> directores, List<Persona> actores) {
         super(titulo, descripcion, pais, imagen);
         this.duracion = duracion;
         this.genero=genero;
-        this.anio=anio;
+        this.fechaEstreno=fechaEstreno;
         this.productora = productora;
         this.bso = bso;
+        this.directores = directores;
+        this.actores = actores;
     }
 
     public String getGenero() {
@@ -26,15 +36,19 @@ public class Pelicula extends Elemento {
         return duracion;
     }
 
-    public int getAnio() {
-        return anio;
+    public Date getFechaEstreno() {
+        return fechaEstreno;
     }
 
     public String getProductora() {
         return productora;
     }
+
     public Bso getBso() {
         return bso;
     }
 
+    public List<Persona> getDirectores() { return directores; }
+
+    public List<Persona> getActores() { return actores; }
 }
