@@ -51,8 +51,8 @@ public class SearchActivity extends AppCompatActivity {
 
 
 
-        items = Fachada.getElementoPorNombre(queryStr);  //new ArrayList();
-        
+        items = SplashScreen.fachada.getElementoPorNombre(queryStr);  //new ArrayList();
+
         // Sets the data behind this ListView
         lista.setAdapter(new ListItemAdapter(this, items));
 

@@ -25,13 +25,20 @@ public class ElementViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_element_view);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        String id;
+        Intent intent = getIntent();
+        if(intent!=null){
+            String id = intent.getStringExtra("id");
+            SplashScreen.fachada.getElementoPorId(Integer.getInteger(id));
+        }
+        setContentView(R.layout.activity_element_view);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        /*String id;
         Bundle extras = getIntent().getExtras();
         if (extras == null){
             id = null;
         } else {
             id = extras.getString("id");
-        }
+        }*/
 
         String elementName = "Deadpool";
         setTitle(elementName);

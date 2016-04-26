@@ -82,6 +82,16 @@ public class Fachada {
         return resultados;
     }
 
+    public Elemento getElementoPorId(int id) {
+
+        for (Pelicula p : peliculas) if (p.getId()==id) return p;
+        for (Serie s : series) if (s.getId()==id) return s;
+        for (Bso b : bsos) if (b.getId()==id) return b;
+        for (Persona p : personas) if (p.getId()==id) return p;
+
+        return null;
+    }
+
     public boolean comprobarUsuario(String usuario, String contrasena){
         boolean existe = false;
         for(Usuario u: usuarios) if(u.getNombre().equals(usuario) && u.getContrasena().equals(contrasena)) existe = true;
