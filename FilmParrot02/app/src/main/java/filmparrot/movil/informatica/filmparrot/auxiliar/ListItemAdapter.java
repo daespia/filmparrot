@@ -1,6 +1,5 @@
 package filmparrot.movil.informatica.filmparrot.auxiliar;
 
-import android.content.ClipData;
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
@@ -13,15 +12,15 @@ import android.widget.TextView;
 import java.util.List;
 
 import filmparrot.movil.informatica.filmparrot.R;
-import filmparrot.movil.informatica.filmparrot.logica.ListItem;
+import filmparrot.movil.informatica.filmparrot.logica.Elemento;
 
 
 public class ListItemAdapter extends BaseAdapter {
 
     private Context context;
-    private List<ListItem> items;
+    private List<Elemento> items;
 
-    public ListItemAdapter(Context context, List<ListItem> items) {
+    public ListItemAdapter(Context context, List<Elemento> items) {
         this.context = context;
         this.items = items;
     }
@@ -58,18 +57,18 @@ public class ListItemAdapter extends BaseAdapter {
         TextView tvTitle = (TextView) rowView.findViewById(R.id.listTitle);
         TextView points = (TextView) rowView.findViewById(R.id.listPoints);
 
-        ListItem item = this.items.get(position);
+        Elemento item = this.items.get(position);
 
-        if(item.getPoints() < 5.0){
+        if(item.getMedia() < 5.0){
             points.setBackgroundColor(ContextCompat.getColor(rowView.getContext(), R.color.colorLess5));
-        } else if (item.getPoints() > 5.0 && item.getPoints() < 7.5){
+        } else if (item.getMedia() > 5.0 && item.getMedia() < 7.5){
             points.setBackgroundColor(ContextCompat.getColor(rowView.getContext(),R.color.colorBetween5));
-        } else if (item.getPoints() > 7.5) points.setBackgroundColor(ContextCompat.getColor(rowView.getContext(), R.color.colorMore7_5));
+        } else if (item.getMedia() > 7.5) points.setBackgroundColor(ContextCompat.getColor(rowView.getContext(), R.color.colorMore7_5));
 
-        points.setText("" + item.getPoints());
+        points.setText("" + item.getMedia());
 
-        tvTitle.setText(item.getTitle());
-        ivItem.setImageResource(item.getImage());
+        tvTitle.setText(item.getTitulo());
+        ivItem.setImageResource(item.getImagen());
 
         return rowView;
     }

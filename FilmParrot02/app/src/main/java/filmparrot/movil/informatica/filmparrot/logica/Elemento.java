@@ -8,18 +8,24 @@ import java.util.List;
  */
 public abstract class Elemento {
 
+    private int id;
     private String titulo;
     private String descripcion;
     private String pais;
     private int imagen;
     private List<Puntuacion> puntuaciones;
 
-    public Elemento(String titulo, String descripcion, String pais, int imagen){
+    public Elemento(int id, String titulo, String descripcion, String pais, int imagen){
+        this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.pais = pais;
         this.imagen = imagen;
         this.puntuaciones = new ArrayList<Puntuacion>();
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getTitulo() {

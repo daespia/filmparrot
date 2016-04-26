@@ -36,6 +36,7 @@ public class ElementViewActivity extends AppCompatActivity {
         TextView pointAverage = (TextView) findViewById(R.id.pointAverage);
         pointAverage.setText("" + points);
 
+
         if(points < 5.0){
             pointAverage.setBackgroundColor(ContextCompat.getColor(this, R.color.colorLess5));
         } else if (points > 5.0 && points < 7.5){

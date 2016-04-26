@@ -10,14 +10,15 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import filmparrot.movil.informatica.filmparrot.auxiliar.ListItemAdapter;
 import filmparrot.movil.informatica.filmparrot.auxiliar.SuggestionsProvider;
-import filmparrot.movil.informatica.filmparrot.logica.ListItem;
+import filmparrot.movil.informatica.filmparrot.logica.Elemento;
+import filmparrot.movil.informatica.filmparrot.logica.Fachada;
 
 public class SearchActivity extends AppCompatActivity {
+    private List<Elemento> items;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,11 +49,10 @@ public class SearchActivity extends AppCompatActivity {
     private void doSearch(String queryStr) {
         ListView lista = (ListView) findViewById(R.id.ResultList);
 
-        List items = new ArrayList();
-        items.add(new ListItem(R.drawable.cover, "Deadpool", 9.8));
-        items.add(new ListItem(R.drawable.cover, "Deadpool returns", 2.5));
-        items.add(new ListItem(R.drawable.cover, "Deadpool II", 7.6));
-        items.add(new ListItem(R.drawable.cover, "X-MEN: primera generación", 5.1));
+
+
+        items = Fachada.getElementoPorNombre(queryStr);  //new ArrayList();
+        
         // Sets the data behind this ListView
         lista.setAdapter(new ListItemAdapter(this, items));
 
@@ -60,6 +60,7 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), ElementViewActivity.class);
+                intent.putExtra("id",items.get(position).getId());
                 startActivity(intent);
             }
         });
