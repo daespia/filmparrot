@@ -15,9 +15,12 @@ import android.widget.TextView;
 
 import java.util.Random;
 
+import filmparrot.movil.informatica.filmparrot.logica.Elemento;
+
 public class ElementViewActivity extends AppCompatActivity {
 
     Button vote;
+    Elemento el;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +31,7 @@ public class ElementViewActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if(intent!=null){
             String id = intent.getStringExtra("id");
-            SplashScreen.fachada.getElementoPorId(Integer.getInteger(id));
+            el = SplashScreen.fachada.getElementoPorId(Integer.getInteger(id));
         }
         setContentView(R.layout.activity_element_view);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -40,16 +43,18 @@ public class ElementViewActivity extends AppCompatActivity {
             id = extras.getString("id");
         }*/
 
-        String elementName = "Deadpool";
+        String elementName = el.getTitulo()
         setTitle(elementName);
 
         Random r = new Random();
-        double points = Math.floor(10*(10.0 * r.nextDouble()))/10;
+        double points = el.getMedia();//Math.floor(10*(10.0 * r.nextDouble()))/10;
 
         ImageView imageCover = (ImageView) findViewById(R.id.coverImage);
         imageCover.setImageResource(R.drawable.cover);
         TextView pointAverage = (TextView) findViewById(R.id.pointAverage);
         pointAverage.setText("" + points);
+        TextView description = (TextView) findViewById(R.id.descriptionLabel);
+        description.setText(el.getDescripcion());
 
 
         if(points < 5.0){
