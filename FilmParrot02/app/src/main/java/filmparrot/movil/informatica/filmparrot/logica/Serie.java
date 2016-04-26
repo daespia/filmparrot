@@ -15,9 +15,9 @@ public class Serie extends Elemento {
     private List<Persona> directores;
     private List<Persona> actores;
 
-    public Serie(String titulo, String descripcion, String pais, int imagen,int anioComienzo,
+    public Serie(int id, String titulo, String descripcion, String pais, int imagen,int anioComienzo,
                  int anioFinal, int temporadas,  int capitulos, Bso bso, List<Persona> directores, List<Persona> actores) {
-        super(titulo, descripcion, pais, imagen);
+        super(id, titulo, descripcion, pais, imagen);
         this.anioComienzo=anioComienzo;
         this.anioFinal= anioFinal;
         this.temporadas = temporadas;

@@ -16,9 +16,9 @@ public class Persona extends Elemento{
 
 
 
-    public Persona(String titulo, String descripcion, String pais, int imagen, String apellidos,
+    public Persona(int id, String titulo, String descripcion, String pais, int imagen, String apellidos,
                    Date fechaNacimiento, Boolean esDirector, Boolean esActor, List<Elemento>elementos) {
-        super(titulo, descripcion, pais, imagen);
+        super(id, titulo, descripcion, pais, imagen);
         this.apellidos = apellidos;
         this.fechaNacimiento = fechaNacimiento;
         this.esDirector = esDirector;

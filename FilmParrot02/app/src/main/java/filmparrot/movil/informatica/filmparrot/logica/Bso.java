@@ -8,8 +8,8 @@ public class Bso extends Elemento {
     private String compositor;
     private int anio;
 
-    public Bso(String titulo, String descripcion, String pais, int imagen, String compositor, int anio){
-        super(titulo, descripcion, pais, imagen);
+    public Bso(int id, String titulo, String descripcion, String pais, int imagen, String compositor, int anio){
+        super(id, titulo, descripcion, pais, imagen);
         this.compositor = compositor;
         this.anio = anio;
     }
