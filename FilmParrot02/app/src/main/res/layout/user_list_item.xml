@@ -40,7 +40,6 @@
         android:layout_below="@id/listTitle"
         android:layout_toRightOf="@id/listImage"
         android:layout_toEndOf="@id/listImage"
-        android:layout_marginTop="2dp"
         android:paddingTop="2dp"
         android:paddingBottom="2dp"
         android:paddingLeft="4dp"
@@ -56,7 +55,6 @@
         android:layout_below="@id/elementType"
         android:layout_toRightOf="@id/listImage"
         android:layout_toEndOf="@id/listImage"
-        android:layout_marginTop="2dp"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textIsSelectable="false" />
 

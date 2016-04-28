@@ -91,6 +91,10 @@ public class PrincipalActivity extends AppCompatActivity
         } else if (id == R.id.releases_item) {
             setTitle("Estrenos");
 
+        }else if (id == R.id.signin_item) {
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new SigninFragment()).commit();
+            setTitle("Registrarse");
+
         } else if (id == R.id.lists_item) {
             setTitle("Listas");
 

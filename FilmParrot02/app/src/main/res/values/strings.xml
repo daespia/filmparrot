@@ -26,6 +26,8 @@
     <!-- LoginFragment. -->
     <string name="l_username">Nombre de usuario</string>
     <string name="l_password">Contraseña</string>
+    <string name="l_confirmpassword">Repita la contraseña</string>
+
     <string name="l_login">INICIAR SESIÓN</string>
 
     <!-- EelementFormFragment. -->
