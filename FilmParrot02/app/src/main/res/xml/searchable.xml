@@ -4,5 +4,5 @@
     android:hint="@string/searchHint"
     android:voiceSearchMode="showVoiceSearchButton|launchRecognizer"
     android:searchSuggestAuthority="filmparrot.movil.informatica.filmparrot.auxiliar.SuggestionsProvider"
-    android:searchSuggestSelection=" ?">
+    android:searchSuggestSelection="">
 </searchable>

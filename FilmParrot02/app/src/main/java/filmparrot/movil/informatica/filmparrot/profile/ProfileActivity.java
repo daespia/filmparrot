@@ -4,7 +4,11 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import filmparrot.movil.informatica.filmparrot.R;
 import filmparrot.movil.informatica.filmparrot.auxiliar.ProfileFragmentAdapter;
@@ -27,6 +31,7 @@ public class ProfileActivity extends AppCompatActivity {
         adapter = new ProfileFragmentAdapter(getSupportFragmentManager());
         adapter.addFragment(new FilmFormFragment());
         adapter.addFragment(new PersonFormFragment());
+        adapter.addFragment(new UserListsFragment());
         pager.setAdapter(adapter);
 
         tabLayout = (TabLayout) findViewById(R.id.profile_tabs);
@@ -61,6 +66,7 @@ public class ProfileActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(pager);
         tabLayout.getTabAt(0).setIcon(R.drawable.eye);
         tabLayout.getTabAt(1).setIcon(R.drawable.pencil);
+        tabLayout.getTabAt(2).setIcon(R.drawable.list_blue);
     }
 
     @Override
@@ -80,5 +86,17 @@ public class ProfileActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.user_options_menu, menu);
+
+        View notification = menu.findItem(R.id.notificationOption).getActionView();
+        TextView ui_hot = (TextView) notification.findViewById(R.id.notification_count);
+        ui_hot.setText(""+ 2);
+
+        return true;
     }
 }

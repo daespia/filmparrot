@@ -25,6 +25,7 @@ public class Serie extends Elemento {
         this.bso=bso;
         this.directores = directores;
         this.actores = actores;
+        setTipo("SERIE");
     }
 
     public int getAnioComienzo() {

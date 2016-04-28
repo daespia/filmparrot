@@ -12,6 +12,7 @@ public class Bso extends Elemento {
         super(id, titulo, descripcion, pais, imagen);
         this.compositor = compositor;
         this.anio = anio;
+        setTipo("BSO");
     }
 
     public String getCompositor() {

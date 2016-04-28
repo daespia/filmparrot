@@ -16,4 +16,15 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/no_results"
+        android:contentDescription="@string/app_logo"
+        android:id="@+id/no_results_image"
+        android:visibility="invisible"
+        android:layout_alignTop="@+id/ResultList"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="117dp" />
+
 </RelativeLayout>

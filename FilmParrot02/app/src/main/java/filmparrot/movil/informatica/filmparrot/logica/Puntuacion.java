@@ -7,7 +7,7 @@ public class Puntuacion {
 
     private double valor;
     private Critica critica;
-    Usuario usuario;
+    private Usuario usuario;
 
     public Puntuacion(double valor, Critica critica, Usuario usuario){
         this.valor = valor;

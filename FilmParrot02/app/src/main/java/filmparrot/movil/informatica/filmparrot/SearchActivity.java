@@ -5,17 +5,22 @@ import android.content.Intent;
 import android.provider.SearchRecentSuggestions;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import filmparrot.movil.informatica.filmparrot.auxiliar.ListItemAdapter;
 import filmparrot.movil.informatica.filmparrot.auxiliar.SuggestionsProvider;
+import filmparrot.movil.informatica.filmparrot.auxiliar.Utils;
 import filmparrot.movil.informatica.filmparrot.logica.Elemento;
-import filmparrot.movil.informatica.filmparrot.logica.Fachada;
 
 public class SearchActivity extends AppCompatActivity {
     private List<Elemento> items;
@@ -33,34 +38,31 @@ public class SearchActivity extends AppCompatActivity {
         handleIntent(intent);
     }
 
-    public void onListItemClick(ListView l, View v, int position, long id) {
-        // call detail activity for clicked entry
-    }
-
     private void handleIntent(Intent intent) {
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
-            SearchRecentSuggestions suggestions = new SearchRecentSuggestions(this, SuggestionsProvider.AUTHORITY, SuggestionsProvider.MODE);
-            suggestions.saveRecentQuery(query, null);
-            doSearch(query);
+            if(query != null) {
+                SearchRecentSuggestions suggestions = new SearchRecentSuggestions(this, SuggestionsProvider.AUTHORITY, SuggestionsProvider.MODE);
+                suggestions.saveRecentQuery(query, null);
+                doSearch(query);
+            }
         }
     }
 
     private void doSearch(String queryStr) {
         ListView lista = (ListView) findViewById(R.id.ResultList);
 
-
-
-        items = SplashScreen.fachada.getElementoPorNombre(queryStr);  //new ArrayList();
-
-        // Sets the data behind this ListView
+        items = Utils.fachada.getElementoPorNombre(queryStr);
+        if(items.size() == 0) findViewById(R.id.no_results_image).setVisibility(View.VISIBLE);
         lista.setAdapter(new ListItemAdapter(this, items));
+
+        registerForContextMenu(lista);
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), ElementViewActivity.class);
-                intent.putExtra("id",items.get(position).getId());
+                intent.putExtra("id", items.get(position).getId());
                 startActivity(intent);
             }
         });
@@ -77,4 +79,26 @@ public class SearchActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo)
+    {
+        menu.setHeaderTitle("Añadir a una lista");
+        HashMap<String, List<Elemento>> elementos = Utils.fachada.getUsuario("raulher").getListas();
+
+        for(Map.Entry e: elementos.entrySet()){
+            menu.add(e.getKey().toString());
+        }
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        int idElemento = items.get(info.position).getId();
+        Elemento elemento = Utils.fachada.getElementoPorId(idElemento);
+        Utils.fachada.getUsuario("raulher").getListas().get(item.getTitle()).add(elemento);
+        Toast.makeText(this, "Has añadido '" + elemento.getTitulo() + "' a '" + item.getTitle()+"'.", Toast.LENGTH_SHORT).show();
+        return true;
+    }
+
 }

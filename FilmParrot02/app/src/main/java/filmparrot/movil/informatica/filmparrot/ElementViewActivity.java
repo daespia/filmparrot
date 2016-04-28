@@ -2,9 +2,7 @@ package filmparrot.movil.informatica.filmparrot;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.preference.PreferenceManager;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -13,11 +11,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.Random;
+import filmparrot.movil.informatica.filmparrot.auxiliar.Utils;
+import filmparrot.movil.informatica.filmparrot.logica.Elemento;
 
 public class ElementViewActivity extends AppCompatActivity {
 
-    Button vote;
+    private Button vote;
+    private Elemento elemento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,36 +27,30 @@ public class ElementViewActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         if(intent!=null){
-            String id = intent.getStringExtra("id");
-            SplashScreen.fachada.getElementoPorId(Integer.getInteger(id));
+            int id = intent.getIntExtra("id", 0);
+            elemento = Utils.fachada.getElementoPorId(id);
         }
         setContentView(R.layout.activity_element_view);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        /*String id;
-        Bundle extras = getIntent().getExtras();
-        if (extras == null){
-            id = null;
-        } else {
-            id = extras.getString("id");
-        }*/
 
-        String elementName = "Deadpool";
-        setTitle(elementName);
-
-        Random r = new Random();
-        double points = Math.floor(10*(10.0 * r.nextDouble()))/10;
+        setTitle(elemento.getTitulo());
 
         ImageView imageCover = (ImageView) findViewById(R.id.coverImage);
-        imageCover.setImageResource(R.drawable.cover);
+        imageCover.setImageResource(elemento.getImagen());
+
         TextView pointAverage = (TextView) findViewById(R.id.pointAverage);
-        pointAverage.setText("" + points);
+        pointAverage.setBackgroundColor(Utils.getProgressiveColor(elemento.getMedia(), getApplicationContext()));
+        pointAverage.setText(String.valueOf(elemento.getMedia()));
 
+        TextView pointsLabel = (TextView) findViewById(R.id.pointsLabel);
+        pointsLabel.setText(elemento.getPuntuaciones().size() + " votos");
 
-        if(points < 5.0){
-            pointAverage.setBackgroundColor(ContextCompat.getColor(this, R.color.colorLess5));
-        } else if (points > 5.0 && points < 7.5){
-            pointAverage.setBackgroundColor(ContextCompat.getColor(this,R.color.colorBetween5));
-        } else if (points > 7.5) pointAverage.setBackgroundColor(ContextCompat.getColor(this,R.color.colorMore7_5));
+        TextView reviewsLabel = (TextView) findViewById(R.id.reviewsLabel);
+        reviewsLabel.setText(elemento.getNumCriticas() + " críticas");
+
+        ((TextView) findViewById(R.id.descriptionText)).setText(elemento.getDescripcion());
+        ((TextView) findViewById(R.id.countryText)).setText(elemento.getPais());
+        ((TextView) findViewById(R.id.elementLabel)).setText(elemento.getTitulo());
 
         vote = (Button) findViewById(R.id.PointsButton);
 

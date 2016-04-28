@@ -26,6 +26,7 @@ public class Pelicula extends Elemento {
         this.bso = bso;
         this.directores = directores;
         this.actores = actores;
+        setTipo("PELÍCULA");
     }
 
     public String getGenero() {

@@ -76,11 +76,9 @@
         <item>Drama</item>
     </string-array>
 
+    <string name="title_activity_splash_screen">Cargando datos...</string>
+    <string name="app_logo">Logo de la aplicación.</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
-    <string name="title_activity_splash_screen">SplashScreen</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="app_logo">App logo.</string>
 </resources>

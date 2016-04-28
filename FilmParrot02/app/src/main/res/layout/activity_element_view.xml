@@ -22,8 +22,8 @@
             android:layout_width="150dp"
             android:layout_height="210dp"
             android:id="@+id/coverImage"
-            android:layout_marginTop="33dp"
-            android:layout_below="@+id/filmLabel"
+            android:layout_marginTop="25dp"
+            android:layout_below="@+id/elementLabel"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
@@ -32,8 +32,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Nombre de elemento"
-            android:id="@+id/filmLabel"
-            android:textSize="25sp"
+            android:id="@+id/elementLabel"
+            android:textSize="30sp"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -102,7 +102,7 @@
             android:layout_alignLeft="@+id/pointsLabel"
             android:layout_alignStart="@+id/pointsLabel" />
 
-        k¡<Button
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="VOTAR"
@@ -121,7 +121,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Sinopsis"
+            android:text="Descripción"
             android:id="@+id/descriptionLabel"
             android:layout_below="@+id/coverImage"
             android:layout_alignParentLeft="true"
@@ -133,7 +133,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Resumen muy breve y general de una cosa, especialmente de una novela, película u obra teatral. Resumen muy breve y general de una cosa, especialmente de una novela, película u obra teatral."
-            android:id="@+id/durationLabel"
+            android:id="@+id/descriptionText"
             android:layout_below="@+id/descriptionLabel"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -146,9 +146,9 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="País:"
-            android:id="@+id/genreLabel"
+            android:id="@+id/countryLabel"
             android:textSize="20sp"
-            android:layout_below="@+id/durationLabel"
+            android:layout_below="@+id/descriptionText"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginTop="10dp" />
@@ -157,12 +157,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="España"
-            android:id="@+id/textView3"
+            android:id="@+id/countryText"
             android:textSize="18sp"
             android:textColor="#000000"
-            android:layout_alignBottom="@+id/genreLabel"
-            android:layout_toRightOf="@+id/genreLabel"
-            android:layout_toEndOf="@+id/genreLabel"
+            android:layout_alignBottom="@+id/countryLabel"
+            android:layout_toRightOf="@+id/countryLabel"
+            android:layout_toEndOf="@+id/countryLabel"
             android:layout_marginLeft="10dp" />
     </RelativeLayout>
 

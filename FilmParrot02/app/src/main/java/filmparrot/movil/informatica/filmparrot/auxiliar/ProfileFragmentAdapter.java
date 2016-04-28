@@ -33,7 +33,7 @@ public class ProfileFragmentAdapter extends FragmentPagerAdapter {
     public String getTitleFromPosition(int position){
         if(position == 0) return "Mi perfil";
         if(position == 1) return "Mi actividad";
-        if(position == 2) return "Añadir elemento";
+        if(position == 2) return "Mis listas";
         return "Mi perfil";
     }
 }

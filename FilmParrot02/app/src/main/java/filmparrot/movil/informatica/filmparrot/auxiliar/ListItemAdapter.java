@@ -1,7 +1,6 @@
 package filmparrot.movil.informatica.filmparrot.auxiliar;
 
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,33 +42,27 @@ public class ListItemAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        View rowView = convertView;
-
         if (convertView == null) {
-            // Create a new view into the list.
-            LayoutInflater inflater = (LayoutInflater) context
-                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            rowView = inflater.inflate(R.layout.list_item, parent, false);
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(R.layout.search_list_item, parent, false);
         }
 
         // Set data into the view.
-        ImageView ivItem = (ImageView) rowView.findViewById(R.id.listImage);
-        TextView tvTitle = (TextView) rowView.findViewById(R.id.listTitle);
-        TextView points = (TextView) rowView.findViewById(R.id.listPoints);
+        ImageView ivItem = (ImageView) convertView.findViewById(R.id.listImage);
+        TextView tvTitle = (TextView) convertView.findViewById(R.id.listTitle);
+        TextView points = (TextView) convertView.findViewById(R.id.listPoints);
+        TextView type = (TextView) convertView.findViewById(R.id.elementType);
+        TextView country = (TextView) convertView.findViewById(R.id.countryText);
 
         Elemento item = this.items.get(position);
+        points.setBackgroundColor(Utils.getProgressiveColor(item.getMedia(), context));
+        points.setText(String.valueOf(item.getMedia()));
 
-        if(item.getMedia() < 5.0){
-            points.setBackgroundColor(ContextCompat.getColor(rowView.getContext(), R.color.colorLess5));
-        } else if (item.getMedia() > 5.0 && item.getMedia() < 7.5){
-            points.setBackgroundColor(ContextCompat.getColor(rowView.getContext(),R.color.colorBetween5));
-        } else if (item.getMedia() > 7.5) points.setBackgroundColor(ContextCompat.getColor(rowView.getContext(), R.color.colorMore7_5));
-
-        points.setText("" + item.getMedia());
-
+        country.setText(item.getPais());
+        type.setText(item.getTipo());
         tvTitle.setText(item.getTitulo());
         ivItem.setImageResource(item.getImagen());
 
-        return rowView;
+        return convertView;
     }
 }

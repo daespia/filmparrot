@@ -7,7 +7,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.provider.SearchRecentSuggestions;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -23,7 +22,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import filmparrot.movil.informatica.filmparrot.auxiliar.SuggestionsProvider;
 import filmparrot.movil.informatica.filmparrot.profile.NewElementActivity;
 import filmparrot.movil.informatica.filmparrot.profile.ProfileActivity;
 
@@ -131,7 +129,7 @@ public class PrincipalActivity extends AppCompatActivity
             menu.findItem(R.id.logout_item).setVisible(condition);
             menu.findItem(R.id.viewprofile_item).setVisible(condition);
             menu.findItem(R.id.logout_item).setVisible(condition);
-            menu.findItem(R.id.new_element_item).setVisible(condition);
+            menu.findItem(R.id.new_element_item).setVisible(sharedPreferences.contains("adminUser"));
         }
     }
 
@@ -142,6 +140,7 @@ public class PrincipalActivity extends AppCompatActivity
                 case DialogInterface.BUTTON_POSITIVE:
                     SharedPreferences.Editor editor = sharedPref.edit();
                     editor.remove("sessionActive");
+                    editor.remove("adminUser");
                     editor.apply();
                     break;
             }
@@ -149,8 +148,8 @@ public class PrincipalActivity extends AppCompatActivity
     }
 
     @Override
-    public void onLoginSuccess(){
-        Toast.makeText(this, "Bienvenido, administrador", Toast.LENGTH_SHORT).show();
+    public void onLoginSuccess(String username){
+        Toast.makeText(this, "Bienvenido, " + username, Toast.LENGTH_SHORT).show();
     }
 
     @Override

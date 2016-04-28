@@ -1,7 +1,5 @@
 package filmparrot.movil.informatica.filmparrot.logica;
 
-import android.renderscript.Element;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,11 +8,11 @@ import java.util.List;
  */
 public class Fachada {
 
-    List<Usuario> usuarios;
-    List<Pelicula> peliculas;
-    List<Serie> series;
-    List<Bso> bsos;
-    List<Persona> personas;
+    private List<Usuario> usuarios;
+    private List<Pelicula> peliculas;
+    private List<Serie> series;
+    private List<Bso> bsos;
+    private List<Persona> personas;
 
     public Fachada(List<Usuario> usuarios, List<Pelicula> peliculas, List<Serie> series, List<Persona> personas, List<Bso> bsos) {
         this.usuarios = usuarios;
@@ -25,11 +23,11 @@ public class Fachada {
     }
 
     public Fachada(){
-        this.usuarios = new ArrayList<Usuario>();
-        this.peliculas = new ArrayList<Pelicula>();
-        this.series = new ArrayList<Serie>();
-        this.personas =  new ArrayList<Persona>();
-        this.bsos = new ArrayList<Bso>();
+        this.usuarios = new ArrayList<>();
+        this.peliculas = new ArrayList<>();
+        this.series = new ArrayList<>();
+        this.personas =  new ArrayList<>();
+        this.bsos = new ArrayList<>();
     }
 
     public List<Pelicula> getPeliculas() {
@@ -73,11 +71,12 @@ public class Fachada {
     public List<Elemento> getElementoPorNombre(String cadena) {
 
         List<Elemento> resultados = new ArrayList<Elemento>();
+        cadena = cadena.toLowerCase();
 
-        for (Pelicula p : peliculas) if (p.getTitulo().contains(cadena)) resultados.add(p);
-        for (Serie s : series) if (s.getTitulo().contains(cadena)) resultados.add(s);
-        for (Bso b : bsos) if (b.getTitulo().contains(cadena)) resultados.add(b);
-        for (Persona p : personas) if (p.getTitulo().contains(cadena)) resultados.add(p);
+        for (Pelicula p : peliculas) if (p.getTitulo().toLowerCase().contains(cadena)) resultados.add(p);
+        for (Serie s : series) if (s.getTitulo().toLowerCase().contains(cadena)) resultados.add(s);
+        for (Bso b : bsos) if (b.getTitulo().toLowerCase().contains(cadena)) resultados.add(b);
+        for (Persona p : personas) if (p.getTitulo().toLowerCase().contains(cadena)) resultados.add(p);
 
         return resultados;
     }
@@ -94,7 +93,12 @@ public class Fachada {
 
     public boolean comprobarUsuario(String usuario, String contrasena){
         boolean existe = false;
-        for(Usuario u: usuarios) if(u.getNombre().equals(usuario) && u.getContrasena().equals(contrasena)) existe = true;
+        for(Usuario u: usuarios) if(u.getNombre().equalsIgnoreCase(usuario) && u.getContrasena().equals(contrasena)) existe = true;
         return existe;
+    }
+
+    public Usuario getUsuario(String usuario){
+        for(Usuario u: usuarios) if(u.getNombre().equalsIgnoreCase(usuario)) return u;
+        return null;
     }
 }

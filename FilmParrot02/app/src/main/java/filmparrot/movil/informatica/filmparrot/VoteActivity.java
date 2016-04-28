@@ -1,12 +1,10 @@
 package filmparrot.movil.informatica.filmparrot;
 
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,10 +13,11 @@ import android.widget.Toast;
 
 public class VoteActivity extends AppCompatActivity
 {
-    Button acceptButton;
-    RatingBar ratingBar;
-    EditText titulo, cuerpo;
-    SharedPreferences sharedPref;
+    private Button acceptButton;
+    private RatingBar ratingBar;
+    private EditText titulo;
+    private EditText cuerpo;
+    private SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +38,7 @@ public class VoteActivity extends AppCompatActivity
             ratingBar.setRating(sharedPref.getFloat("puntos", 0.0f));
             titulo.setEnabled(false);
             titulo.setText(sharedPref.getString("titulo", ""));
-            cuerpo.setEnabled(false);;
+            cuerpo.setEnabled(false);
             cuerpo.setText(sharedPref.getString("cuerpo", ""));
             ratingBar.setIsIndicator(true);
         }

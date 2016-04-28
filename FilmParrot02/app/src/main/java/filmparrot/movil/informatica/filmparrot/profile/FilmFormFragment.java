@@ -12,13 +12,12 @@ import filmparrot.movil.informatica.filmparrot.R;
 
 public class FilmFormFragment extends Fragment {
 
-    Spinner genre;
+    private Spinner genre;
 
     public FilmFormFragment() { }
 
     public static FilmFormFragment newInstance(String param1, String param2) {
-        FilmFormFragment fragment = new FilmFormFragment();
-        return fragment;
+        return new FilmFormFragment();
     }
 
     @Override

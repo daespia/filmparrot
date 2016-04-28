@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import filmparrot.movil.informatica.filmparrot.auxiliar.Utils;
+
 public class LoginFragment extends Fragment {
 
     private EditText userText;
@@ -50,12 +52,15 @@ public class LoginFragment extends Fragment {
                 String username = userText.getText().toString();
                 String password = passwordText.getText().toString();
 
-                if (username.equals("admin") && password.equals("adminadmin")) {
+                if (Utils.fachada.comprobarUsuario(username, password)) {
                     SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
                     SharedPreferences.Editor editor = sharedPref.edit();
-                    editor.putBoolean("sessionActive", true);
+                    editor.putString("sessionActive", username);
+                    if(Utils.fachada.getUsuario(username).getEsAdministrador()){
+                        editor.putBoolean("adminUser", true);
+                    }
                     editor.apply();
-                    mListener.onLoginSuccess();
+                    mListener.onLoginSuccess(username);
 
                 } else {
                     userText.setText("");
@@ -94,6 +99,6 @@ public class LoginFragment extends Fragment {
     // objeto mListener (mirar onAttach) guarda una referencia a la actividad.
     public interface OnLoginInteractionListener {
         // TODO: Update argument type and name
-        void onLoginSuccess();
+        void onLoginSuccess(String username);
     }
 }
