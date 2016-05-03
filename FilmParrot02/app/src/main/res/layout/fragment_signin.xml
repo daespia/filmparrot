@@ -1,95 +1,108 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingStart="@dimen/activity_horizontal_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingEnd="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin">
+    android:overScrollMode="never"
+    android:scrollbars="none">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/l_username"
-        android:id="@+id/userLabel"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="30dp"
-        android:textSize="18sp" />
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin">
 
-    <EditText
-        android:inputType="text"
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:id="@+id/usernameText"
-        android:layout_below="@+id/userLabel"
-        android:layout_alignParentLeft="true"
-        android:background="#ffffff"
-        android:layout_marginTop="10dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/userLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="30dp"
+            android:text="@string/l_username"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="18sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/l_password"
-        android:id="@+id/passwordLabel"
-        android:layout_below="@+id/usernameText"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="30dp"
-        android:textSize="18sp" />
+        <EditText
+            android:id="@+id/usernameText"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/userLabel"
+            android:layout_marginTop="10dp"
+            android:background="#ffffff"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-    <EditText
-        android:layout_width="fill_parent"
-        android:inputType="textPassword"
-        android:layout_height="40dp"
-        android:id="@+id/passwordText"
-        android:layout_below="@+id/passwordLabel"
-        android:layout_alignParentLeft="true"
-        android:background="#ffffff"
-        android:layout_marginTop="10dp"
-        android:textSize="20sp"
-        android:textAlignment="center"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/passwordLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/usernameText"
+            android:layout_marginTop="30dp"
+            android:text="@string/l_password"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/passwordText"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/passwordLabel"
+            android:layout_marginTop="10dp"
+            android:background="#ffffff"
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/l_confirmpassword"
-        android:id="@+id/confirmpasswordLabel"
-        android:layout_below="@+id/passwordText"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="30dp"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/confirmpasswordLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/passwordText"
+            android:layout_marginTop="30dp"
+            android:text="@string/l_confirmpassword"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="18sp" />
 
-    <EditText
-        android:layout_width="fill_parent"
-        android:inputType="textPassword"
-        android:layout_height="40dp"
-        android:id="@+id/confirmpasswordText"
-        android:layout_below="@+id/confirmpasswordLabel"
-        android:layout_alignParentLeft="true"
-        android:background="#ffffff"
-        android:layout_marginTop="10dp"
-        android:textSize="20sp"
-        android:textAlignment="center"
-        android:textStyle="bold" />
+        <EditText
+            android:id="@+id/confirmpasswordText"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/confirmpasswordLabel"
+            android:layout_marginTop="10dp"
+            android:background="#ffffff"
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:text="@string/l_login"
-        android:id="@+id/loginButton"
-        android:background="@android:color/holo_blue_dark"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_marginTop="25dp"
-        android:layout_below="@+id/confirmpasswordText"
-        android:layout_alignParentRight="true" />
-</RelativeLayout>
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/confirmpasswordText"
+            android:layout_marginTop="25dp"
+            android:background="@android:color/holo_blue_dark"
+            android:text="@string/l_signin"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</ScrollView>

@@ -55,18 +55,15 @@ public class SigninFragment extends Fragment {
             public void onClick(View v) {
                 String username = userText.getText().toString();
                 String password = passwordText.getText().toString();
-                String confirmpassword = confirmpasswordText.getText().toString();
+                String confirm_password = confirmpasswordText.getText().toString();
 
                 if (Utils.fachada.getUsuario(username) == null) {
-                    if (password.equals(confirmpassword)) {
+                    if (password.equals(confirm_password) && !password.isEmpty()) {
                         Usuario u = new Usuario(username,password);
                         Utils.fachada.anadirUsuario(u);
                     } else {
                         passwordText.setText("");
                         confirmpasswordText.setText("");
-                        userLabel.setTextColor(Color.RED);
-                        passwordLabel.setTextColor(Color.RED);
-                        confirmpasswordLabel.setTextColor(Color.RED);
                         userText.setError("Las contraseñas no coinciden");
                     }
                 } else {

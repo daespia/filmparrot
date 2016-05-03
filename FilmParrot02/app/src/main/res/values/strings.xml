@@ -22,13 +22,12 @@
     <string name="m_lists">Listas</string>
     <string name="m_new_element">Nuevo elemento</string>
 
-
     <!-- LoginFragment. -->
     <string name="l_username">Nombre de usuario</string>
     <string name="l_password">Contraseña</string>
     <string name="l_confirmpassword">Repita la contraseña</string>
-
     <string name="l_login">INICIAR SESIÓN</string>
+    <string name="l_signin">REGISTRARSE</string>
 
     <!-- EelementFormFragment. -->
     <string name="ef_name">Nombre:</string>
@@ -80,7 +79,4 @@
 
     <string name="title_activity_splash_screen">Cargando datos...</string>
     <string name="app_logo">Logo de la aplicación.</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
