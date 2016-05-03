@@ -1,7 +1,9 @@
 package filmparrot.movil.informatica.filmparrot.profile;
 
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
@@ -18,13 +20,13 @@ import java.util.HashMap;
 import java.util.List;
 
 import filmparrot.movil.informatica.filmparrot.R;
-import filmparrot.movil.informatica.filmparrot.auxiliar.ExpandableListAdapter;
+import filmparrot.movil.informatica.filmparrot.auxiliar.ExpandableUserListAdapter;
 import filmparrot.movil.informatica.filmparrot.auxiliar.Utils;
 import filmparrot.movil.informatica.filmparrot.logica.Elemento;
 
 public class UserListsFragment extends Fragment {
 
-    private ExpandableListAdapter exp;
+    private ExpandableUserListAdapter exp;
     private EditText addList;
     private HashMap<String, List<Elemento>> listas;
     private AlertDialog alertDialog;
@@ -39,11 +41,13 @@ public class UserListsFragment extends Fragment {
         ExpandableListView listasUsuario = (ExpandableListView) view.findViewById(R.id.UserListsList);
         FloatingActionButton floatButton = (FloatingActionButton) view.findViewById(R.id.addListButton);
 
-        listas = Utils.fachada.getUsuario("raulher").getListas();
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getContext());
+
+        listas = Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null)).getListas();
         List<String> nombres = new ArrayList<>();
         nombres.addAll(listas.keySet());
 
-        exp = new ExpandableListAdapter(getContext(), nombres, listas);
+        exp = new ExpandableUserListAdapter(getContext(), nombres, listas);
         listasUsuario.setAdapter(exp);
 
         alertDialog = new AlertDialog.Builder(getContext()).create();

@@ -2,6 +2,8 @@ package filmparrot.movil.informatica.filmparrot;
 
 import android.app.SearchManager;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.provider.SearchRecentSuggestions;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,13 +25,14 @@ import filmparrot.movil.informatica.filmparrot.auxiliar.Utils;
 import filmparrot.movil.informatica.filmparrot.logica.Elemento;
 
 public class SearchActivity extends AppCompatActivity {
+
     private List<Elemento> items;
+    SharedPreferences sharedPref;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setTitle("Búsqueda");
         handleIntent(getIntent());
     }
 
@@ -42,6 +45,7 @@ public class SearchActivity extends AppCompatActivity {
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
             if(query != null) {
+                setTitle("Búsqueda de '" + query + "'");
                 SearchRecentSuggestions suggestions = new SearchRecentSuggestions(this, SuggestionsProvider.AUTHORITY, SuggestionsProvider.MODE);
                 suggestions.saveRecentQuery(query, null);
                 doSearch(query);
@@ -83,11 +87,13 @@ public class SearchActivity extends AppCompatActivity {
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo)
     {
-        menu.setHeaderTitle("Añadir a una lista");
-        HashMap<String, List<Elemento>> elementos = Utils.fachada.getUsuario("raulher").getListas();
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplication());
+        if (sharedPref.contains("sessionActive")){
+            menu.setHeaderTitle("Añadir a una lista");
+            HashMap<String, List<Elemento>> elementos = Utils.fachada.getUsuario(
+                    sharedPref.getString("sessionActive", null)).getListas();
 
-        for(Map.Entry e: elementos.entrySet()){
-            menu.add(e.getKey().toString());
+            for(Map.Entry e: elementos.entrySet()) menu.add(e.getKey().toString());
         }
     }
 
@@ -96,7 +102,7 @@ public class SearchActivity extends AppCompatActivity {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         int idElemento = items.get(info.position).getId();
         Elemento elemento = Utils.fachada.getElementoPorId(idElemento);
-        Utils.fachada.getUsuario("raulher").getListas().get(item.getTitle()).add(elemento);
+        Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null)).getListas().get(item.getTitle()).add(elemento);
         Toast.makeText(this, "Has añadido '" + elemento.getTitulo() + "' a '" + item.getTitle()+"'.", Toast.LENGTH_SHORT).show();
         return true;
     }

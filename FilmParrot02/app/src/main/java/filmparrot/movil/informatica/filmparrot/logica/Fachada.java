@@ -1,6 +1,7 @@
 package filmparrot.movil.informatica.filmparrot.logica;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -13,6 +14,7 @@ public class Fachada {
     private List<Serie> series;
     private List<Bso> bsos;
     private List<Persona> personas;
+    private HashMap<String, List<Elemento>> listas;
 
     public Fachada(List<Usuario> usuarios, List<Pelicula> peliculas, List<Serie> series, List<Persona> personas, List<Bso> bsos) {
         this.usuarios = usuarios;
@@ -20,6 +22,7 @@ public class Fachada {
         this.series = series;
         this.personas = personas;
         this.bsos = bsos;
+        listas = new HashMap<>();
     }
 
     public Fachada(){
@@ -28,6 +31,7 @@ public class Fachada {
         this.series = new ArrayList<>();
         this.personas =  new ArrayList<>();
         this.bsos = new ArrayList<>();
+        listas = new HashMap<>();
     }
 
     public List<Pelicula> getPeliculas() {
@@ -100,5 +104,13 @@ public class Fachada {
     public Usuario getUsuario(String usuario){
         for(Usuario u: usuarios) if(u.getNombre().equalsIgnoreCase(usuario)) return u;
         return null;
+    }
+
+    public HashMap<String, List<Elemento>> getListas() {
+        return listas;
+    }
+
+    public void anadirLista(String nombre, List<Elemento> elementos) {
+        listas.put(nombre, elementos);
     }
 }

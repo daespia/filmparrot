@@ -96,6 +96,7 @@ public class PrincipalActivity extends AppCompatActivity
             setTitle("Registrarse");
 
         } else if (id == R.id.lists_item) {
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new ListsFragment()).commit();
             setTitle("Listas");
 
         } else if (id == R.id.login_item) {

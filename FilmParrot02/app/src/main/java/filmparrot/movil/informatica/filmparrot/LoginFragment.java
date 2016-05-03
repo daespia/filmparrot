@@ -53,7 +53,7 @@ public class LoginFragment extends Fragment {
                 String password = passwordText.getText().toString();
 
                 if (Utils.fachada.comprobarUsuario(username, password)) {
-                    SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+                    SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getContext());
                     SharedPreferences.Editor editor = sharedPref.edit();
                     editor.putString("sessionActive", username);
                     if(Utils.fachada.getUsuario(username).getEsAdministrador()){

@@ -82,24 +82,107 @@ public class Utils {
                 2015, 2016, 2, 42, null, null, null);
         ministerio.anadirPuntuacion(new Puntuacion(4.8, null, dani));
 
+        Pelicula jurassic = new Pelicula(7, "Jurassic Park", "El multimillonario John Hammond consigue hacer realidad " +
+                "su sueño de clonar dinosaurios del Jurásico y crear con ellos un parque temático " +
+                "en una isla remota. Antes de abrirlo al público, invita a una pareja de eminentes " +
+                "científicos y a un matemático para que comprueben la viabilidad del proyecto. ", "Estados Unidos",
+                R.drawable.cover_jurassic, 120, "Ciencia ficción",
+                Calendar.getInstance().getTime(), "La que sea", null, null, null);
+        jurassic.anadirPuntuacion(new Puntuacion(9.6, null, raul));
+        jurassic.anadirPuntuacion(new Puntuacion(8.7, null, manu));
+        jurassic.anadirPuntuacion(new Puntuacion(5.9, null, dani));
+
+        Pelicula padrino = new Pelicula(8, "El padrino", "América, años 40. Don Vito Corleone (Marlon Brando) es el respetado y temido jefe " +
+                "de una de las cinco familias de la mafia de Nueva York. Tiene cuatro hijos: Connie (Talia Shire), " +
+                "el impulsivo Sonny (James Caan), el pusilánime Fredo (John Cazale) y Michael (Al Pacino), " +
+                "que no quiere saber nada de los negocios de su padre. ", "Estados Unidos",
+                R.drawable.cover_padrino, 120, "Drama | Mafia",
+                Calendar.getInstance().getTime(), "La que sea", null, null, null);
+        padrino.anadirPuntuacion(new Puntuacion(7.5, null, raul));
+        padrino.anadirPuntuacion(new Puntuacion(8.5, null, manu));
+        padrino.anadirPuntuacion(new Puntuacion(9.1, null, dani));
+
+        Pelicula gladiator = new Pelicula(9, "Gladiator", "En el año 180, el Imperio Romano domina todo el mundo conocido. " +
+                "Tras una gran victoria sobre los bárbaros del norte, el anciano emperador Marco Aurelio " +
+                "(Richard Harris) decide transferir el poder a Máximo (Russell Crowe), bravo general de sus " +
+                "ejércitos y hombre de inquebrantable lealtad al imperio. Pero su hijo Cómodo (Joaquin Phoenix), " +
+                "que aspiraba al trono, no lo acepta y trata de asesinar a Máximo.", "Estados Unidos",
+                R.drawable.gladiator_cover, 120, "Drama | Mafia",
+                Calendar.getInstance().getTime(), "La que sea", null, null, null);
+        gladiator.anadirPuntuacion(new Puntuacion(7.5, null, raul));
+        gladiator.anadirPuntuacion(new Puntuacion(8.5, null, manu));
+        gladiator.anadirPuntuacion(new Puntuacion(9.1, null, dani));
+
+        Pelicula cena = new Pelicula(10, "La cena de los idiotas", "A un grupo de amigos, que se reúne semanalmente para cenar, " +
+                "se les ocurre una original y extravagante apuesta: cada uno debe llevar a la cena al tipo más idiota " +
+                "que haya sido capaz de encontrar; el que invite al más idiota de todos será el ganador. " +
+                "Remake del popular film francés de Francis Veber.", "Estados Unidos",
+                R.drawable.cover_cena, 120, "Humor",
+                Calendar.getInstance().getTime(), "La que sea", null, null, null);
+        cena.anadirPuntuacion(new Puntuacion(7.5, null, raul));
+        cena.anadirPuntuacion(new Puntuacion(8.5, null, manu));
+
+        Serie friends = new Serie(11, "Friends", "Narra las aventuras y desventuras de seis jóvenes de Nueva York. " +
+                "Forman una unida pandilla de amigos que viven en Manhattan y que suelen reunirse en sus a" +
+                "partamentos o en su bar habitual, el Central Perk. A pesar de los numerosos cambios que " +
+                "se producen en sus vidas, su amistad es inquebrantable en la dura batalla por salir adelante" +
+                " en sus periplos profesionales y personales", "Estados Unidos", R.drawable.cover_friends,
+                2015, 2016, 2, 42, null, null, null);
+        friends.anadirPuntuacion(new Puntuacion(7.8, null, dani));;
+
+        Persona scarlett = new Persona(12, "Scarlett Johansson", "Scarlett Johansson.",
+                "Estados Unidos", R.drawable.cover_scarlett, "Johansson",
+                Calendar.getInstance().getTime(), false, true, null);
+        scarlett.anadirPuntuacion(new Puntuacion(6.5, null, raul));
+
+        Persona riddley = new Persona(13, "Riddley Scott", "Riddley Scott.",
+                "Estados Unidos", R.drawable.cover_riddley,
+                "Scott", Calendar.getInstance().getTime(), true, false, null);
+        riddley.anadirPuntuacion(new Puntuacion(5.6, null, manu));
+
         fachada.anadirPelicula(deadpool);
         fachada.anadirPelicula(titanic);
+        fachada.anadirPelicula(jurassic);
+        fachada.anadirPelicula(padrino);
+        fachada.anadirPelicula(gladiator);
+        fachada.anadirPelicula(cena);
+
         fachada.anadirSerie(ministerio);
+        fachada.anadirSerie(friends);
         fachada.anadirSerie(juegotronos);
+
         fachada.anadirPersona(chris);
+        fachada.anadirPersona(scarlett);
         fachada.anadirPersona(spielberg);
+        fachada.anadirPersona(riddley);
 
         List<Elemento> lista1 = new ArrayList<>();
         lista1.add(deadpool);
         lista1.add(ministerio);
         raul.anadirLista("Mis series y películas preferidas", lista1);
-
         List<Elemento> lista2 = new ArrayList<>();
         lista2.add(chris);
-        raul.anadirLista("Actores que me gustan", lista2);
-
+        manu.anadirLista("Actores que me gustan", lista2);
         List<Elemento> lista3 = new ArrayList<>();
         lista3.add(juegotronos);
-        raul.anadirLista("Series que tengo que ver", lista3);
+        dani.anadirLista("Series que tengo que ver", lista3);
+
+        List<Elemento> lista4 = new ArrayList<>();
+        lista4.add(jurassic);
+        lista4.add(padrino);
+        lista4.add(gladiator);
+        lista4.add(titanic);
+        fachada.anadirLista("Megaclásicos", lista4);
+
+        List<Elemento> lista5 = new ArrayList<>();
+        lista5.add(cena);
+        lista5.add(friends);
+        fachada.anadirLista("Para reír sin parar", lista5);
+
+        List<Elemento> lista6 = new ArrayList<>();
+        lista6.add(riddley);
+        lista6.add(spielberg);
+        fachada.anadirLista("Directores famosos", lista6);
+
     }
 }
