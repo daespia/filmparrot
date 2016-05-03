@@ -55,6 +55,8 @@ public abstract class Elemento {
 
     public void anadirPuntuacion(Puntuacion p){
         puntuaciones.add(p);
+        p.getUsuario().anadirPuntuacion(p);
+        p.setElemento(this);
     }
 
     public boolean eliminarPuntuacion(Puntuacion p){
@@ -63,10 +65,9 @@ public abstract class Elemento {
 
     public double getMedia() {
         double media = 0.0;
-        if (!puntuaciones.isEmpty()) {
-            for (Puntuacion p : puntuaciones) media = media + p.getValor();
-            media = Math.round(media / puntuaciones.size() * 10d) / 10d;
-        } return media;
+        for (Puntuacion p : puntuaciones) media = media + p.getValor();
+        media = Math.round(media / puntuaciones.size() * 10d) / 10d;
+        return media;
     }
 
     public int getNumCriticas(){
@@ -74,7 +75,6 @@ public abstract class Elemento {
         for(Puntuacion p: puntuaciones){
             if(p.getCritica() != null) criticas++;
         }
-
         return criticas;
     }
 

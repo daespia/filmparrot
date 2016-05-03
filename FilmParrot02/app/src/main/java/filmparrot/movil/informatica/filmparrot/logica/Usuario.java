@@ -1,5 +1,7 @@
 package filmparrot.movil.informatica.filmparrot.logica;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -47,6 +49,9 @@ public class Usuario {
         puntuaciones.add(p);
     }
 
+    public List<Puntuacion> getPuntuaciones(){
+        return puntuaciones;
+    }
 
     public HashMap<String, List<Elemento>> getListas() {
         return listas;
@@ -58,5 +63,62 @@ public class Usuario {
 
     public void anadirElementoALista(String nombre, Elemento elemento){
         listas.get(nombre).add(elemento);
+    }
+
+    public double getMediaPuntuaciones(){
+        double media = 0.0;
+        for (Puntuacion p : puntuaciones) media = media + p.getValor();
+        media = Math.round(media / puntuaciones.size() * 10d) / 10d;
+        return media;
+    }
+
+    public int getNumCriticas(){
+        int num = 0;
+        for (Puntuacion p : puntuaciones) if(p.getCritica() != null) num++;
+        return num;
+    }
+
+    public HashMap<String, Integer> getVotacionesPorTipo(){
+
+        HashMap<String, Integer> votosPorTipo = new HashMap<>();
+        int pel = 0, ser = 0, bso = 0, dir = 0, act = 0;
+
+        for(Puntuacion p: puntuaciones){
+            Elemento e = p.getElemento();
+
+            if(e instanceof Pelicula){
+                pel++; votosPorTipo.put("Películas", pel);
+            }
+            if(e instanceof Serie){
+                ser++; votosPorTipo.put("Series", ser);
+            }
+            if(e instanceof Bso){
+                bso++; votosPorTipo.put("BSOs", bso);
+            }
+            if(e instanceof Persona && ((Persona)e).getEsActor()){
+                act++; votosPorTipo.put("Actores", act);
+            }
+            if(e instanceof Persona && ((Persona)e).getEsDirector()){  votosPorTipo.put("Directores", dir++);}
+        }
+
+        return votosPorTipo;
+    }
+
+    public HashMap<String, Integer> getVotacionesPorPaises(){
+
+        HashMap<String, Integer> votosPorPaises = new HashMap<>();
+
+        for(Puntuacion p: puntuaciones){
+            Elemento e = p.getElemento();
+
+            if(!votosPorPaises.containsKey(e.getPais())){
+                votosPorPaises.put(e.getPais(), 1);
+
+            } else{
+                votosPorPaises.put(e.getPais(), votosPorPaises.get(e.getPais()) + 1);
+            }
+        }
+
+        return votosPorPaises;
     }
 }

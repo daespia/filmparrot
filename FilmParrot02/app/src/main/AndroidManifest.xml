@@ -24,8 +24,6 @@
             android:label="@string/title_activity_profile" />
         <activity android:name=".ElementViewActivity" />
 
-        <activity android:name=".profile.NewElementActivity" />
-
         <activity
             android:name=".VoteActivity"
             android:label="Votación"

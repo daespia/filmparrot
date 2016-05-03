@@ -22,7 +22,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import filmparrot.movil.informatica.filmparrot.profile.NewElementActivity;
 import filmparrot.movil.informatica.filmparrot.profile.ProfileActivity;
 
 public class PrincipalActivity extends AppCompatActivity
@@ -115,10 +114,6 @@ public class PrincipalActivity extends AppCompatActivity
             intent = new Intent(this, ProfileActivity.class);
         }
 
-        else if (id == R.id.new_element_item) {
-        intent = new Intent(this, NewElementActivity.class);
-        }
-
         if(intent != null) startActivity(intent);
         else drawer.closeDrawer(GravityCompat.START);
         return true;
@@ -134,7 +129,6 @@ public class PrincipalActivity extends AppCompatActivity
             menu.findItem(R.id.logout_item).setVisible(condition);
             menu.findItem(R.id.viewprofile_item).setVisible(condition);
             menu.findItem(R.id.logout_item).setVisible(condition);
-            menu.findItem(R.id.new_element_item).setVisible(sharedPreferences.contains("adminUser"));
         }
     }
 

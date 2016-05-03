@@ -29,8 +29,8 @@ public class ProfileActivity extends AppCompatActivity {
 
         pager = (ViewPager) this.findViewById(R.id.profile_viewpager);
         adapter = new ProfileFragmentAdapter(getSupportFragmentManager());
-        adapter.addFragment(new FilmFormFragment());
-        adapter.addFragment(new PersonFormFragment());
+        adapter.addFragment(new UserListsFragment());
+        adapter.addFragment(new StatsFragment());
         adapter.addFragment(new UserListsFragment());
         pager.setAdapter(adapter);
 
@@ -65,7 +65,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         tabLayout.setupWithViewPager(pager);
         tabLayout.getTabAt(0).setIcon(R.drawable.eye);
-        tabLayout.getTabAt(1).setIcon(R.drawable.pencil);
+        tabLayout.getTabAt(1).setIcon(R.drawable.chart_icon);
         tabLayout.getTabAt(2).setIcon(R.drawable.list_blue);
     }
 

@@ -60,26 +60,11 @@
     <string name="sf_season">Temporada:</string>
     <string name="sf_chapter">Capítulos:</string>
 
-
-    <string-array name="elementType_array">
-        <item>Ninguno</item>
-        <item>Película</item>
-        <item>Serie</item>
-        <item>BSO</item>
-        <item>Actor</item>
-        <item>Director</item>
-    </string-array>
-
-    <string-array name="film_genre_array">
-        <item>Terror</item>
-        <item>Animación</item>
-        <item>Acción</item>
-        <item>Comedia</item>
-        <item>Ciencia ficción</item>
-        <item>Aventuras</item>
-        <item>Drama</item>
-    </string-array>
-
     <string name="title_activity_splash_screen">Cargando datos...</string>
     <string name="app_logo">Logo de la aplicación.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="votos_por_tipo">VOTOS POR TIPO</string>
+    <string name="votos_por_pa_ses">VOTOS POR PAÍSES</string>
 </resources>
