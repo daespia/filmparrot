@@ -43,6 +43,9 @@
     <string name="ff_year">Año:</string>
     <string name="ff_producer">Productora:</string>
     <string name="ff_bso">BSO:</string>
+    <string name="ff_director">Director/es:</string>
+    <string name="ff_actor">Actor/es:</string>
+
 
     <!-- BsoFormFragment. -->
     <string name="bf_year">Año:</string>

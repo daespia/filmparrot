@@ -31,6 +31,7 @@ public class LoginFragment extends Fragment {
     // Constructor personalizado por si necesitamos pasar parámetros desde la actividad al fragmento
     // en el momento de crearlo.
     public static LoginFragment newInstance() {
+
         return new LoginFragment();
     }
 
