@@ -8,6 +8,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import filmparrot.movil.informatica.filmparrot.R;
+import filmparrot.movil.informatica.filmparrot.logica.Bso;
 import filmparrot.movil.informatica.filmparrot.logica.Elemento;
 import filmparrot.movil.informatica.filmparrot.logica.Fachada;
 import filmparrot.movil.informatica.filmparrot.logica.Pelicula;
@@ -128,7 +129,7 @@ public class Utils {
                 "se producen en sus vidas, su amistad es inquebrantable en la dura batalla por salir adelante" +
                 " en sus periplos profesionales y personales", "Estados Unidos", R.drawable.cover_friends,
                 2015, 2016, 2, 42, null, null, null);
-        friends.anadirPuntuacion(new Puntuacion(7.8, null, dani));;
+        friends.anadirPuntuacion(new Puntuacion(7.8, null, dani));
 
         Persona scarlett = new Persona(12, "Scarlett Johansson", "Scarlett Johansson.",
                 "Estados Unidos", R.drawable.cover_scarlett, "Johansson",
@@ -139,6 +140,12 @@ public class Utils {
                 "Estados Unidos", R.drawable.cover_riddley,
                 "Scott", Calendar.getInstance().getTime(), true, false, null);
         riddley.anadirPuntuacion(new Puntuacion(5.6, null, manu));
+
+        Bso starWars = new Bso(14, "Star Wars","Banda sonora de la reconocida saga de Star Wars" ,"Estados Unidos",
+                R.drawable.cover_starwars,"John Williams",2015);
+        starWars.anadirPuntuacion(new Puntuacion(8.6, null, raul));
+        starWars.anadirPuntuacion(new Puntuacion(6.7, null, manu));
+        starWars.anadirPuntuacion(new Puntuacion(5.0, null, dani));
 
         fachada.anadirPelicula(deadpool);
         fachada.anadirPelicula(titanic);
@@ -155,6 +162,8 @@ public class Utils {
         fachada.anadirPersona(scarlett);
         fachada.anadirPersona(spielberg);
         fachada.anadirPersona(riddley);
+
+        fachada.anadirBso(starWars);
 
         List<Elemento> lista1 = new ArrayList<>();
         lista1.add(deadpool);

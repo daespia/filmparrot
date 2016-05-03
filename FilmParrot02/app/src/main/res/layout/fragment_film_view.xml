@@ -48,9 +48,11 @@
         android:id="@+id/genreText"
         android:textSize="18sp"
         android:textColor="#000000"
-        android:layout_alignTop="@+id/genreLabel"
-        android:layout_alignLeft="@+id/durationText"
-        android:layout_alignStart="@+id/durationText" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_alignBottom="@+id/genreLabel"
+        android:layout_toRightOf="@+id/genreLabel"
+        android:layout_toEndOf="@+id/genreLabel"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -71,9 +73,11 @@
         android:id="@+id/yearText"
         android:textSize="18sp"
         android:textColor="#000000"
-        android:layout_alignTop="@+id/yearLabel"
-        android:layout_alignLeft="@+id/durationText"
-        android:layout_alignStart="@+id/durationText" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_alignBottom="@+id/yearLabel"
+        android:layout_toRightOf="@+id/yearLabel"
+        android:layout_toEndOf="@+id/yearLabel" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -94,9 +98,11 @@
         android:id="@+id/BsoText"
         android:textSize="18sp"
         android:textColor="#000000"
-        android:layout_alignTop="@+id/BsoLabel"
-        android:layout_alignLeft="@+id/durationText"
-        android:layout_alignStart="@+id/durationText" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_alignBottom="@+id/BsoLabel"
+        android:layout_toRightOf="@+id/BsoLabel"
+        android:layout_toEndOf="@+id/BsoLabel" />
 
     <TextView
     android:layout_width="wrap_content"
