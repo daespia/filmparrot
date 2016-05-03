@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ContextMenu;
 import android.view.MenuItem;
@@ -78,6 +79,8 @@ public class ElementViewActivity extends AppCompatActivity {
                 openContextMenu(addList);
             }
         });
+
+        loadFragment(elemento);
     }
 
     @Override
@@ -124,5 +127,14 @@ public class ElementViewActivity extends AppCompatActivity {
         Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null)).getListas().get(item.getTitle()).add(elemento);
         Toast.makeText(this, "Has añadido '" + elemento.getTitulo() + "' a '" + item.getTitle()+"'.", Toast.LENGTH_SHORT).show();
         return true;
+    }
+
+    private void loadFragment(Elemento e){
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        if(e.getTipo().equalsIgnoreCase("Película")){
+            fragmentManager.beginTransaction().replace(R.id.element_frame, FilmViewFragment.newInstance(e.getId())).commit();
+        }
     }
 }
