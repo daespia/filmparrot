@@ -111,14 +111,22 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/line_chart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_below="@id/dataLabelsLayout"
+            android:layout_marginTop="10dp"/>
+
         <TextView
             android:id="@+id/titulo1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/dataLabelsLayout"
+            android:layout_below="@id/line_chart"
             android:layout_marginTop="15dp"
             android:text="@string/votos_por_tipo"
-            android:textSize="20sp" />
+            android:textSize="22sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -127,9 +135,9 @@
             android:background="@color/colorPrimary" />
 
         <com.github.mikephil.charting.charts.BarChart
-            android:id="@+id/chart"
+            android:id="@+id/bar_chart1"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="250dp"
             android:layout_below="@id/titulo1"
             android:layout_marginTop="10dp" />
 
@@ -137,10 +145,10 @@
             android:id="@+id/titulo2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/chart"
+            android:layout_below="@id/bar_chart1"
             android:layout_marginTop="20dp"
             android:text="@string/votos_por_pa_ses"
-            android:textSize="20sp" />
+            android:textSize="22sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -149,10 +157,11 @@
             android:background="@color/colorPrimary" />
 
         <com.github.mikephil.charting.charts.BarChart
-            android:id="@+id/chart2"
+            android:id="@+id/bar_chart2"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="250dp"
             android:layout_below="@id/titulo2"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"/>
     </RelativeLayout>
 </ScrollView>

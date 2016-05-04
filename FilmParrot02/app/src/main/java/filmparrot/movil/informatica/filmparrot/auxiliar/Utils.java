@@ -1,6 +1,9 @@
 package filmparrot.movil.informatica.filmparrot.auxiliar;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.support.v4.content.ContextCompat;
 
 import java.util.ArrayList;
@@ -31,6 +34,12 @@ public class Utils {
         else if (points >= 5.0 && points <= 7.5) return ContextCompat.getColor(context, R.color.colorBetween5);
         else if (points > 7.5) return ContextCompat.getColor(context, R.color.colorMore7_5);
         return 0;
+    }
+
+    public static boolean hasPermission(String permission, Activity activity){
+        if(Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP_MR1){
+            return activity.checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED;
+        } else return true;
     }
 
     private static void inicializarFachada(){

@@ -16,6 +16,7 @@ public class Usuario {
     private boolean esAdministrador;
     private List<Puntuacion> puntuaciones;
     private HashMap<String, List<Elemento>> listas;
+    private List<Double> historiaMedias;
 
     public Usuario(String nombre, String contrasena){
         this.nombre = nombre;
@@ -23,6 +24,8 @@ public class Usuario {
         esAdministrador = false;
         puntuaciones = new ArrayList<>();
         listas = new HashMap<>();
+        historiaMedias = new ArrayList<>();
+        historiaMedias.add(0.0);
     }
 
     public String getContrasena() {
@@ -120,5 +123,13 @@ public class Usuario {
         }
 
         return votosPorPaises;
+    }
+
+    public void addMedia(double media){
+        historiaMedias.add(media);
+    }
+
+    public List<Double> getHistoriaMedias(){
+        return historiaMedias;
     }
 }

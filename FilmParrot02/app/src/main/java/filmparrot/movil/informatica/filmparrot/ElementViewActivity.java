@@ -139,4 +139,6 @@ public class ElementViewActivity extends AppCompatActivity {
             fragmentManager.beginTransaction().replace(R.id.element_frame, BsoViewFragment.newInstance(e.getId())).commit();
         }
     }
+
+
 }

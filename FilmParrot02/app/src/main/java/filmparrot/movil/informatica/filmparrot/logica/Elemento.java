@@ -55,8 +55,10 @@ public abstract class Elemento {
 
     public void anadirPuntuacion(Puntuacion p){
         puntuaciones.add(p);
-        p.getUsuario().anadirPuntuacion(p);
         p.setElemento(this);
+        Usuario u = p.getUsuario();
+        u.anadirPuntuacion(p);
+        u.addMedia(u.getMediaPuntuaciones());
     }
 
     public boolean eliminarPuntuacion(Puntuacion p){
