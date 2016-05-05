@@ -139,6 +139,7 @@ public class StatsFragment extends Fragment {
         bar_chart2.animateY(2000, Easing.EasingOption.EaseOutBack);
         bar_chart2.getXAxis().setLabelsToSkip(0);
         bar_chart2.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
+        bar_chart2.getXAxis().setLabelRotationAngle(345);
         bar_chart2.getXAxis().setTextSize(12);
         bar_chart2.setDescription("");
         bar_chart2.setScaleEnabled(false);

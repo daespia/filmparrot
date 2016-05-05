@@ -101,7 +101,9 @@ public class Usuario {
             if(e instanceof Persona && ((Persona)e).getEsActor()){
                 act++; votosPorTipo.put("Actores", act);
             }
-            if(e instanceof Persona && ((Persona)e).getEsDirector()){  votosPorTipo.put("Directores", dir++);}
+            if(e instanceof Persona && ((Persona)e).getEsDirector()){
+                dir++; votosPorTipo.put("Directores", dir);
+            }
         }
 
         return votosPorTipo;

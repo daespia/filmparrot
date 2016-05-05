@@ -12,16 +12,14 @@ public class Persona extends Elemento{
     private Date fechaNacimiento;
     private Boolean esDirector;
     private Boolean esActor;
-    private List<Elemento> elementos;
 
     public Persona(int id, String titulo, String descripcion, String pais, int imagen, String apellidos,
-                   Date fechaNacimiento, Boolean esDirector, Boolean esActor, List<Elemento>elementos) {
+                   Date fechaNacimiento, Boolean esDirector, Boolean esActor) {
         super(id, titulo, descripcion, pais, imagen);
         this.apellidos = apellidos;
         this.fechaNacimiento = fechaNacimiento;
         this.esDirector = esDirector;
         this.esActor = esActor;
-        this.elementos = elementos;
 
         if(esActor && !esDirector) setTipo("ACTOR");
         else if (esDirector && !esActor) setTipo("DIRECTOR");
@@ -38,5 +36,4 @@ public class Persona extends Elemento{
 
     public Boolean getEsActor() { return esActor; }
 
-    public List<Elemento> getElementos() { return elementos; }
 }
