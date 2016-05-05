@@ -12,6 +12,7 @@ import java.util.List;
 
 import filmparrot.movil.informatica.filmparrot.R;
 import filmparrot.movil.informatica.filmparrot.logica.Bso;
+import filmparrot.movil.informatica.filmparrot.logica.Critica;
 import filmparrot.movil.informatica.filmparrot.logica.Elemento;
 import filmparrot.movil.informatica.filmparrot.logica.Fachada;
 import filmparrot.movil.informatica.filmparrot.logica.Pelicula;
@@ -67,7 +68,19 @@ public class Utils {
                 "habiendo obtenido el premio en dos ocasiones, con 'La lista de Schindler' y 'Salvar al soldado Ryan'.",
                 "Estados Unidos", R.drawable.cover_spielberg,
                 "Spielberg", Calendar.getInstance().getTime(), true, false);
-        spielberg.anadirPuntuacion(new Puntuacion(5.2, null, manu));
+        spielberg.anadirPuntuacion(new Puntuacion(5.5, new Critica("Muy irregular", "Aunque ha hecho" +
+                " películas buenas a lo largo de su carrera, creo que este director es muy irregular. También " +
+                "ha hecho truños."), manu));
+        spielberg.anadirPuntuacion(new Puntuacion(8.5, new Critica("Genial", "Personalmente, me encanta" +
+                " Steven Spielberg. Aunque ha tenido altibajos, como todos, siempre mantiene el nivel."), raul));
+        spielberg.anadirPuntuacion(new Puntuacion(3.5, new Critica("Ni tanto ni tan poco",
+                "Spielberg, aunque no es capaz de firmar una obra redonda por completo, " +
+                        "es un director con verdadero sentido visual, a diferencia de tantos de sus colegas, " +
+                        "mucho más teatrales o literarios que él. Y además es un director de actores " +
+                        "bastante mejor de lo que muchos suelen concederle. Y, sobre todo, es un tipo mucho más " +
+                        "arriesgado y sincero de lo que a menudo él mismo quiere aparentar, pues a menudo " +
+                        "vuelve a meterse en algunos “jardines” en los que no necesita sembrar, " +
+                        "teniendo en cuenta su posición."), dani));
 
         Persona ryan = new Persona(13, "Ryan Reynolds", "Actor canadiense de películas y series televisivas. " +
                 "El éxito y el reconocimiento llegó con su participación en la comedia titulada 'Two Guys and a Girl', " +
@@ -143,6 +156,13 @@ public class Utils {
         fachada.anadirPersona(spielberg);
         fachada.anadirPersona(riddley);
         fachada.anadirPersona(ryan);
+        fachada.anadirPersona(paulrudd);
+        fachada.anadirPersona(francis);
+        fachada.anadirPersona(cameron);
+        fachada.anadirPersona(samneill);
+        fachada.anadirPersona(kate);
+        fachada.anadirPersona(leonardo);
+        fachada.anadirPersona(russell);
 
         // ---------------- Series - ID: 2X
 

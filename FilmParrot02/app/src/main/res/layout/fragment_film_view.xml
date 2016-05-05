@@ -1,156 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".FilmViewFragment"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/ff_duration"
-        android:id="@+id/durationLabel"
-        android:textSize="20sp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:id="@+id/durationText"
-        android:textSize="18sp"
-        android:textColor="#000000"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_alignBottom="@+id/durationLabel"
-        android:layout_toRightOf="@+id/durationLabel"
-        android:layout_toEndOf="@+id/durationLabel" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/ff_genre"
-        android:id="@+id/genreLabel"
-        android:textSize="20sp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/durationLabel"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="5dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sin especificar"
-        android:id="@+id/genreText"
-        android:textSize="18sp"
-        android:textColor="#000000"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_alignBottom="@+id/genreLabel"
-        android:layout_toRightOf="@+id/genreLabel"
-        android:layout_toEndOf="@+id/genreLabel"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/ff_year"
-        android:id="@+id/yearLabel"
-        android:textSize="20sp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/genreLabel"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="5dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Desconocido"
-        android:id="@+id/yearText"
-        android:textSize="18sp"
-        android:textColor="#000000"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_alignBottom="@+id/yearLabel"
-        android:layout_toRightOf="@+id/yearLabel"
-        android:layout_toEndOf="@+id/yearLabel" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/ff_bso"
-        android:id="@+id/BsoLabel"
-        android:textSize="20sp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/yearLabel"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="5dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Desconocida"
-        android:id="@+id/BsoText"
-        android:textSize="18sp"
-        android:textColor="#000000"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_alignBottom="@+id/BsoLabel"
-        android:layout_toRightOf="@+id/BsoLabel"
-        android:layout_toEndOf="@+id/BsoLabel" />
-
-    <TextView
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:textAppearance="?android:attr/textAppearanceMedium"
-    android:text="@string/ff_director"
-    android:id="@+id/directorLabel"
-    android:layout_below="@+id/BsoLabel"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true"
-    android:layout_marginTop="5dp"
-    android:textSize="20sp" />
+    tools:context=".FilmViewFragment">
 
     <TextView
+        android:id="@+id/durationLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Desconocido"
-        android:id="@+id/directorText"
-        android:layout_below="@+id/directorLabel"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="5dp"
-        android:textSize="18sp"
-        android:textColor="#000000" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/ff_actor"
-        android:id="@+id/actorLabel"
-        android:layout_below="@+id/directorText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="10dp"
+        android:text="@string/ff_duration"
         android:textSize="20sp" />
 
     <TextView
+        android:id="@+id/durationText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Desconocido"
-        android:id="@+id/actorText"
-        android:layout_below="@+id/actorLabel"
+        android:layout_alignBottom="@+id/durationLabel"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/durationLabel"
+        android:layout_toRightOf="@+id/durationLabel"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/genreLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@id/durationLabel"
         android:layout_marginTop="5dp"
-        android:textSize="18sp"
-        android:textColor="#000000" />
+        android:text="@string/ff_genre"
+        android:textSize="20sp" />
 
+    <TextView
+        android:id="@+id/genreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/genreLabel"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/genreLabel"
+        android:layout_toRightOf="@+id/genreLabel"
+        android:text="Sin especificar"
+        android:textColor="#000000"
+        android:textSize="18sp" />
 
+    <TextView
+        android:id="@+id/yearLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/genreLabel"
+        android:layout_marginTop="5dp"
+        android:text="@string/ff_year"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/yearText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/yearLabel"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/yearLabel"
+        android:layout_toRightOf="@+id/yearLabel"
+        android:text="Desconocido"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/BsoLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/yearLabel"
+        android:layout_marginTop="5dp"
+        android:text="@string/ff_bso"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/BsoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/BsoLabel"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/BsoLabel"
+        android:layout_toRightOf="@+id/BsoLabel"
+        android:text="Desconocida"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/directorLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/BsoLabel"
+        android:layout_marginTop="5dp"
+        android:text="@string/ff_director"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/directorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/directorLabel"
+        android:layout_marginTop="5dp"
+        android:text="Desconocido"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/actorLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/directorText"
+        android:layout_marginTop="10dp"
+        android:text="@string/ff_actor"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/actorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/actorLabel"
+        android:layout_marginTop="5dp"
+        android:text="Desconocido"
+        android:textColor="#000000"
+        android:textSize="18sp" />
 </RelativeLayout>

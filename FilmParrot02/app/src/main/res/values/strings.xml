@@ -60,7 +60,7 @@
     <!-- SerieFormFragment. -->
     <string name="sf_startyear">Año comienzo:</string>
     <string name="sf_endyear">Año fin:</string>
-    <string name="sf_season">Temporada:</string>
+    <string name="sf_season">Temporadas:</string>
     <string name="sf_chapter">Capítulos:</string>
 
     <string name="title_activity_splash_screen">Cargando datos...</string>

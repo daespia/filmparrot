@@ -40,7 +40,7 @@ public class PersonViewFragment extends Fragment {
 
 
         TextView anio  = (TextView) view.findViewById(R.id.birthdateText);
-        SimpleDateFormat dt = new SimpleDateFormat("dd-mm-yyyy");
+        SimpleDateFormat dt = new SimpleDateFormat("dd-MM-yyyy");
         anio.setText("" + dt.format(e.getFechaNacimiento()));
 
         TextView director  = (TextView) view.findViewById(R.id.directorText);

@@ -4,43 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="none"
-    android:overScrollMode="never">
+    android:overScrollMode="never"
+    android:scrollbars="none">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingStart="@dimen/activity_horizontal_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         tools:context=".ElementViewActivity">
 
         <ImageView
+            android:id="@+id/coverImage"
             android:layout_width="150dp"
             android:layout_height="210dp"
-            android:id="@+id/coverImage"
-            android:layout_marginTop="25dp"
-            android:layout_below="@+id/elementLabel"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/elementLabel"
-            android:textSize="30sp"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/addList"
-            android:layout_toStartOf="@+id/addList"
-            android:layout_marginRight="15dp"
-            android:layout_marginEnd="15dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="10dp" />
+            android:layout_below="@+id/elementLabel"
+            android:layout_marginTop="25dp" />
+
+        <TextView
+            android:id="@+id/elementLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@+id/addList"
+            android:layout_toStartOf="@+id/addList"
+            android:textSize="30sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="2dp"
@@ -51,151 +51,146 @@
             android:id="@+id/addList"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@drawable/add_list"
-            android:layout_alignTop="@id/elementLabel"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignTop="@id/elementLabel"
+            android:src="@drawable/add_list" />
 
         <TextView
+            android:id="@+id/pointAverage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/pointAverage"
-            android:textColor="#ffffff"
+            android:layout_alignTop="@+id/coverImage"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/coverImage"
+            android:layout_toRightOf="@+id/coverImage"
             android:background="@color/colorPrimary"
             android:padding="10dp"
+            android:textColor="#ffffff"
             android:textSize="30sp"
-            android:layout_alignTop="@+id/coverImage"
-            android:layout_toRightOf="@+id/coverImage"
-            android:layout_toEndOf="@+id/coverImage"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
 
             />
 
         <ImageView
+            android:id="@+id/pointsIcon"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:id="@+id/pointsIcon"
-            android:src="@drawable/view"
-            android:layout_below="@+id/pointAverage"
             android:layout_alignLeft="@+id/pointAverage"
             android:layout_alignStart="@+id/pointAverage"
-            android:layout_marginTop="20dp" />
+            android:layout_below="@+id/pointAverage"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/view" />
 
         <TextView
+            android:id="@+id/pointsLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="27 votos"
-            android:id="@+id/pointsLabel"
-            android:textSize="18sp"
-            android:textColor="#000000"
             android:layout_above="@+id/reviewsIcon"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:layout_toEndOf="@+id/pointsIcon"
             android:layout_toRightOf="@+id/pointsIcon"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp" />
+            android:text="27 votos"
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
         <ImageView
+            android:id="@+id/reviewsIcon"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:id="@+id/reviewsIcon"
-            android:src="@drawable/tick_icon"
-            android:layout_below="@+id/pointsIcon"
             android:layout_alignLeft="@+id/pointsIcon"
             android:layout_alignStart="@+id/pointsIcon"
-            android:layout_marginTop="15dp" />
+            android:layout_below="@+id/pointsIcon"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/tick_icon" />
 
         <TextView
+            android:id="@+id/reviewsLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="2 críticas"
-            android:id="@+id/reviewsLabel"
-            android:textSize="18sp"
-            android:textColor="#000000"
-            android:layout_alignTop="@+id/reviewsIcon"
             android:layout_alignLeft="@+id/pointsLabel"
-            android:layout_alignStart="@+id/pointsLabel" />
+            android:layout_alignStart="@+id/pointsLabel"
+            android:layout_alignTop="@+id/reviewsIcon"
+            android:text="2 críticas"
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
         <Button
+            android:id="@+id/PointsButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="VOTAR"
-            android:id="@+id/PointsButton"
             android:layout_alignBottom="@+id/coverImage"
             android:layout_alignLeft="@+id/reviewsIcon"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_alignStart="@+id/reviewsIcon"
             android:background="@color/colorPrimary"
+            android:text="VOTAR"
             android:textColor="#ffffff"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/descriptionLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Descripción"
-            android:id="@+id/descriptionLabel"
-            android:layout_below="@+id/coverImage"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_below="@+id/coverImage"
             android:layout_marginTop="30dp"
+            android:text="Descripción"
             android:textSize="20sp" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Resumen muy breve y general de una cosa, especialmente de una novela, película u obra teatral. Resumen muy breve y general de una cosa, especialmente de una novela, película u obra teatral."
             android:id="@+id/descriptionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_below="@+id/descriptionLabel"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:layout_marginTop="5dp"
-            android:textSize="18sp"
-            android:textColor="#000000" />
+            android:text="Resumen muy breve y general de una cosa, especialmente de una novela, película u obra teatral. Resumen muy breve y general de una cosa, especialmente de una novela, película u obra teatral."
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/countryLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="País:"
-            android:id="@+id/countryLabel"
-            android:textSize="20sp"
-            android:layout_below="@+id/descriptionText"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="10dp" />
+            android:layout_below="@+id/descriptionText"
+            android:layout_marginTop="10dp"
+            android:text="País:"
+            android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/countryText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="España"
-            android:id="@+id/countryText"
-            android:textSize="18sp"
-            android:textColor="#000000"
             android:layout_alignBottom="@+id/countryLabel"
-            android:layout_toRightOf="@+id/countryLabel"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:layout_toEndOf="@+id/countryLabel"
-            android:layout_marginLeft="10dp" />
+            android:layout_toRightOf="@+id/countryLabel"
+            android:text="España"
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_marginTop="10dp"
             android:layout_below="@id/countryLabel"
+            android:layout_marginTop="10dp"
             android:background="@color/colorPrimary" />
 
         <RelativeLayout
             android:id="@+id/element_frame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
             android:layout_below="@id/countryLabel"
-            />
+            android:layout_marginTop="20dp" />
 
     </RelativeLayout>
 

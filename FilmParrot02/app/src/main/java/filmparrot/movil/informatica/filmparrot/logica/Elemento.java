@@ -80,6 +80,16 @@ public abstract class Elemento {
         return criticas;
     }
 
+    public List<Puntuacion> getPuntuacionesConCritica(){
+        List<Puntuacion> puntuacionesConCritica = new ArrayList<>();
+
+        for (Puntuacion p: puntuaciones) {
+            if(p.getCritica() != null) puntuacionesConCritica.add(p);
+        }
+
+        return puntuacionesConCritica;
+    }
+
     public String getTipo(){
         return tipo;
     }

@@ -40,9 +40,6 @@ public class ElementViewActivity extends AppCompatActivity {
             elemento = Utils.fachada.getElementoPorId(id);
         }
 
-        setContentView(R.layout.activity_element_view);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         setTitle(elemento.getTitulo());
 
         ImageView imageCover = (ImageView) findViewById(R.id.coverImage);
@@ -57,6 +54,14 @@ public class ElementViewActivity extends AppCompatActivity {
 
         TextView reviewsLabel = (TextView) findViewById(R.id.reviewsLabel);
         reviewsLabel.setText(elemento.getNumCriticas() + " críticas");
+        reviewsLabel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), AllReviewsActivity.class);
+                intent.putExtra("id", elemento.getId());
+                startActivity(intent);
+            }
+        });
 
         ((TextView) findViewById(R.id.descriptionText)).setText(elemento.getDescripcion());
         ((TextView) findViewById(R.id.countryText)).setText(elemento.getPais());
