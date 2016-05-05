@@ -53,16 +53,16 @@ public class FilmViewFragment extends Fragment {
 
         TextView director  = (TextView) view.findViewById(R.id.directorText);
         String directores ="";
-       /* for(Persona p: e.getDirectores()){
+       for(Persona p: e.getDirectores()){
             directores+= ", " +p.getTitulo();
-        }*/
+        }
         director.setText(directores);
 
         TextView actor  = (TextView) view.findViewById(R.id.actorText);
         String actores ="";
-        /*for(Persona p: e.getActores()){
+        for(Persona p: e.getActores()){
             actores+= ", " +p.getTitulo();
-        }*/
+        }
         actor.setText(actores);
 
         return view;
