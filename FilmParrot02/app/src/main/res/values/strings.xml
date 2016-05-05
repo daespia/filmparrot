@@ -50,9 +50,12 @@
     <string name="bf_year">Año:</string>
     <string name="bf_compositor">Compositor:</string>
 
+
     <!-- PersonFormFragment. -->
     <string name="pf_surname">Apellidos:</string>
     <string name="pf_birthdate">Fecha ncto:</string>
+    <string name="pf_director">Director:</string>
+    <string name="pf_actor">Actor:</string>
 
     <!-- SerieFormFragment. -->
     <string name="sf_startyear">Año comienzo:</string>

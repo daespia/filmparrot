@@ -137,6 +137,8 @@ public class ElementViewActivity extends AppCompatActivity {
             fragmentManager.beginTransaction().replace(R.id.element_frame, FilmViewFragment.newInstance(e.getId())).commit();
         }else if(e.getTipo().equalsIgnoreCase("Bso")){
             fragmentManager.beginTransaction().replace(R.id.element_frame, BsoViewFragment.newInstance(e.getId())).commit();
+        }else if(e.getTipo().equalsIgnoreCase("Actor")||e.getTipo().equalsIgnoreCase("Director")||(e.getTipo().equalsIgnoreCase("Actor/Director"))){
+            fragmentManager.beginTransaction().replace(R.id.element_frame, PersonViewFragment.newInstance(e.getId())).commit();
         }
     }
 
