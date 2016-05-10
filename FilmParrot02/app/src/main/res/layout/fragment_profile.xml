@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".FilmViewFragment">
+
+    <TextView
+        android:id="@+id/usernameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/l_username"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/usernameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/usernameLabel"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_toRightOf="@+id/usernameLabel"
+        android:layout_toEndOf="@+id/usernameLabel"
+        android:text="Desconocido"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/passwordLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/usernameLabel"
+        android:layout_marginTop="5dp"
+        android:text="@string/l_password"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:textSize="18sp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="contraseña"
+        android:id="@+id/passwordText"
+        android:layout_alignBottom="@+id/passwordLabel"
+        android:layout_toRightOf="@+id/passwordLabel"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/changeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/passwordLabel"
+        android:layout_marginTop="5dp"
+        android:text="@string/l_changepassword"
+        android:textSize="20sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/changeText"
+
+        android:layout_alignBottom="@+id/changeLabel"
+        android:layout_toRightOf="@+id/changeLabel"
+        android:layout_toEndOf="@+id/changeLabel"
+        android:background="#ffffff"
+        android:layout_alignParentStart="false" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:text="@string/l_confirmchangepassword"
+        android:id="@+id/acceptButton"
+        android:background="@android:color/holo_blue_dark"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_below="@+id/changeLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="25dp"
+        android:layout_height="15dp"
+        android:id="@+id/seePassword"
+        android:background="@drawable/eye"
+        android:layout_marginLeft="30dp"
+
+        android:layout_alignTop="@+id/passwordText"
+        android:layout_toRightOf="@+id/passwordText"/>
+
+
+</RelativeLayout>

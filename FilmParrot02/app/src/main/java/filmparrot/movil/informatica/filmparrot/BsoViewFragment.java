@@ -43,9 +43,6 @@ public class BsoViewFragment extends Fragment {
         TextView year  = (TextView) view.findViewById(R.id.yearText);
         year.setText(""+e.getAnio());
 
-
-
-
         return view;
     }
 

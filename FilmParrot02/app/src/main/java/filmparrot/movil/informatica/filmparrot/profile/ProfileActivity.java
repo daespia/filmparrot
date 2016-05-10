@@ -29,7 +29,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         pager = (ViewPager) this.findViewById(R.id.profile_viewpager);
         adapter = new ProfileFragmentAdapter(getSupportFragmentManager());
-        adapter.addFragment(new UserListsFragment());
+        adapter.addFragment(new ProfileFragment());
         adapter.addFragment(new StatsFragment());
         adapter.addFragment(new UserListsFragment());
         pager.setAdapter(adapter);

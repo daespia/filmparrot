@@ -25,11 +25,13 @@
     <!-- LoginFragment. -->
     <string name="l_username">Nombre de usuario</string>
     <string name="l_password">Contraseña</string>
+    <string name="l_changepassword">Cambiar contraseña:</string>
+    <string name="l_confirmchangepassword">Confirmar cambio</string>
     <string name="l_confirmpassword">Repita la contraseña</string>
     <string name="l_login">INICIAR SESIÓN</string>
     <string name="l_signin">REGISTRARSE</string>
 
-    <!-- EelementFormFragment. -->
+    <!-- ElementFormFragment. -->
     <string name="ef_name">Nombre:</string>
     <string name="ef_country">País:</string>
     <string name="ef_description">Descripción:</string>
