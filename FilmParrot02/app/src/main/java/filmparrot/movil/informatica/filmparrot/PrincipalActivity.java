@@ -88,6 +88,7 @@ public class PrincipalActivity extends AppCompatActivity
             setTitle("FilmParrot");
 
         } else if (id == R.id.releases_item) {
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new ReleasesFragment()).commit();
             setTitle("Estrenos");
 
         }else if (id == R.id.signin_item) {

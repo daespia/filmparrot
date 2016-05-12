@@ -1,0 +1,14 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="8dp"
+    tools:context="filmparrot.movil.informatica.filmparrot.ReleasesFragment">
+
+   <GridView
+       android:id="@+id/releasesGrid"
+       android:layout_width="match_parent"
+       android:scrollbars="none"
+       android:layout_height="wrap_content"
+       android:numColumns="3"/>
+</LinearLayout>

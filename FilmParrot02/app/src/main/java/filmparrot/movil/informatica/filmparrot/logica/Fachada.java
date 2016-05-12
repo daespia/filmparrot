@@ -1,6 +1,8 @@
 package filmparrot.movil.informatica.filmparrot.logica;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -112,5 +114,19 @@ public class Fachada {
 
     public void anadirLista(String nombre, List<Elemento> elementos) {
         listas.put(nombre, elementos);
+    }
+
+    public List<Elemento> getEstrenos(){
+
+        List<Elemento> estrenos = new ArrayList<>();
+
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.WEEK_OF_MONTH, -1);
+        Date lastWeek = cal.getTime();
+
+        for(Pelicula p: peliculas) if(p.getFechaEstreno().after(lastWeek)) estrenos.add(p);
+       ///for(Serie s: series) if(s.get).after(lastWeek)) estrenos.add(p);
+
+        return estrenos;
     }
 }
