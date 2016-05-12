@@ -56,24 +56,32 @@ public class ProfileFragment extends Fragment {
         username.setText(Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null)).getNombre());
 
         final TextView password  = (TextView) view.findViewById(R.id.passwordText);
-        password.setText(Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null)).getContrasena());
+        String contraseña = Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null)).getContrasena();
+        String ast="";
+        for(int k=0;k<contraseña.length();k++){
+            ast+="*";
+        }
+        password.setText(ast);
 
         Button verCont  = (Button) view.findViewById(R.id.seePassword);
         verCont.setOnClickListener(
                 new View.OnClickListener() {
+                    SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getContext());
                     int i=0;
                     @Override
                     public void onClick(View v) {
-
-
-
+                        String contraseña = Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null)).getContrasena();
                         if(i==0){
                             i++;
-                            password.setInputType(InputType.TYPE_CLASS_TEXT);
+                            password.setText(contraseña);
                         }
                         else if(i==1){
                             i--;
-                            password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            String ast="";
+                            for(int k=0;k<contraseña.length();k++){
+                                ast+="*";
+                            }
+                            password.setText(ast);
                         }
                     }
                 }

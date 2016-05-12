@@ -3,7 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".FilmViewFragment">
+    tools:context=".FilmViewFragment"
+    android:layout_marginStart="16dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="16dp"
+    >
 
     <TextView
         android:id="@+id/usernameLabel"
@@ -49,8 +55,7 @@
         android:text="contraseña"
         android:id="@+id/passwordText"
         android:layout_alignBottom="@+id/passwordLabel"
-        android:layout_toRightOf="@+id/passwordLabel"
-        android:inputType="textPassword" />
+        android:layout_toRightOf="@+id/passwordLabel" />
 
     <TextView
         android:id="@+id/changeLabel"
@@ -74,7 +79,9 @@
         android:layout_toRightOf="@+id/changeLabel"
         android:layout_toEndOf="@+id/changeLabel"
         android:background="#ffffff"
-        android:layout_alignParentStart="false" />
+        android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="false"
+        />
 
     <Button
         android:layout_width="250dp"
@@ -95,10 +102,12 @@
         android:layout_height="15dp"
         android:id="@+id/seePassword"
         android:background="@drawable/eye"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="150dp"
 
         android:layout_alignTop="@+id/passwordText"
-        android:layout_toRightOf="@+id/passwordText"/>
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        />
 
 
 </RelativeLayout>
