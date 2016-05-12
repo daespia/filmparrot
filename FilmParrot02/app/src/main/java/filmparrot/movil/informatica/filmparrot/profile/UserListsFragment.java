@@ -1,6 +1,7 @@
 package filmparrot.movil.informatica.filmparrot.profile;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import filmparrot.movil.informatica.filmparrot.ElementViewActivity;
 import filmparrot.movil.informatica.filmparrot.R;
 import filmparrot.movil.informatica.filmparrot.auxiliar.ExpandableUserListAdapter;
 import filmparrot.movil.informatica.filmparrot.auxiliar.Utils;
@@ -94,6 +96,21 @@ public class UserListsFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {}
+        });
+
+
+
+        listasUsuario.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+                String group = exp.getGroup(groupPosition).toString();
+
+                Intent intent = new Intent(getActivity(), ElementViewActivity.class);
+                intent.putExtra("id", listas.get(group).get(childPosition).getId());
+                startActivity(intent);
+
+                return true;
+            }
         });
 
         return view;

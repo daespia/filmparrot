@@ -1,6 +1,7 @@
 package filmparrot.movil.informatica.filmparrot;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
@@ -51,6 +52,18 @@ public class ListsFragment extends Fragment {
         exp = new ExpandableListAdapter(getContext(), nombres, listas);
         listasFachada.setAdapter(exp);
         registerForContextMenu(listasFachada);
+        listasFachada.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+                String group = exp.getGroup(groupPosition).toString();
+
+                Intent intent = new Intent(getActivity(), ElementViewActivity.class);
+                intent.putExtra("id", listas.get(group).get(childPosition).getId());
+                startActivity(intent);
+
+                return true;
+            }
+        });
 
         return v;
     }
@@ -73,5 +86,7 @@ public class ListsFragment extends Fragment {
         Toast.makeText(getContext(), "Has añadido '" + group + "' a tus listas", Toast.LENGTH_SHORT).show();
         return true;
     }
+
+
 
 }
