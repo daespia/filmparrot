@@ -60,7 +60,7 @@ public class ListsFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), ElementViewActivity.class);
                 intent.putExtra("id", listas.get(group).get(childPosition).getId());
                 startActivity(intent);
-
+                getActivity().overridePendingTransition(R.anim.left_toright, R.anim.right_toleft);
                 return true;
             }
         });

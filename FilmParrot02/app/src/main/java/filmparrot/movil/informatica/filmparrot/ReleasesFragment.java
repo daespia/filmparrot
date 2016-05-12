@@ -32,6 +32,7 @@ public class ReleasesFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), ElementViewActivity.class);
                 intent.putExtra("id", Utils.fachada.getEstrenos().get(position).getId());
                 startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.left_toright, R.anim.right_toleft);
             }
         });
 
