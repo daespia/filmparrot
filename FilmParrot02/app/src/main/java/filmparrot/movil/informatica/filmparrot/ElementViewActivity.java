@@ -102,7 +102,7 @@ public class ElementViewActivity extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         super.onBackPressed();
-        overridePendingTransition(R.anim.left_toright, R.anim.right_toleft);
+        overridePendingTransition(R.anim.anim2, R.anim.anim1);
     }
 
     @Override
