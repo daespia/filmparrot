@@ -22,6 +22,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import java.util.Random;
+
+import filmparrot.movil.informatica.filmparrot.auxiliar.Utils;
+import filmparrot.movil.informatica.filmparrot.logica.Pelicula;
 import filmparrot.movil.informatica.filmparrot.profile.ProfileActivity;
 
 public class PrincipalActivity extends AppCompatActivity
@@ -59,6 +63,11 @@ public class PrincipalActivity extends AppCompatActivity
         session_manager = new SessionManager();
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         sharedPref.registerOnSharedPreferenceChangeListener(session_manager);
+
+        fragmentManager.beginTransaction().replace(R.id.content_frame, new PrincipalFragment()).commit();
+
+
+
     }
 
     @Override
@@ -85,6 +94,7 @@ public class PrincipalActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.home_item) {
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new PrincipalFragment()).commit();
             setTitle("FilmParrot");
 
         } else if (id == R.id.releases_item) {

@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:scrollbars="none">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingTop="8dp"
+        tools:context=".ElementViewActivity">
+
+        <ImageView
+            android:id="@+id/coverImage"
+            android:layout_width="150dp"
+            android:layout_height="210dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/elementLabel"
+            android:layout_marginTop="25dp" />
+
+        <TextView
+            android:id="@+id/elementLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:layout_toStartOf="@+id/addList"
+            android:textSize="30sp"
+            android:layout_alignRight="@+id/linearLayout"
+            android:layout_alignEnd="@+id/linearLayout"
+            android:layout_toLeftOf="@+id/addList" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/elementLabel"
+            android:background="@color/colorPrimary"
+            android:id="@+id/linearLayout"
+            android:orientation="horizontal" />
+
+
+        <TextView
+            android:id="@+id/pointAverage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/coverImage"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/coverImage"
+            android:layout_toRightOf="@+id/coverImage"
+            android:background="@color/colorPrimary"
+            android:padding="10dp"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+
+            />
+
+        <ImageView
+            android:id="@+id/pointsIcon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignLeft="@+id/pointAverage"
+            android:layout_alignStart="@+id/pointAverage"
+            android:layout_below="@+id/pointAverage"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/view" />
+
+        <TextView
+            android:id="@+id/pointsLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/reviewsIcon"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/pointsIcon"
+            android:layout_toRightOf="@+id/pointsIcon"
+            android:text="27 votos"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/reviewsIcon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignLeft="@+id/pointsIcon"
+            android:layout_alignStart="@+id/pointsIcon"
+            android:layout_below="@+id/pointsIcon"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/tick_icon" />
+
+        <TextView
+            android:id="@+id/reviewsLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/pointsLabel"
+            android:layout_alignStart="@+id/pointsLabel"
+            android:layout_alignTop="@+id/reviewsIcon"
+            android:text="2 críticas"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/descriptionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/coverImage"
+            android:layout_marginTop="30dp"
+            android:text="Descripción"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/descriptionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/descriptionLabel"
+            android:layout_marginTop="5dp"
+            android:text="Resumen muy breve y general de una cosa, especialmente de una novela, película u obra teatral. Resumen muy breve y general de una cosa, especialmente de una novela, película u obra teatral."
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/countryLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/descriptionText"
+            android:layout_marginTop="10dp"
+            android:text="País:"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/countryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/countryLabel"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/countryLabel"
+            android:layout_toRightOf="@+id/countryLabel"
+            android:text="España"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/countryLabel"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary" />
+
+        <RelativeLayout
+            android:id="@+id/element_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/countryLabel"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/durationLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/ff_duration"
+            android:textSize="20sp"
+            android:layout_below="@id/countryLabel"
+            />
+
+        <TextView
+            android:id="@+id/durationText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/durationLabel"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/durationLabel"
+            android:layout_toRightOf="@+id/durationLabel"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/genreLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/durationLabel"
+            android:layout_marginTop="5dp"
+            android:text="@string/ff_genre"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/genreText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/genreLabel"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/genreLabel"
+            android:layout_toRightOf="@+id/genreLabel"
+            android:text="Sin especificar"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/yearLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/genreLabel"
+            android:layout_marginTop="5dp"
+            android:text="@string/ff_year"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/yearText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/yearLabel"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/yearLabel"
+            android:layout_toRightOf="@+id/yearLabel"
+            android:text="Desconocido"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/BsoLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/yearLabel"
+            android:layout_marginTop="5dp"
+            android:text="@string/ff_bso"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/BsoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/BsoLabel"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/BsoLabel"
+            android:layout_toRightOf="@+id/BsoLabel"
+            android:text="Desconocida"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/directorLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/BsoLabel"
+            android:layout_marginTop="5dp"
+            android:text="@string/ff_director"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/directorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/directorLabel"
+            android:layout_marginTop="5dp"
+            android:text="Desconocido"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/actorLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/directorText"
+            android:layout_marginTop="10dp"
+            android:text="@string/ff_actor"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/actorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/actorLabel"
+            android:layout_marginTop="5dp"
+            android:text="Desconocido"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+</ScrollView>
