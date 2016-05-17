@@ -67,7 +67,7 @@ public class SearchActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), ElementViewActivity.class);
                 intent.putExtra("id", items.get(position).getId());
                 startActivity(intent);
-                overridePendingTransition(R.anim.right_toleft, R.anim.left_toright);
+                overridePendingTransition(R.anim.left_toright, R.anim.right_toleft);
             }
         });
 

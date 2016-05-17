@@ -134,4 +134,18 @@ public class Usuario {
     public List<Double> getHistoriaMedias(){
         return historiaMedias;
     }
+
+    public Puntuacion getPuntuacionDeElemento(Elemento e){
+
+        for(Puntuacion p: puntuaciones){
+            if(p.getElemento().getId() == e.getId()) return p;
+        }
+        return null;
+    }
+
+    public void eliminarPuntuacion(Puntuacion p){
+        if(puntuaciones.remove(p)){
+            addMedia(getMediaPuntuaciones());
+        }
+    }
 }

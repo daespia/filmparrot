@@ -20,6 +20,8 @@ import java.util.Map;
 
 import filmparrot.movil.informatica.filmparrot.auxiliar.Utils;
 import filmparrot.movil.informatica.filmparrot.logica.Elemento;
+import filmparrot.movil.informatica.filmparrot.logica.Puntuacion;
+import filmparrot.movil.informatica.filmparrot.logica.Usuario;
 
 public class ElementViewActivity extends AppCompatActivity {
 
@@ -27,6 +29,7 @@ public class ElementViewActivity extends AppCompatActivity {
     private ImageView addList;
     private Elemento elemento;
     private SharedPreferences sharedPref;
+    private TextView pointAverage, pointsLabel, reviewsLabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,15 +48,9 @@ public class ElementViewActivity extends AppCompatActivity {
         ImageView imageCover = (ImageView) findViewById(R.id.coverImage);
         imageCover.setImageResource(elemento.getImagen());
 
-        TextView pointAverage = (TextView) findViewById(R.id.pointAverage);
-        pointAverage.setBackgroundColor(Utils.getProgressiveColor(elemento.getMedia(), getApplicationContext()));
-        pointAverage.setText(String.valueOf(elemento.getMedia()));
-
-        TextView pointsLabel = (TextView) findViewById(R.id.pointsLabel);
-        pointsLabel.setText(elemento.getPuntuaciones().size() + " votos");
-
-        TextView reviewsLabel = (TextView) findViewById(R.id.reviewsLabel);
-        reviewsLabel.setText(elemento.getNumCriticas() + " críticas");
+        pointAverage = (TextView) findViewById(R.id.pointAverage);
+        pointsLabel = (TextView) findViewById(R.id.pointsLabel);
+        reviewsLabel = (TextView) findViewById(R.id.reviewsLabel);
         reviewsLabel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,17 +60,20 @@ public class ElementViewActivity extends AppCompatActivity {
             }
         });
 
+        resetStatus();
+
         ((TextView) findViewById(R.id.descriptionText)).setText(elemento.getDescripcion());
         ((TextView) findViewById(R.id.countryText)).setText(elemento.getPais());
         ((TextView) findViewById(R.id.elementLabel)).setText(elemento.getTitulo());
 
         vote = (Button) findViewById(R.id.PointsButton);
         vote.setOnClickListener(new View.OnClickListener(){
-                                    @Override public void onClick(View v) {
-                                        Intent i = new Intent(ElementViewActivity.this, VoteActivity.class);
-                                        startActivity(i);
-                                    }
-                                }
+            @Override public void onClick(View v) {
+                    Intent intent = new Intent(ElementViewActivity.this, VoteActivity.class);
+                    intent.putExtra("id", elemento.getId());
+                    startActivity(intent);
+                }
+            }
         );
 
         addList = (ImageView) findViewById(R.id.addList);
@@ -111,9 +111,15 @@ public class ElementViewActivity extends AppCompatActivity {
 
         if(sharedPref.contains("sessionActive")) {
             vote.setEnabled(true);
-            if (sharedPref.contains("puntos")) {
-                vote.setText("Tu voto: " + sharedPref.getFloat("puntos", 0.0f)*2);
+
+            Usuario usuario = Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null));
+            Puntuacion puntuacion = usuario.getPuntuacionDeElemento(elemento);
+
+            if (puntuacion != null) {
+                vote.setText("Tu voto: " + puntuacion.getValor());
             } else vote.setText("Votar");
+
+            resetStatus();
 
         } else vote.setEnabled(false);
 
@@ -153,6 +159,13 @@ public class ElementViewActivity extends AppCompatActivity {
         }else if(e.getTipo().equalsIgnoreCase("Serie")){
             fragmentManager.beginTransaction().replace(R.id.element_frame, SerieViewFragment.newInstance(e.getId())).commit();
         }
+    }
+
+    private void resetStatus(){
+        pointAverage.setBackgroundColor(Utils.getProgressiveColor(elemento.getMedia(), getApplicationContext()));
+        pointAverage.setText(String.valueOf(elemento.getMedia()));
+        pointsLabel.setText(elemento.getPuntuaciones().size() + " votos");
+        reviewsLabel.setText(elemento.getNumCriticas() + " críticas");
     }
 
 

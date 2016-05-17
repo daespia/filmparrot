@@ -87,16 +87,4 @@ public class ProfileActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.user_options_menu, menu);
-
-        View notification = menu.findItem(R.id.notificationOption).getActionView();
-        TextView ui_hot = (TextView) notification.findViewById(R.id.notification_count);
-        ui_hot.setText(""+ 2);
-
-        return true;
-    }
 }

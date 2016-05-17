@@ -22,7 +22,10 @@ import filmparrot.movil.informatica.filmparrot.auxiliar.Utils;
 
 
 public class ProfileFragment extends Fragment {
-    private static int i =0;
+
+    private TextView username, password;
+    private Button cambiar;
+    private EditText changepassword;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -50,17 +53,18 @@ public class ProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getContext());
 
-
-
-        final TextView username  = (TextView) view.findViewById(R.id.usernameText);
+        username  = (TextView) view.findViewById(R.id.usernameText);
         username.setText(Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null)).getNombre());
 
-        final TextView password  = (TextView) view.findViewById(R.id.passwordText);
+        password  = (TextView) view.findViewById(R.id.passwordText);
+
         String contraseña = Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null)).getContrasena();
+
         String ast="";
         for(int k=0;k<contraseña.length();k++){
             ast+="*";
         }
+
         password.setText(ast);
 
         Button verCont  = (Button) view.findViewById(R.id.seePassword);
@@ -87,10 +91,9 @@ public class ProfileFragment extends Fragment {
                 }
         );
 
-        final EditText changepassword  = (EditText) view.findViewById(R.id.changeText);
+        changepassword  = (EditText) view.findViewById(R.id.changeText);
 
-
-        final Button cambiar  = (Button) view.findViewById(R.id.acceptButton);
+        cambiar  = (Button) view.findViewById(R.id.acceptButton);
         cambiar.setOnClickListener(
                 new View.OnClickListener() {
                     SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getContext());
@@ -112,14 +115,9 @@ public class ProfileFragment extends Fragment {
                 }
         );
 
-
         return view;
 
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-
-    }
 
 }
