@@ -1,8 +1,5 @@
 package filmparrot.movil.informatica.filmparrot.logica;
 
-/**
- * Created by Raul on 21/04/2016.
- */
 public class Puntuacion {
 
     private double valor;

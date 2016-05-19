@@ -1,19 +1,16 @@
 package filmparrot.movil.informatica.filmparrot.auxiliar;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.List;
 
 import filmparrot.movil.informatica.filmparrot.R;
-import filmparrot.movil.informatica.filmparrot.logica.Elemento;
 import filmparrot.movil.informatica.filmparrot.logica.Puntuacion;
 
 public class ListReviewsAdapter extends BaseAdapter {
@@ -49,7 +46,7 @@ public class ListReviewsAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.review_list_item, parent, false);
         }
 
-        ((RatingBar) convertView.findViewById(R.id.smallRatingBar)).setRating(new Float(p.getValor())/2f);
+        ((RatingBar) convertView.findViewById(R.id.smallRatingBar)).setRating((float) p.getValor() /2f);
         ((TextView) convertView.findViewById(R.id.reviewTitle)).setText(p.getCritica().getTitulo());
         ((TextView) convertView.findViewById(R.id.reviewBodyText)).setText(p.getCritica().getCuerpo());
         ((TextView) convertView.findViewById(R.id.smallPointsText)).setText("(" + p.getValor() + ")");

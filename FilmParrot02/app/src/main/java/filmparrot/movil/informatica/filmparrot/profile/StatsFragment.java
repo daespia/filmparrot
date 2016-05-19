@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.view.ContextMenu;
@@ -12,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +27,6 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 
-import java.security.Permission;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -40,9 +39,10 @@ import filmparrot.movil.informatica.filmparrot.logica.Usuario;
 
 public class StatsFragment extends Fragment {
 
-    Usuario usuario;
-    BarChart bar_chart1, bar_chart2;
-    LineChart line_chart;
+    private Usuario usuario;
+    private BarChart bar_chart1;
+    private BarChart bar_chart2;
+    private LineChart line_chart;
     private int tag;
 
     public StatsFragment() {
@@ -81,9 +81,9 @@ public class StatsFragment extends Fragment {
         ArrayList<BarEntry> entries2 = new ArrayList<>();
         ArrayList<Entry> entries3 = new ArrayList<>();
 
-        ArrayList<String> labels1 = new ArrayList<String>();
-        ArrayList<String> labels2 = new ArrayList<String>();
-        ArrayList<String> labels3 = new ArrayList<String>();
+        ArrayList<String> labels1 = new ArrayList<>();
+        ArrayList<String> labels2 = new ArrayList<>();
+        ArrayList<String> labels3 = new ArrayList<>();
 
 
         int i = 0;
@@ -177,7 +177,7 @@ public class StatsFragment extends Fragment {
     }
 
     @Override
-    public void onRequestPermissionsResult(int permsRequestCode, String[] permissions, int[] grantResults){
+    public void onRequestPermissionsResult(int permsRequestCode, @NonNull String[] permissions, int[] grantResults){
         switch (permsRequestCode){
             case 200:
                 boolean writeStorage = grantResults[0] == PackageManager.PERMISSION_GRANTED;

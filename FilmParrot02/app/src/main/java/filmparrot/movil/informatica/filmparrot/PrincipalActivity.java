@@ -22,10 +22,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import java.util.Random;
-
-import filmparrot.movil.informatica.filmparrot.auxiliar.Utils;
-import filmparrot.movil.informatica.filmparrot.logica.Pelicula;
 import filmparrot.movil.informatica.filmparrot.profile.ProfileActivity;
 
 public class PrincipalActivity extends AppCompatActivity
@@ -65,8 +61,6 @@ public class PrincipalActivity extends AppCompatActivity
         sharedPref.registerOnSharedPreferenceChangeListener(session_manager);
 
         fragmentManager.beginTransaction().replace(R.id.content_frame, new PrincipalFragment()).commit();
-
-
 
     }
 

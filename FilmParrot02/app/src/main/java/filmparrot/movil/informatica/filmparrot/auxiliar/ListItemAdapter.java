@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import filmparrot.movil.informatica.filmparrot.R;
@@ -64,5 +66,41 @@ public class ListItemAdapter extends BaseAdapter {
         ivItem.setImageResource(item.getImagen());
 
         return convertView;
+    }
+
+    public void sortListByAlfa(){
+        Collections.sort(items, new AlfaComparator());
+        notifyDataSetChanged();
+    }
+
+    public void sortListByPopularity(){
+        Collections.sort(items, new PopularityComparator());
+        notifyDataSetChanged();
+    }
+
+    public void sortListByRating(){
+        Collections.sort(items, new RatingComparator());
+        notifyDataSetChanged();
+    }
+
+    private class AlfaComparator implements Comparator<Elemento> {
+        @Override
+        public int compare(Elemento object1, Elemento object2) {
+            return object1.getTitulo().compareToIgnoreCase(object2.getTitulo());
+        }
+    }
+
+    private class RatingComparator implements Comparator<Elemento> {
+        @Override
+        public int compare(Elemento object1, Elemento object2) {
+            return Double.compare(object2.getMedia(), object1.getMedia());
+        }
+    }
+
+    private class PopularityComparator implements Comparator<Elemento> {
+        @Override
+        public int compare(Elemento object1, Elemento object2) {
+            return object2.getPuntuaciones().size() - object1.getPuntuaciones().size();
+        }
     }
 }

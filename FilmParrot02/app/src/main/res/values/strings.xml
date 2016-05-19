@@ -65,11 +65,17 @@
     <string name="sf_season">Temporadas:</string>
     <string name="sf_chapter">Capítulos:</string>
 
-    <string name="title_activity_splash_screen">Cargando datos...</string>
+    <string name="title_activity_splash_screen">Cargando datos…</string>
     <string name="app_logo">Logo de la aplicación.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="votos_por_tipo">Votos por tipo</string>
     <string name="votos_por_pa_ses">Votos por países</string>
+    <string name="descripci_n">Descripción</string>
+    <string name="votar">VOTAR</string>
+
+    <string name="undo">Deshacer</string>
+    <string name="undoall">Deshacer todo</string>
+
 </resources>

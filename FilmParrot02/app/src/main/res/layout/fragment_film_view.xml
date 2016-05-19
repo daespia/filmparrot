@@ -11,7 +11,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"
         android:text="@string/ff_duration"
         android:textSize="20sp" />
 
@@ -19,14 +18,18 @@
         android:id="@+id/durationText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/durationLabel"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_toEndOf="@+id/durationLabel"
-        android:layout_toRightOf="@+id/durationLabel"
-        android:text="0"
+        android:layout_alignBaseline="@+id/durationLabel"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:textColor="#000000"
         android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/durationLabel"
+        android:layout_marginTop="5dp"
+        android:background="#D3D3D3"/>
 
     <TextView
         android:id="@+id/genreLabel"
@@ -35,7 +38,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@id/durationLabel"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:text="@string/ff_genre"
         android:textSize="20sp" />
 
@@ -43,14 +46,18 @@
         android:id="@+id/genreText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/genreLabel"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_toEndOf="@+id/genreLabel"
-        android:layout_toRightOf="@+id/genreLabel"
-        android:text="Sin especificar"
+        android:layout_alignBaseline="@id/genreLabel"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:textColor="#000000"
         android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/genreLabel"
+        android:layout_marginTop="5dp"
+        android:background="#D3D3D3"/>
 
     <TextView
         android:id="@+id/yearLabel"
@@ -59,7 +66,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@id/genreLabel"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:text="@string/ff_year"
         android:textSize="20sp" />
 
@@ -67,14 +74,18 @@
         android:id="@+id/yearText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/yearLabel"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_toEndOf="@+id/yearLabel"
-        android:layout_toRightOf="@+id/yearLabel"
-        android:text="Desconocido"
+        android:layout_alignBaseline="@id/yearLabel"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:textColor="#000000"
         android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/yearLabel"
+        android:layout_marginTop="5dp"
+        android:background="#D3D3D3"/>
 
     <TextView
         android:id="@+id/BsoLabel"
@@ -83,7 +94,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@id/yearLabel"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:text="@string/ff_bso"
         android:textSize="20sp" />
 
@@ -91,14 +102,18 @@
         android:id="@+id/BsoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/BsoLabel"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_toEndOf="@+id/BsoLabel"
-        android:layout_toRightOf="@+id/BsoLabel"
-        android:text="Desconocida"
+        android:layout_alignBaseline="@id/BsoLabel"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:textColor="#000000"
         android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/BsoLabel"
+        android:background="#D3D3D3"
+        android:layout_marginTop="5dp"/>
 
     <TextView
         android:id="@+id/directorLabel"
@@ -107,7 +122,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/BsoLabel"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:text="@string/ff_director"
         android:textSize="20sp" />
 
@@ -119,9 +134,15 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/directorLabel"
         android:layout_marginTop="5dp"
-        android:text="Desconocido"
         android:textColor="#000000"
         android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/directorText"
+        android:background="#D3D3D3"
+        android:layout_marginTop="5dp"/>
 
     <TextView
         android:id="@+id/actorLabel"
@@ -142,7 +163,6 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/actorLabel"
         android:layout_marginTop="5dp"
-        android:text="Desconocido"
         android:textColor="#000000"
         android:textSize="18sp" />
 </RelativeLayout>

@@ -1,8 +1,10 @@
 package filmparrot.movil.informatica.filmparrot;
 
+import android.app.LauncherActivity;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.preference.PreferenceManager;
 import android.provider.SearchRecentSuggestions;
 import android.support.design.widget.FloatingActionButton;
@@ -12,7 +14,7 @@ import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -28,12 +30,16 @@ import filmparrot.movil.informatica.filmparrot.logica.Elemento;
 public class SearchActivity extends AppCompatActivity {
 
     private List<Elemento> items;
-    SharedPreferences sharedPref;
+    private SharedPreferences sharedPref;
+    private SearchRecentSuggestions suggestions;
+    private ImageButton az, rating, popularity;
+    ListItemAdapter listItemAdapter;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         handleIntent(getIntent());
     }
 
@@ -45,9 +51,10 @@ public class SearchActivity extends AppCompatActivity {
     private void handleIntent(Intent intent) {
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
+
             if(query != null) {
                 setTitle("Búsqueda de '" + query + "'");
-                final SearchRecentSuggestions suggestions = new SearchRecentSuggestions(this, SuggestionsProvider.AUTHORITY, SuggestionsProvider.MODE);
+                suggestions = new SearchRecentSuggestions(this, SuggestionsProvider.AUTHORITY, SuggestionsProvider.MODE);
                 suggestions.saveRecentQuery(query, null);
 
                 FloatingActionButton removeSuggest = (FloatingActionButton) findViewById(R.id.removeSuggestButton);
@@ -67,8 +74,35 @@ public class SearchActivity extends AppCompatActivity {
         ListView lista = (ListView) findViewById(R.id.ResultList);
 
         items = Utils.fachada.getElementoPorNombre(queryStr);
-        if(items.size() == 0) findViewById(R.id.no_results_image).setVisibility(View.VISIBLE);
-        lista.setAdapter(new ListItemAdapter(this, items));
+        if(items.size() == 0){
+            findViewById(R.id.no_results_image).setVisibility(View.VISIBLE);
+        }
+
+        listItemAdapter = new ListItemAdapter(this, items);
+
+        az = (ImageButton) findViewById(R.id.az_button);
+        az.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listItemAdapter.sortListByAlfa();
+            }
+        });
+        rating = (ImageButton) findViewById(R.id.rating_button);
+        rating.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listItemAdapter.sortListByRating();
+            }
+        });
+        popularity = (ImageButton) findViewById(R.id.popularity_button);
+        popularity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listItemAdapter.sortListByPopularity();
+            }
+        });
+
+        lista.setAdapter(listItemAdapter);
 
         registerForContextMenu(lista);
 
@@ -113,7 +147,7 @@ public class SearchActivity extends AppCompatActivity {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         int idElemento = items.get(info.position).getId();
         Elemento elemento = Utils.fachada.getElementoPorId(idElemento);
-        Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null)).getListas().get(item.getTitle()).add(elemento);
+        Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null)).anadirElementoALista(item.getTitle().toString(), elemento);
         Toast.makeText(this, "Has añadido '" + elemento.getTitulo() + "' a '" + item.getTitle()+"'.", Toast.LENGTH_SHORT).show();
         return true;
     }

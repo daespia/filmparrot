@@ -37,6 +37,10 @@ public class ExpandableUserListAdapter extends BaseExpandableListAdapter {
         return listChilds.get(this.listGroupTitles.get(groupPosition)).get(childPosition);
     }
 
+    public  HashMap<String, List<Elemento>> getAllChilds()  {
+        return listChilds;
+    }
+
     @Override
     public long getChildId(int groupPosition, int childPosition) {
         return childPosition;
@@ -48,23 +52,14 @@ public class ExpandableUserListAdapter extends BaseExpandableListAdapter {
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.user_list_item, parent, false);
+            convertView = inflater.inflate(R.layout.list_item, parent, false);
         }
 
         ImageView ivItem = (ImageView) convertView.findViewById(R.id.listImage);
         TextView tvTitle = (TextView) convertView.findViewById(R.id.listTitle);
         TextView points = (TextView) convertView.findViewById(R.id.listPoints);
-        ImageView deleteImage = (ImageView) convertView.findViewById(R.id.deleteItem);
         TextView type = (TextView) convertView.findViewById(R.id.elementType);
         TextView country = (TextView) convertView.findViewById(R.id.countryText);
-
-        deleteImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listChilds.get(listGroupTitles.get(groupPosition)).remove(childPosition);
-                notifyDataSetChanged();
-            }
-        });
 
         Elemento item = getChild(groupPosition, childPosition);
         points.setBackgroundColor(Utils.getProgressiveColor(item.getMedia(), context));

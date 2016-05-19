@@ -3,9 +3,6 @@ package filmparrot.movil.informatica.filmparrot.logica;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Raul on 21/04/2016.
- */
 public abstract class Elemento {
 
     private int id;

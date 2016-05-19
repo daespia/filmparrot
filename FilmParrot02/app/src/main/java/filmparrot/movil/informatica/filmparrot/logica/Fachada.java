@@ -6,9 +6,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Created by Raul on 21/04/2016.
- */
 public class Fachada {
 
     private List<Usuario> usuarios;
@@ -76,7 +73,7 @@ public class Fachada {
 
     public List<Elemento> getElementoPorNombre(String cadena) {
 
-        List<Elemento> resultados = new ArrayList<Elemento>();
+        List<Elemento> resultados = new ArrayList<>();
         cadena = cadena.toLowerCase();
 
         for (Pelicula p : peliculas) if (p.getTitulo().toLowerCase().contains(cadena)) resultados.add(p);

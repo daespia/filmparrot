@@ -13,32 +13,36 @@
         android:id="@+id/surnameLabel"
         android:textSize="20sp"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Desconocido"
         android:id="@+id/surnameText"
         android:textSize="18sp"
         android:textColor="#000000"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_alignBottom="@+id/surnameLabel"
-        android:layout_toRightOf="@+id/surnameLabel" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBaseline="@+id/surnameLabel" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/surnameText"
+        android:layout_marginTop="5dp"
+        android:background="#D3D3D3"/>
 
     <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textAppearance="?android:attr/textAppearanceMedium"
-    android:text="@string/pf_birthdate"
-    android:id="@+id/birthdateLabel"
-    android:textSize="20sp"
-    android:layout_alignParentLeft="true"
-    android:layout_below="@id/surnameLabel"
-    android:layout_alignParentStart="true"
-    android:layout_marginTop="5dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/pf_birthdate"
+        android:id="@+id/birthdateLabel"
+        android:textSize="20sp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/surnameLabel"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -47,10 +51,16 @@
         android:id="@+id/birthdateText"
         android:textSize="18sp"
         android:textColor="#000000"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_alignBottom="@+id/birthdateLabel"
-        android:layout_toRightOf="@+id/birthdateLabel"/>
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBaseline="@+id/birthdateLabel"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/birthdateText"
+        android:layout_marginTop="5dp"
+        android:background="#D3D3D3"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -62,19 +72,24 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@id/birthdateLabel"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No"
         android:id="@+id/directorText"
         android:textSize="18sp"
         android:textColor="#000000"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_alignBottom="@+id/directorLabel"
-        android:layout_toRightOf="@+id/directorLabel"/>
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignBaseline="@+id/directorLabel" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/directorText"
+        android:layout_marginTop="5dp"
+        android:background="#D3D3D3"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -86,7 +101,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@id/directorLabel"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -95,9 +110,8 @@
         android:id="@+id/actorText"
         android:textSize="18sp"
         android:textColor="#000000"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_alignBottom="@+id/actorLabel"
-        android:layout_toRightOf="@+id/actorLabel"/>
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignBaseline="@+id/actorLabel" />
 
 </RelativeLayout>

@@ -23,14 +23,16 @@ import java.util.List;
 import filmparrot.movil.informatica.filmparrot.ElementViewActivity;
 import filmparrot.movil.informatica.filmparrot.R;
 import filmparrot.movil.informatica.filmparrot.auxiliar.ExpandableUserListAdapter;
+import filmparrot.movil.informatica.filmparrot.auxiliar.SwipeDismissList;
 import filmparrot.movil.informatica.filmparrot.auxiliar.Utils;
 import filmparrot.movil.informatica.filmparrot.logica.Elemento;
 
 public class UserListsFragment extends Fragment {
 
-    private ExpandableUserListAdapter exp;
+    private ExpandableUserListAdapter expandableAdapter;
+    private ExpandableListView expandableList;
     private EditText addList;
-    private HashMap<String, List<Elemento>> listas;
+    private HashMap<String, List<Elemento>> listasUsuario;
     private AlertDialog alertDialog;
 
     public UserListsFragment() {}
@@ -40,18 +42,46 @@ public class UserListsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_user_lists, container, false);
 
-        ExpandableListView listasUsuario = (ExpandableListView) view.findViewById(R.id.UserListsList);
+        expandableList = (ExpandableListView) view.findViewById(R.id.UserListsList);
         FloatingActionButton floatButton = (FloatingActionButton) view.findViewById(R.id.addListButton);
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getContext());
 
-        listas = Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null)).getListas();
+        listasUsuario = Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null)).getListas();
         List<String> nombres = new ArrayList<>();
-        nombres.addAll(listas.keySet());
+        nombres.addAll(listasUsuario.keySet());
 
-        exp = new ExpandableUserListAdapter(getContext(), nombres, listas);
-        listasUsuario.setAdapter(exp);
+        expandableAdapter = new ExpandableUserListAdapter(getContext(), nombres, listasUsuario);
+        expandableList.setAdapter(expandableAdapter);
 
+        enableDismissSwipe();
+        createNewListAlertDialog();
+
+        floatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.show();
+                alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
+            }
+        });
+
+        expandableList.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+                String group = expandableAdapter.getGroup(groupPosition).toString();
+
+                Intent intent = new Intent(getActivity(), ElementViewActivity.class);
+                intent.putExtra("id", listasUsuario.get(group).get(childPosition).getId());
+                startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.left_toright, R.anim.right_toleft);
+                return true;
+            }
+        });
+
+        return view;
+    }
+
+    private void createNewListAlertDialog(){
         alertDialog = new AlertDialog.Builder(getContext()).create();
         alertDialog.setTitle("Nueva lista");
         addList = new EditText(getContext());
@@ -62,23 +92,14 @@ public class UserListsFragment extends Fragment {
             public void onClick(DialogInterface dialog, int which) {
                 String newText = addList.getText().toString();
                 List<Elemento> elementos = new ArrayList<>();
-                listas.put(newText, elementos);
-                exp.addList(newText, elementos);
-            }
-        });
-
-        floatButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                alertDialog.show();
-                alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
+                listasUsuario.put(newText, elementos);
+                expandableAdapter.addList(newText, elementos);
             }
         });
 
         addList.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -86,7 +107,7 @@ public class UserListsFragment extends Fragment {
                     addList.setError("No puedes dejar el nombre vacío");
                     alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
                 }
-                else if(listas.get(addList.getText().toString()) != null) {
+                else if(listasUsuario.get(addList.getText().toString()) != null) {
                     addList.setError("Ya existe una lista con ese nombre");
                     alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
                 } else {
@@ -97,23 +118,34 @@ public class UserListsFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {}
         });
-
-
-
-        listasUsuario.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-            @Override
-            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                String group = exp.getGroup(groupPosition).toString();
-
-                Intent intent = new Intent(getActivity(), ElementViewActivity.class);
-                intent.putExtra("id", listas.get(group).get(childPosition).getId());
-                startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.left_toright, R.anim.right_toleft);
-                return true;
-            }
-        });
-
-        return view;
     }
 
+    private void enableDismissSwipe(){
+        SwipeDismissList.UndoMode mode = SwipeDismissList.UndoMode.SINGLE_UNDO;
+
+        SwipeDismissList.OnDismissCallback callback = new SwipeDismissList.OnDismissCallback() {
+
+            Elemento itemToDelete;
+            String groupString;
+            int childPos;
+
+            public SwipeDismissList.Undoable onDismiss(ExpandableListView listView, int groupPosition, int childPosition) {
+                itemToDelete = expandableAdapter.getChild(groupPosition, childPosition);
+                groupString = expandableAdapter.getGroup(groupPosition).toString();
+                childPos = childPosition;
+
+                expandableAdapter.getAllChilds().get(groupString).remove(childPosition);
+                expandableAdapter.notifyDataSetChanged();
+
+                return new SwipeDismissList.Undoable() {
+                    public void undo() {
+                        expandableAdapter.getAllChilds().get(groupString).add(childPos, itemToDelete);
+                        expandableAdapter.notifyDataSetChanged();
+                    }
+                };
+            }
+        };
+
+        new SwipeDismissList(expandableList, callback, mode);
+    }
 }

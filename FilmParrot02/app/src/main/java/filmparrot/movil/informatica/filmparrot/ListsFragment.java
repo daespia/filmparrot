@@ -1,32 +1,23 @@
 package filmparrot.movil.informatica.filmparrot;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import filmparrot.movil.informatica.filmparrot.auxiliar.ExpandableListAdapter;
-import filmparrot.movil.informatica.filmparrot.auxiliar.ExpandableUserListAdapter;
 import filmparrot.movil.informatica.filmparrot.auxiliar.Utils;
 import filmparrot.movil.informatica.filmparrot.logica.Elemento;
 
@@ -34,7 +25,7 @@ public class ListsFragment extends Fragment {
 
     private ExpandableListAdapter exp;
     private HashMap<String, List<Elemento>> listas;
-    SharedPreferences sharedPref;
+    private SharedPreferences sharedPref;
 
     public ListsFragment() {}
 

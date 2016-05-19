@@ -26,7 +26,6 @@ public class VoteActivity extends AppCompatActivity
     private Usuario usuario;
     private Puntuacion puntuacion;
     private Elemento elemento;
-    private SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +43,7 @@ public class VoteActivity extends AppCompatActivity
             elemento = Utils.fachada.getElementoPorId(id);
         }
 
-        sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         usuario = Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null));
         puntuacion = usuario.getPuntuacionDeElemento(elemento);
 
@@ -52,7 +51,7 @@ public class VoteActivity extends AppCompatActivity
             acceptButton.setText("Eliminar");
             acceptButton.setBackgroundColor(Color.RED);
 
-            ratingBar.setRating(new Float(puntuacion.getValor())/2f);
+            ratingBar.setRating((float) puntuacion.getValor() /2f);
             titulo.setEnabled(false);
             cuerpo.setEnabled(false);
 

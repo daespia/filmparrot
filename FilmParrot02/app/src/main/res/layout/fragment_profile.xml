@@ -47,7 +47,6 @@
         android:layout_marginStart="10dp"
         android:textSize="18sp"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="contraseña"
         android:id="@+id/passwordText"
         android:layout_alignBottom="@+id/passwordLabel"
         android:layout_toRightOf="@+id/passwordLabel" />

@@ -1,11 +1,7 @@
 package filmparrot.movil.informatica.filmparrot.logica;
 
 import java.util.Date;
-import java.util.List;
 
-/**
- * Created by bubu on 21/04/2016.
- */
 public class Persona extends Elemento{
 
     private String apellidos;

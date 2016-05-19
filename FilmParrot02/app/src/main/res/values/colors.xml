@@ -7,6 +7,13 @@
     <color name="colorLess5">#f10c0c</color>
     <color name="colorMore7.5">#18b700</color>
     <color name="colorBetween5">#ff9d00</color>
-
     <color name="black_overlay">#66000000</color>
+
+    <color name="popup_bg_color">#EE666666</color>
+    <color name="separator_color">#BBBBBB</color>
+    <color name="popup_text_color">#FFFFFF</color>
+
+    <color name="btn_pressed">#ff33b5e5</color>
+    <color name="btn_focused">#ff0099cc</color>
+    <color name="btn_normal">#00000000</color>
 </resources>

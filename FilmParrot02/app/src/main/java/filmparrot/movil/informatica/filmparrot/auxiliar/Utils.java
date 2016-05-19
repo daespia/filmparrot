@@ -37,10 +37,10 @@ public class Utils {
         return 0;
     }
 
-    public static boolean hasPermission(String permission, Activity activity){
-        if(Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP_MR1){
+    public static boolean hasPermission(String permission, Activity activity) {
+        if(Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP_MR1)
             return activity.checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED;
-        } else return true;
+        else return true;
     }
 
     private static void inicializarFachada(){
@@ -209,8 +209,8 @@ public class Utils {
 
         // ---------------- Películas - ID: 4X
 
-        ArrayList<Persona> actores41 = new ArrayList<Persona>();
-        ArrayList<Persona> directores41 = new ArrayList<Persona>();
+        ArrayList<Persona> actores41 = new ArrayList<>();
+        ArrayList<Persona> directores41 = new ArrayList<>();
         actores41.add(samneill);
         directores41.add(spielberg);
 
@@ -224,7 +224,7 @@ public class Utils {
         jurassic.anadirPuntuacion(new Puntuacion(8.7, null, manu));
         jurassic.anadirPuntuacion(new Puntuacion(5.9, null, dani));
 
-        ArrayList<Persona> directores42 = new ArrayList<Persona>();
+        ArrayList<Persona> directores42 = new ArrayList<>();
         directores42.add(francis);
 
         Pelicula padrino = new Pelicula(42, "El padrino", "América, años 40. Don Vito Corleone (Marlon Brando) es el respetado y temido jefe " +
@@ -237,8 +237,8 @@ public class Utils {
         padrino.anadirPuntuacion(new Puntuacion(8.5, null, manu));
         padrino.anadirPuntuacion(new Puntuacion(9.1, null, dani));
 
-        ArrayList<Persona> actores43 = new ArrayList<Persona>();
-        ArrayList<Persona> directores43 = new ArrayList<Persona>();
+        ArrayList<Persona> actores43 = new ArrayList<>();
+        ArrayList<Persona> directores43 = new ArrayList<>();
         actores43.add(russell);
         directores43.add(riddley);
 
@@ -253,7 +253,7 @@ public class Utils {
         gladiator.anadirPuntuacion(new Puntuacion(8.5, null, manu));
         gladiator.anadirPuntuacion(new Puntuacion(9.1, null, dani));
 
-        ArrayList<Persona> actores44 = new ArrayList<Persona>();
+        ArrayList<Persona> actores44 = new ArrayList<>();
         actores44.add(paulrudd);
 
         Pelicula cena = new Pelicula(44, "La cena de los idiotas", "A un grupo de amigos, que se reúne semanalmente para cenar, " +
@@ -265,7 +265,7 @@ public class Utils {
         cena.anadirPuntuacion(new Puntuacion(7.5, null, raul));
         cena.anadirPuntuacion(new Puntuacion(8.5, null, manu));
 
-        ArrayList<Persona> actores45 = new ArrayList<Persona>();
+        ArrayList<Persona> actores45 = new ArrayList<>();
         actores45.add(ryan);
 
         Pelicula deadpool = new Pelicula(45, "Deadpool", "Basado en el antihéroe menos convencional de Marvel," +
@@ -276,8 +276,8 @@ public class Utils {
         deadpool.anadirPuntuacion(new Puntuacion(7.4, null, raul));
         deadpool.anadirPuntuacion(new Puntuacion(9.5, null, manu));
 
-        ArrayList<Persona> actores46 = new ArrayList<Persona>();
-        ArrayList<Persona> directores46 = new ArrayList<Persona>();
+        ArrayList<Persona> actores46 = new ArrayList<>();
+        ArrayList<Persona> directores46 = new ArrayList<>();
         actores46.add(leonardo);
         actores46.add(kate);
         directores46.add(cameron);

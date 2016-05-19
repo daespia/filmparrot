@@ -62,7 +62,6 @@
     <TextView
         android:id="@+id/reviewBodyText"
         android:layout_marginTop="15dp"
-        android:text="Hola, esta es una crítica de prueba."
         android:layout_below="@id/userReviewTitle"
         android:layout_alignStart="@id/reviewTitle"
         android:layout_alignLeft="@id/reviewTitle"

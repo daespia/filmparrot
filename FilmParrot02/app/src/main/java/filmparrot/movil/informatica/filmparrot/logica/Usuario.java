@@ -1,14 +1,9 @@
 package filmparrot.movil.informatica.filmparrot.logica;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Created by Raul on 21/04/2016.
- */
 public class Usuario {
 
     private String nombre;

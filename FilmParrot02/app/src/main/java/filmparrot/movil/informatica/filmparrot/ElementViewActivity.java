@@ -141,7 +141,7 @@ public class ElementViewActivity extends AppCompatActivity {
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
-        Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null)).getListas().get(item.getTitle()).add(elemento);
+        Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null)).anadirElementoALista(item.getTitle().toString(), elemento);
         Toast.makeText(this, "Has añadido '" + elemento.getTitulo() + "' a '" + item.getTitle()+"'.", Toast.LENGTH_SHORT).show();
         return true;
     }

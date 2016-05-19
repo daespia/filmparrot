@@ -3,9 +3,6 @@ package filmparrot.movil.informatica.filmparrot.logica;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by Manu on 21/04/2016.
- */
 public class Pelicula extends Elemento {
 
     private int duracion;

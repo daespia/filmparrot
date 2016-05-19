@@ -1,8 +1,5 @@
 package filmparrot.movil.informatica.filmparrot.logica;
 
-/**
- * Created by bubu on 21/04/2016.
- */
 public class Bso extends Elemento {
 
     private String compositor;

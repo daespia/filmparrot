@@ -1,14 +1,10 @@
 package filmparrot.movil.informatica.filmparrot.profile;
 
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.text.InputType;
-import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,8 +19,7 @@ import filmparrot.movil.informatica.filmparrot.auxiliar.Utils;
 
 public class ProfileFragment extends Fragment {
 
-    private TextView username, password;
-    private Button cambiar;
+    private TextView password;
     private EditText changepassword;
 
     public ProfileFragment() {
@@ -41,11 +36,6 @@ public class ProfileFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -53,7 +43,7 @@ public class ProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getContext());
 
-        username  = (TextView) view.findViewById(R.id.usernameText);
+        TextView username = (TextView) view.findViewById(R.id.usernameText);
         username.setText(Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null)).getNombre());
 
         password  = (TextView) view.findViewById(R.id.passwordText);
@@ -93,7 +83,7 @@ public class ProfileFragment extends Fragment {
 
         changepassword  = (EditText) view.findViewById(R.id.changeText);
 
-        cambiar  = (Button) view.findViewById(R.id.acceptButton);
+        Button cambiar = (Button) view.findViewById(R.id.acceptButton);
         cambiar.setOnClickListener(
                 new View.OnClickListener() {
                     SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getContext());

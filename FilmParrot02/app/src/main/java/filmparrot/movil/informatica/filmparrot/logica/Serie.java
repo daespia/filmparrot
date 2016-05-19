@@ -2,9 +2,6 @@ package filmparrot.movil.informatica.filmparrot.logica;
 
 import java.util.List;
 
-/**
- * Created by Manu on 21/04/2016.
- */
 public class Serie extends Elemento {
 
     private int anioComienzo;

@@ -1,7 +1,6 @@
 package filmparrot.movil.informatica.filmparrot;
 
 import android.content.Intent;
-import android.opengl.Visibility;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -11,15 +10,13 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import filmparrot.movil.informatica.filmparrot.auxiliar.ListReviewsAdapter;
 import filmparrot.movil.informatica.filmparrot.auxiliar.Utils;
 import filmparrot.movil.informatica.filmparrot.logica.Elemento;
 
 public class AllReviewsActivity extends AppCompatActivity {
 
-    Elemento elemento;
+    private Elemento elemento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

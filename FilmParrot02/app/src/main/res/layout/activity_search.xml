@@ -9,12 +9,35 @@
     android:overScrollMode="never"
     tools:context=".SearchActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sortLayoutButton">
+        <ImageButton
+            android:id="@+id/az_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/sort_az_icon"/>
+        <ImageButton
+            android:id="@+id/rating_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/sort_rating_icon"/>
+        <ImageButton
+            android:id="@+id/popularity_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/sort_popular_icon"/>
+    </LinearLayout>
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/ResultList"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@id/sortLayoutButton" />
 
     <ImageView
         android:layout_width="200dp"

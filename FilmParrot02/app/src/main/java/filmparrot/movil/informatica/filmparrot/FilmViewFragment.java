@@ -1,7 +1,5 @@
 package filmparrot.movil.informatica.filmparrot;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -49,32 +47,26 @@ public class FilmViewFragment extends Fragment {
         anio.setText("" + c.get(Calendar.YEAR));
 
         TextView bso  = (TextView) view.findViewById(R.id.BsoText);
-        //bso.setText(e.getBso().getTitulo());
+        bso.setText("Desconocida");
 
         TextView director  = (TextView) view.findViewById(R.id.directorText);
-        String directores = "";
+        String directores = "Desconocido";
 
-        if(e.getDirectores()==null){
-            director.setText("Desconocido");
-        }else{
-            for(Persona p: e.getDirectores()){
-                directores+=p.getTitulo() +", ";
-            }
-            director.setText(directores);
+        if(e.getDirectores() != null){
+            directores = "";
+            for(Persona p: e.getDirectores()) directores+=p.getTitulo() +", ";
         }
+        director.setText(directores);
 
 
         TextView actor  = (TextView) view.findViewById(R.id.actorText);
-        String actores = "";
+        String actores = "Desconocidos";
 
-        if(e.getActores()==null){
-            actor.setText("Desconocido");
-        }else{
-            for(Persona p: e.getActores()){
-                actores+= p.getTitulo() + ", ";
-            }
-            actor.setText(actores);
+        if(e.getActores() != null){
+            actores = "";
+            for(Persona p: e.getActores()) actores+=p.getTitulo() +", ";
         }
+        actor.setText(actores);
 
         return view;
     }
