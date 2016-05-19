@@ -52,25 +52,27 @@ public class FilmViewFragment extends Fragment {
         //bso.setText(e.getBso().getTitulo());
 
         TextView director  = (TextView) view.findViewById(R.id.directorText);
-        String directores = null;
-       for(Persona p: e.getDirectores()){
-            directores+= p.getTitulo()+", ";
-        }
-        if(directores==null){
+        String directores = "";
+
+        if(e.getDirectores()==null){
             director.setText("Desconocido");
         }else{
+            for(Persona p: e.getDirectores()){
+                directores+=p.getTitulo() +", ";
+            }
             director.setText(directores);
         }
 
 
         TextView actor  = (TextView) view.findViewById(R.id.actorText);
-        String actores = null;
-        for(Persona p: e.getActores()){
-            actores+= p.getTitulo() + ", ";
-        }
-        if(actores==null){
+        String actores = "";
+
+        if(e.getActores()==null){
             actor.setText("Desconocido");
         }else{
+            for(Persona p: e.getActores()){
+                actores+= p.getTitulo() + ", ";
+            }
             actor.setText(actores);
         }
 

@@ -84,28 +84,28 @@ public class PrincipalFragment extends Fragment {
         //bso.setText(e.getBso().getTitulo());
 
         TextView director  = (TextView) view.findViewById(R.id.directorText);
-        String directores = null;
-       for(Persona p: elemento.getDirectores()){
-            directores+= ", " +p.getTitulo();
-        }
-        if(directores==null){
+        String directores = "";
+
+        if(elemento.getDirectores()==null){
             director.setText("Desconocido");
         }else{
+            for(Persona p: elemento.getDirectores()){
+                directores+=p.getTitulo() +", ";
+            }
             director.setText(directores);
         }
 
         TextView actor  = (TextView) view.findViewById(R.id.actorText);
-        String actores = null;
-        for(Persona p: elemento.getActores()){
-            actores+= p.getTitulo() + ", ";
-        }
-        if(actores==null){
-            actor.setText("Desconocido");
+        String actores = "";
 
+        if(elemento.getActores()==null){
+            actor.setText("Desconocido");
         }else{
+            for(Persona p: elemento.getActores()){
+                actores+= p.getTitulo() + ", ";
+            }
             actor.setText(actores);
         }
-
 
         return view;
 
