@@ -58,8 +58,10 @@ public class FilmViewFragment extends Fragment {
         }
         if(directores==null){
             director.setText("Desconocido");
+        }else{
+            director.setText(directores);
         }
-        director.setText(directores);
+
 
         TextView actor  = (TextView) view.findViewById(R.id.actorText);
         String actores = null;
@@ -68,8 +70,9 @@ public class FilmViewFragment extends Fragment {
         }
         if(actores==null){
             actor.setText("Desconocido");
+        }else{
+            actor.setText(actores);
         }
-        actor.setText(actores);
 
         return view;
     }
