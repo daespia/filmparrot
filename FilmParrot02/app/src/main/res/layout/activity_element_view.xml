@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,179 +14,187 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:layout_margin="12dp"
-        android:background="@android:color/white"
-        android:elevation="4dp">
-
-        <ImageView
-            android:id="@+id/coverImage"
-            android:layout_width="150dp"
-            android:layout_height="210dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/elementLabel"
-            android:layout_marginTop="25dp" />
-
-        <TextView
-            android:id="@+id/elementLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginEnd="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_toLeftOf="@+id/addList"
-            android:layout_toStartOf="@+id/addList"
-            android:textSize="30sp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_below="@id/elementLabel"
-            android:background="@color/colorPrimary" />
-
-        <ImageView
-            android:id="@+id/addList"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignTop="@id/elementLabel"
-            android:src="@drawable/add_list" />
-
-        <TextView
-            android:id="@+id/pointAverage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/coverImage"
-            android:layout_marginLeft="12dp"
-            android:layout_marginStart="12dp"
-            android:layout_toEndOf="@+id/coverImage"
-            android:layout_toRightOf="@+id/coverImage"
-            android:background="@color/colorPrimary"
-            android:padding="10dp"
-            android:textColor="#ffffff"
-            android:textSize="30sp" />
-
-        <ImageView
-            android:id="@+id/pointsIcon"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignLeft="@+id/pointAverage"
-            android:layout_alignStart="@+id/pointAverage"
-            android:layout_below="@+id/pointAverage"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/view" />
-
-        <TextView
-            android:id="@+id/pointsLabel"
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/reviewsIcon"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/pointsIcon"
-            android:layout_toRightOf="@+id/pointsIcon"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+            android:layout_margin="12dp"
+            card_view:cardBackgroundColor="@android:color/white"
+            card_view:contentPadding="16dp">
 
-        <ImageView
-            android:id="@+id/reviewsIcon"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignLeft="@+id/pointsIcon"
-            android:layout_alignStart="@+id/pointsIcon"
-            android:layout_below="@+id/pointsIcon"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/tick_icon" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/reviewsLabel"
+                <ImageView
+                    android:id="@+id/coverImage"
+                    android:layout_width="150dp"
+                    android:layout_height="210dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/elementLabel"
+                    android:layout_marginTop="25dp" />
+
+                <TextView
+                    android:id="@+id/elementLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_toLeftOf="@+id/addList"
+                    android:layout_toStartOf="@+id/addList"
+                    android:textSize="30sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/elementLabel"
+                    android:background="@color/colorPrimary" />
+
+                <ImageView
+                    android:id="@+id/addList"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@id/elementLabel"
+                    android:src="@drawable/add_list" />
+
+                <TextView
+                    android:id="@+id/pointAverage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/coverImage"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_toEndOf="@+id/coverImage"
+                    android:layout_toRightOf="@+id/coverImage"
+                    android:background="@color/colorPrimary"
+                    android:padding="10dp"
+                    android:textColor="#ffffff"
+                    android:textSize="30sp" />
+
+                <ImageView
+                    android:id="@+id/pointsIcon"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignLeft="@+id/pointAverage"
+                    android:layout_alignStart="@+id/pointAverage"
+                    android:layout_below="@+id/pointAverage"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/view" />
+
+                <TextView
+                    android:id="@+id/pointsLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/reviewsIcon"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/pointsIcon"
+                    android:layout_toRightOf="@+id/pointsIcon"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/reviewsIcon"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignLeft="@+id/pointsIcon"
+                    android:layout_alignStart="@+id/pointsIcon"
+                    android:layout_below="@+id/pointsIcon"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/tick_icon" />
+
+                <TextView
+                    android:id="@+id/reviewsLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/pointsLabel"
+                    android:layout_alignStart="@+id/pointsLabel"
+                    android:layout_alignTop="@+id/reviewsIcon"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/PointsButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/coverImage"
+                    android:layout_alignLeft="@+id/reviewsIcon"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignStart="@+id/reviewsIcon"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/votar"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/descriptionLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/coverImage"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/descripci_n"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/descriptionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/descriptionLabel"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/countryLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/descriptionText"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/ef_country"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/countryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/countryLabel"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/countryLabel"
+                    android:layout_toRightOf="@+id/countryLabel"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/pointsLabel"
-            android:layout_alignStart="@+id/pointsLabel"
-            android:layout_alignTop="@+id/reviewsIcon"
-            android:textColor="#000000"
-            android:textSize="18sp" />
-
-        <Button
-            android:id="@+id/PointsButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/coverImage"
-            android:layout_alignLeft="@+id/reviewsIcon"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignStart="@+id/reviewsIcon"
-            android:background="@color/colorPrimary"
-            android:text="@string/votar"
-            android:textColor="#ffffff"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/descriptionLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/coverImage"
-            android:layout_marginTop="30dp"
-            android:text="@string/descripci_n"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/descriptionText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/descriptionLabel"
-            android:layout_marginTop="5dp"
-            android:textColor="#000000"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/countryLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/descriptionText"
-            android:layout_marginTop="10dp"
-            android:text="País:"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/countryText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/countryLabel"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/countryLabel"
-            android:layout_toRightOf="@+id/countryLabel"
-            android:textColor="#000000"
-            android:textSize="18sp" />
-    </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/element_frame"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="16dp"
-            android:layout_marginRight="12dp"
+            android:layout_marginBottom="12dp"
             android:layout_marginEnd="12dp"
             android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
             android:layout_marginStart="12dp"
-            android:layout_marginBottom="12dp"
-            android:background="@android:color/white"
-            android:elevation="4dp" />
+            card_view:cardBackgroundColor="@android:color/white"
+            card_view:contentPadding="16dp">
+
+            <RelativeLayout
+                android:id="@+id/element_frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </android.support.v7.widget.CardView>
     </LinearLayout>
 </ScrollView>

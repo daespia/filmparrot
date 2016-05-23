@@ -15,92 +15,56 @@ import android.widget.Toast;
 
 import filmparrot.movil.informatica.filmparrot.R;
 import filmparrot.movil.informatica.filmparrot.auxiliar.Utils;
+import filmparrot.movil.informatica.filmparrot.logica.Usuario;
 
 
 public class ProfileFragment extends Fragment {
 
-    private TextView password;
-    private EditText changepassword;
+    private EditText currentPassword, newPassword, confirmNewPassword;
+    private Usuario usuario;
+    private Button changePassword;
 
-    public ProfileFragment() {
-        // Required empty public constructor
-    }
+    public ProfileFragment() { }
 
-
-    public static ProfileFragment newInstance(String param1, String param2) {
-        ProfileFragment fragment = new ProfileFragment();
-        Bundle args = new Bundle();
-
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getContext());
+        usuario = Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null));
 
         TextView username = (TextView) view.findViewById(R.id.usernameText);
-        username.setText(Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null)).getNombre());
+        username.setText(usuario.getNombre());
 
-        password  = (TextView) view.findViewById(R.id.passwordText);
+        currentPassword  = (EditText) view.findViewById(R.id.current_password);
+        newPassword  = (EditText) view.findViewById(R.id.new_password);
+        confirmNewPassword  = (EditText) view.findViewById(R.id.confirm_new_password);
 
-        String contraseña = Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null)).getContrasena();
-
-        String ast="";
-        for(int k=0;k<contraseña.length();k++){
-            ast+="*";
-        }
-
-        password.setText(ast);
-
-        Button verCont  = (Button) view.findViewById(R.id.seePassword);
-        verCont.setOnClickListener(
+        changePassword = (Button) view.findViewById(R.id.acceptButton);
+        changePassword.setOnClickListener(
                 new View.OnClickListener() {
-                    SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getContext());
-                    int i=0;
                     @Override
                     public void onClick(View v) {
-                        String contraseña = Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null)).getContrasena();
-                        if(i==0){
-                            i++;
-                            password.setText(contraseña);
+
+                        if(!currentPassword.getText().toString().equals(usuario.getContrasena()) ||
+                                ! newPassword.getText().toString().equals(confirmNewPassword.getText().toString())){
+                            currentPassword.setError("Las contraseñas deben coincidir.");
+
+                        }else if (newPassword.getText().toString().isEmpty() || newPassword.toString().isEmpty()) {
+                            newPassword.setError("La nueva contraseña no puede ser vacía.");
+
+                        } else {
+                            usuario.setContrasena(newPassword.getText().toString());
+                            Toast.makeText(getActivity().getApplicationContext(), "Has cambiado la contraseña con éxito",
+                                    Toast.LENGTH_SHORT).show();
+
+                            newPassword.getText().clear();
+                            currentPassword.getText().clear();
+                            confirmNewPassword.getText().clear();
                         }
-                        else if(i==1){
-                            i--;
-                            String ast="";
-                            for(int k=0;k<contraseña.length();k++){
-                                ast+="*";
-                            }
-                            password.setText(ast);
-                        }
-                    }
-                }
-        );
-
-        changepassword  = (EditText) view.findViewById(R.id.changeText);
-
-        Button cambiar = (Button) view.findViewById(R.id.acceptButton);
-        cambiar.setOnClickListener(
-                new View.OnClickListener() {
-                    SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getContext());
-                    @Override
-                    public void onClick(View v) {
-                        if(changepassword.getText().toString().isEmpty()){
-                            changepassword.setError("La contraseña no puede ser vacía");
-                        }else{
-                            Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null))
-                                    .setContrasena(changepassword.getText().toString());
-
-                            Toast toast = Toast.makeText(getActivity().getApplicationContext(),
-                                    "Has cambiado la contraseña con éxtio", Toast.LENGTH_SHORT);
-                            toast.show();
-                        }
-
-
                     }
                 }
         );

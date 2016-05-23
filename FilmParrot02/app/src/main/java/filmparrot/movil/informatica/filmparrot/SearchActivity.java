@@ -2,12 +2,14 @@ package filmparrot.movil.informatica.filmparrot;
 
 import android.app.LauncherActivity;
 import android.app.SearchManager;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.Image;
 import android.preference.PreferenceManager;
 import android.provider.SearchRecentSuggestions;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -61,7 +63,11 @@ public class SearchActivity extends AppCompatActivity {
                 removeSuggest.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        suggestions.clearHistory();
+                        AlertDialog.Builder builder = new AlertDialog.Builder(SearchActivity.this);
+                        builder.setTitle("Eliminar sugerencias");
+                        builder.setMessage("¿Quieres limpiar las sugerencias del buscador?")
+                                .setNegativeButton("NO", new RemoveSuggestionsDialogListener())
+                                .setPositiveButton("SÍ", new RemoveSuggestionsDialogListener()).show();
                     }
                 });
 
@@ -150,6 +156,18 @@ public class SearchActivity extends AppCompatActivity {
         Utils.fachada.getUsuario(sharedPref.getString("sessionActive", null)).anadirElementoALista(item.getTitle().toString(), elemento);
         Toast.makeText(this, "Has añadido '" + elemento.getTitulo() + "' a '" + item.getTitle()+"'.", Toast.LENGTH_SHORT).show();
         return true;
+    }
+
+    private class RemoveSuggestionsDialogListener implements DialogInterface.OnClickListener{
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            switch (which){
+                case DialogInterface.BUTTON_POSITIVE:
+                    suggestions.clearHistory();
+                    Toast.makeText(SearchActivity.this, "Sugerencias eliminadas con éxito", Toast.LENGTH_SHORT).show();
+                    break;
+            }
+        }
     }
 
 }

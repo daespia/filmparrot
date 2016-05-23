@@ -146,6 +146,7 @@ public class PrincipalActivity extends AppCompatActivity
                     editor.remove("sessionActive");
                     editor.remove("adminUser");
                     editor.apply();
+                    Toast.makeText(PrincipalActivity.this, "Has cerrado sesión", Toast.LENGTH_SHORT).show();
                     break;
             }
         }
@@ -153,6 +154,7 @@ public class PrincipalActivity extends AppCompatActivity
 
     @Override
     public void onLoginSuccess(String username){
+        fragmentManager.beginTransaction().replace(R.id.content_frame, new PrincipalFragment()).commit();
         Toast.makeText(this, "Bienvenido, " + username, Toast.LENGTH_SHORT).show();
     }
 

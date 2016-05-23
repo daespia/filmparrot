@@ -77,19 +77,18 @@ public class VoteActivity extends AppCompatActivity
                     String titString = titulo.getText().toString();
                     String cuerpoString = cuerpo.getText().toString();
 
-                    if((titString.isEmpty() && cuerpoString.isEmpty()) ||
-                            (!titString.isEmpty() && !titString.isEmpty())) {
+                    if((titString.isEmpty() && !cuerpoString.isEmpty()) ||
+                            !titString.isEmpty() && cuerpoString.isEmpty()) {
+                        titulo.setError("Añade un cuerpo y un título, o deja la crítica vacía.");
 
-                        if(!titString.isEmpty() && !cuerpoString.isEmpty())
-                            critica = new Critica(titString, cuerpoString);
-
+                    } else {
+                        if(!titString.isEmpty() && !cuerpoString.isEmpty()) critica = new Critica(titString, cuerpoString);
                         elemento.anadirPuntuacion(new Puntuacion(ratingBar.getRating()*2d, critica, usuario));
-                        Toast.makeText(getApplicationContext(), "Has añadido una crítica", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Has votado a '" + elemento.getTitulo()+ "'",
+                                Toast.LENGTH_SHORT).show();
                         finish();
-
-                    } else{
-                        titulo.setError("Añade un título y un cuerpo, o deja la crítica vacía");
                     }
+
                 }
 
 
