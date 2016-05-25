@@ -33,6 +33,7 @@ public class PrincipalActivity extends AppCompatActivity
     private SharedPreferences sharedPref;
     private SessionManager session_manager;
     private FragmentManager fragmentManager;
+    private SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,15 +73,13 @@ public class PrincipalActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
     }
-
-    @SuppressWarnings("StatementWithEmptyBody")
+    
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
@@ -121,6 +120,7 @@ public class PrincipalActivity extends AppCompatActivity
 
         if(intent != null) startActivity(intent);
         else drawer.closeDrawer(GravityCompat.START);
+        searchView.onActionViewCollapsed();
         return true;
     }
 
@@ -164,7 +164,7 @@ public class PrincipalActivity extends AppCompatActivity
         inflater.inflate(R.menu.options_menu, menu);
 
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
+        searchView = (SearchView) menu.findItem(R.id.search).getActionView();
 
         ComponentName cn = new ComponentName(this, SearchActivity.class);
         searchView.setSearchableInfo(searchManager.getSearchableInfo(cn));
