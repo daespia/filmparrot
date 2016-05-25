@@ -79,7 +79,7 @@ public class PrincipalActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
-    
+
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 

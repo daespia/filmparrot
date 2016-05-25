@@ -8,10 +8,12 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import filmparrot.movil.informatica.filmparrot.R;
 import filmparrot.movil.informatica.filmparrot.logica.Elemento;
+import filmparrot.movil.informatica.filmparrot.logica.Pelicula;
 
 public class ReleasesAdapter extends BaseAdapter {
 
@@ -46,11 +48,12 @@ public class ReleasesAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.grid_releases_item, parent, false);
         }
 
-        Elemento item = this.items.get(position);
+        Pelicula item = (Pelicula) this.items.get(position);
+        SimpleDateFormat dt = new SimpleDateFormat("dd/MM/yy");
 
         ((ImageView)convertView.findViewById(R.id.gridImage)).setImageResource(item.getImagen());
         ((TextView)convertView.findViewById(R.id.gridTitle)).setText(item.getTitulo());
-        ((TextView)convertView.findViewById(R.id.dayText)).setText("Desde el viernes");
+        ((TextView)convertView.findViewById(R.id.dayText)).setText(dt.format(item.getFechaEstreno()));
         return convertView;
     }
 }

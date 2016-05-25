@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground">
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:orientation="vertical"
+    android:padding="5dp"
     android:layout_height="200dp">
 
     <TextView
@@ -10,35 +18,28 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:singleLine="true"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginStart="4dp"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginStart="4dp"
         android:background="@color/colorPrimary"/>
-
 
     <TextView
         android:id="@+id/dayText"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:drawablePadding="4dp"
+        android:drawablePadding="6dp"
         android:drawableLeft="@drawable/calendar_icon"
         android:drawableStart="@drawable/calendar_icon"/>
 
     <ImageView
-        android:padding="8dp"
         android:id="@+id/gridImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
 </LinearLayout>
+    </android.support.v7.widget.CardView>
