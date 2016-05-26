@@ -2,313 +2,313 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:overScrollMode="never"
     android:scrollbars="none">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingEnd="@dimen/activity_horizontal_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingStart="@dimen/activity_horizontal_margin"
-        android:paddingTop="8dp"
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:clipToPadding="false"
         tools:context=".ElementViewActivity">
 
-        <ImageView
-            android:id="@+id/coverImage"
-            android:layout_width="150dp"
-            android:layout_height="210dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/elementLabel"
-            android:layout_marginTop="25dp" />
-
-        <TextView
-            android:id="@+id/elementLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="10dp"
-            android:textSize="30sp"
-            android:layout_alignRight="@+id/linearLayout"
-            android:layout_alignEnd="@+id/linearLayout" />
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/welcome_card"
+        android:layout_marginBottom="16dp"
+        card_view:cardBackgroundColor="@android:color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_below="@id/elementLabel"
-            android:background="@color/colorPrimary"
-            android:id="@+id/linearLayout"
-            android:orientation="horizontal" />
-
-
-        <TextView
-            android:id="@+id/pointAverage"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/coverImage"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_toEndOf="@+id/coverImage"
-            android:layout_toRightOf="@+id/coverImage"
-            android:background="@color/colorPrimary"
-            android:padding="10dp"
-            android:textColor="#ffffff"
-            android:textSize="30sp"
+            android:paddingTop="8dp"
+            android:paddingRight="8dp"
+            android:paddingEnd="8dp"
+            android:paddingLeft="8dp"
+            android:paddingStart="8dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bienvenido_a_filmparrot"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:layout_marginBottom="6dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/filmparrot_description"
+                android:textSize="15sp"
+                android:layout_marginBottom="12dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+            <TextView
+                android:id="@+id/gotit_text"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:textColor="@color/colorPrimary"
+                android:text="@string/entendido"/>
+        </LinearLayout>
 
-            />
-
-        <ImageView
-            android:id="@+id/pointsIcon"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignLeft="@+id/pointAverage"
-            android:layout_alignStart="@+id/pointAverage"
-            android:layout_below="@+id/pointAverage"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/view" />
+    </android.support.v7.widget.CardView>
 
         <TextView
-            android:id="@+id/pointsLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/reviewsIcon"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/pointsIcon"
-            android:layout_toRightOf="@+id/pointsIcon"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+            android:text="PELÍCULA DEL DÍA"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
 
-        <ImageView
-            android:id="@+id/reviewsIcon"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignLeft="@+id/pointsIcon"
-            android:layout_alignStart="@+id/pointsIcon"
-            android:layout_below="@+id/pointsIcon"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/tick_icon" />
-
-        <TextView
-            android:id="@+id/reviewsLabel"
+        <android.support.v7.widget.CardView
+            android:id="@+id/film_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/pointsLabel"
-            android:layout_alignStart="@+id/pointsLabel"
-            android:layout_alignTop="@+id/reviewsIcon"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+            card_view:cardBackgroundColor="@android:color/white"
+            android:layout_marginBottom="16dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            card_view:contentPadding="8dp">
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/coverImage"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/elementLabel"
+                    android:layout_marginTop="16dp" />
+
+                <TextView
+                    android:id="@+id/elementLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/elementLabel"
+                    android:background="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/pointAverage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/coverImage"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_toEndOf="@+id/coverImage"
+                    android:layout_toRightOf="@+id/coverImage"
+                    android:background="@color/colorPrimary"
+                    android:padding="10dp"
+                    android:textColor="#ffffff"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:id="@+id/pointsIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/view"
+                    android:layout_alignTop="@+id/pointAverage"
+                    android:layout_toRightOf="@+id/pointAverage"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_toEndOf="@id/pointAverage"/>
+
+                <TextView
+                    android:id="@+id/pointsLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_alignTop="@+id/pointsIcon"
+                    android:layout_toEndOf="@+id/pointsIcon"
+                    android:layout_toRightOf="@+id/pointsIcon"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/reviewsIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignBottom="@+id/pointAverage"
+                    android:layout_toRightOf="@+id/pointAverage"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_toEndOf="@id/pointAverage"
+                    android:src="@drawable/tick_icon" />
+
+                <TextView
+                    android:id="@+id/reviewsLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/pointsLabel"
+                    android:layout_alignStart="@+id/pointsLabel"
+                    android:layout_alignTop="@+id/reviewsIcon"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:maxLines="5"
+                    android:ellipsize="end"
+                    android:textSize="14sp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/descriptionText"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_toEndOf="@+id/coverImage"
+                    android:layout_toRightOf="@+id/coverImage"
+                    android:layout_below="@id/reviewsIcon" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
 
         <TextView
-            android:id="@+id/descriptionLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/coverImage"
-            android:layout_marginTop="30dp"
-            android:text="Descripción"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/descriptionText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/descriptionLabel"
-            android:layout_marginTop="5dp"
-            android:textColor="#000000"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/countryLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/descriptionText"
-            android:layout_marginTop="10dp"
-            android:text="País:"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/countryText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/countryLabel"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/countryLabel"
-            android:layout_toRightOf="@+id/countryLabel"
-            android:text="España"
-            android:textColor="#000000"
-            android:textSize="18sp" />
-
-        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_below="@id/countryLabel"
-            android:layout_marginTop="10dp"
-            android:background="@color/colorPrimary" />
+            android:layout_height="wrap_content"
+            android:text="SERIE DEL DÍA"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
 
-        <RelativeLayout
-            android:id="@+id/element_frame"
+        <android.support.v7.widget.CardView
+            android:id="@+id/serie_card"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/countryLabel"
-            android:layout_marginTop="20dp" />
-
-        <TextView
-            android:id="@+id/durationLabel"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="20dp"
-            android:text="@string/ff_duration"
-            android:textSize="20sp"
-            android:layout_below="@id/countryLabel"
-            />
+            card_view:cardBackgroundColor="@android:color/white"
+            android:foreground="?android:attr/selectableItemBackground"
+            card_view:contentPadding="8dp">
 
-        <TextView
-            android:id="@+id/durationText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/durationLabel"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/durationLabel"
-            android:layout_toRightOf="@+id/durationLabel"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/genreLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@id/durationLabel"
-            android:layout_marginTop="5dp"
-            android:text="@string/ff_genre"
-            android:textSize="20sp" />
+                <ImageView
+                    android:id="@+id/coverSerieImage"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/elementSerieLabel"
+                    android:layout_marginTop="16dp" />
 
-        <TextView
-            android:id="@+id/genreText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/genreLabel"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/genreLabel"
-            android:layout_toRightOf="@+id/genreLabel"
-            android:text="Sin especificar"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/elementSerieLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/yearLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@id/genreLabel"
-            android:layout_marginTop="5dp"
-            android:text="@string/ff_year"
-            android:textSize="20sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/elementSerieLabel"
+                    android:background="@color/colorPrimary" />
 
-        <TextView
-            android:id="@+id/yearText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/yearLabel"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/yearLabel"
-            android:layout_toRightOf="@+id/yearLabel"
-            android:text="Desconocido"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/pointSerieAverage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/coverSerieImage"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_toEndOf="@+id/coverSerieImage"
+                    android:layout_toRightOf="@+id/coverSerieImage"
+                    android:background="@color/colorPrimary"
+                    android:padding="10dp"
+                    android:textColor="#ffffff"
+                    android:textSize="25sp" />
 
-        <TextView
-            android:id="@+id/BsoLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@id/yearLabel"
-            android:layout_marginTop="5dp"
-            android:text="@string/ff_bso"
-            android:textSize="20sp" />
+                <ImageView
+                    android:id="@+id/pointsSerieIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/view"
+                    android:layout_alignTop="@+id/pointSerieAverage"
+                    android:layout_toRightOf="@+id/pointSerieAverage"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_toEndOf="@id/pointSerieAverage"/>
 
-        <TextView
-            android:id="@+id/BsoText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/BsoLabel"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/BsoLabel"
-            android:layout_toRightOf="@+id/BsoLabel"
-            android:text="Desconocida"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/pointsSerieLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_alignTop="@+id/pointsSerieIcon"
+                    android:layout_toEndOf="@+id/pointsSerieIcon"
+                    android:layout_toRightOf="@+id/pointsSerieIcon"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
 
-        <TextView
-            android:id="@+id/directorLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/BsoLabel"
-            android:layout_marginTop="5dp"
-            android:text="@string/ff_director"
-            android:textSize="20sp" />
+                <ImageView
+                    android:id="@+id/reviewsSerieIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignBottom="@+id/pointSerieAverage"
+                    android:layout_toRightOf="@+id/pointSerieAverage"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_toEndOf="@id/pointSerieAverage"
+                    android:src="@drawable/tick_icon" />
 
-        <TextView
-            android:id="@+id/directorText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/directorLabel"
-            android:layout_marginTop="5dp"
-            android:text="Desconocido"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/reviewsSerieLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/pointsSerieLabel"
+                    android:layout_alignStart="@+id/pointsSerieLabel"
+                    android:layout_alignTop="@+id/reviewsSerieIcon"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
 
-        <TextView
-            android:id="@+id/actorLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/directorText"
-            android:layout_marginTop="10dp"
-            android:text="@string/ff_actor"
-            android:textSize="20sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:maxLines="5"
+                    android:ellipsize="end"
+                    android:textSize="14sp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/descriptionSerieText"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_toEndOf="@+id/coverSerieImage"
+                    android:layout_toRightOf="@+id/coverSerieImage"
+                    android:layout_below="@id/reviewsSerieIcon" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
 
-        <TextView
-            android:id="@+id/actorText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/actorLabel"
-            android:layout_marginTop="5dp"
-            android:text="Desconocido"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+    </LinearLayout>
 
-    </RelativeLayout>
+
 
 </ScrollView>

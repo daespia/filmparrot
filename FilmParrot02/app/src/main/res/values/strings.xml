@@ -81,5 +81,8 @@
     <string name="cambiar_contrase_a">Cambiar contraseña</string>
     <string name="datos_de_usuario">Datos de usuario</string>
     <string name="l_confirmchangepassword">Confirmar cambio</string>
+    <string name="bienvenido_a_filmparrot">¡Bienvenido a FilmParrot!</string>
+    <string name="filmparrot_description">FilmParrot es tu aplicación para comentar todo lo relacionado con el cine. ¡No te olvides de registrarte para compartir tus impresiones con otros usuarios!</string>
+    <string name="entendido">ENTENDIDO</string>
 
 </resources>
