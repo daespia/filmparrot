@@ -110,7 +110,7 @@ public class Utils {
                 "arrera en su propio país, en Australia y en Estados Unidos, " +
                 "donde fue premiado con un Oscar por su interpretación en Gladiator (2000).Nació el 7 de abril " +
                 "de 1964 en Wellington, Nueva Zelanda, aunque se crió y pasó la mayor parte de su vida en Australia. ",
-                "Nueva Zelanda", R.drawable.cover_ryan, "Ira Crowe",
+                "Nueva Zelanda", R.drawable.cover_russell, "Ira Crowe",
                 Calendar.getInstance().getTime(), false, true);
         russell.anadirPuntuacion(new Puntuacion(6.5, null, dani));
         russell.anadirPuntuacion(new Puntuacion(8.9, null, manu));

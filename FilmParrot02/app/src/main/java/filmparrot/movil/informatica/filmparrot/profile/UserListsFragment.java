@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -130,19 +131,24 @@ public class UserListsFragment extends Fragment {
             int childPos;
 
             public SwipeDismissList.Undoable onDismiss(ExpandableListView listView, int groupPosition, int childPosition) {
-                itemToDelete = expandableAdapter.getChild(groupPosition, childPosition);
+
                 groupString = expandableAdapter.getGroup(groupPosition).toString();
-                childPos = childPosition;
 
-                expandableAdapter.getAllChilds().get(groupString).remove(childPosition);
-                expandableAdapter.notifyDataSetChanged();
+                if(childPosition >= 0) {
+                    itemToDelete = expandableAdapter.getChild(groupPosition, childPosition);
+                    childPos = childPosition;
+                    listasUsuario.get(groupString).remove(childPosition);
+                    expandableAdapter.notifyDataSetChanged();
 
-                return new SwipeDismissList.Undoable() {
-                    public void undo() {
-                        expandableAdapter.getAllChilds().get(groupString).add(childPos, itemToDelete);
-                        expandableAdapter.notifyDataSetChanged();
-                    }
-                };
+                    return new SwipeDismissList.Undoable() {
+                        public void undo() {
+                            listasUsuario.get(groupString).add(childPos, itemToDelete);
+                            expandableAdapter.notifyDataSetChanged();
+                        }
+                    };
+                }
+
+                return null;
             }
         };
 

@@ -70,7 +70,7 @@ public class PrincipalFragment extends Fragment {
         TextView reviewsSerieLabel = (TextView) view.findViewById(R.id.reviewsSerieLabel);
 
         pointSerieAverage.setBackgroundColor(Utils.getProgressiveColor(elementoSerie.getMedia(), getActivity()));
-        pointSerieAverage.setText(String.valueOf(elementoPelicula.getMedia()));
+        pointSerieAverage.setText(String.valueOf(elementoSerie.getMedia()));
         pointsSerieLabel.setText(elementoSerie.getPuntuaciones().size() + " votos");
         reviewsSerieLabel.setText(elementoSerie.getNumCriticas() + " críticas");
         ((TextView) view.findViewById(R.id.elementSerieLabel)).setText(elementoSerie.getTitulo());

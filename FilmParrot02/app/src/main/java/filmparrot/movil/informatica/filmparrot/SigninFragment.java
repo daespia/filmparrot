@@ -1,6 +1,9 @@
 package filmparrot.movil.informatica.filmparrot;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +19,7 @@ public class SigninFragment extends Fragment {
     private EditText userText;
     private EditText passwordText;
     private EditText confirmpasswordText;
+    private OnSignInInteractionListener mListener;
 
     // Constructor público vacío. NO BORRAR. Da error.
     public SigninFragment() {
@@ -47,8 +51,18 @@ public class SigninFragment extends Fragment {
 
                 if (Utils.fachada.getUsuario(username) == null) {
                     if (password.equals(confirm_password) && !password.isEmpty()) {
-                        Usuario u = new Usuario(username,password);
+                        Usuario u = new Usuario(username, password);
                         Utils.fachada.anadirUsuario(u);
+
+                        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getContext());
+                        SharedPreferences.Editor editor = sharedPref.edit();
+                        editor.putString("sessionActive", username);
+                        if(Utils.fachada.getUsuario(username).getEsAdministrador()){
+                            editor.putBoolean("adminUser", true);
+                        }
+                        editor.apply();
+                        mListener.onSignInSuccess(username);
+
                     } else {
                         passwordText.setText("");
                         confirmpasswordText.setText("");
@@ -62,5 +76,29 @@ public class SigninFragment extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    // Método mediante el cual el fragmento se adjunta a su actividad.
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnSignInInteractionListener) {
+            mListener = (OnSignInInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnLoginInteractionListener");
+        }
+    }
+
+    @Override
+    // El opuesto a onAttach. El fragmento se desvincula de su actividad.
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+
+    public interface OnSignInInteractionListener {
+        // TODO: Update argument type and name
+        void onSignInSuccess(String username);
     }
 }

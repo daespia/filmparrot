@@ -26,7 +26,7 @@ import filmparrot.movil.informatica.filmparrot.profile.ProfileActivity;
 
 public class PrincipalActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
-        LoginFragment.OnLoginInteractionListener {
+        LoginFragment.OnLoginInteractionListener, SigninFragment.OnSignInInteractionListener {
 
     private DrawerLayout drawer;
     private NavigationView navigationView;
@@ -156,6 +156,14 @@ public class PrincipalActivity extends AppCompatActivity
     public void onLoginSuccess(String username){
         fragmentManager.beginTransaction().replace(R.id.content_frame, new PrincipalFragment()).commit();
         Toast.makeText(this, "Bienvenido, " + username, Toast.LENGTH_SHORT).show();
+        setTitle("FilmParrot");
+    }
+
+    @Override
+    public void onSignInSuccess(String username){
+        fragmentManager.beginTransaction().replace(R.id.content_frame, new PrincipalFragment()).commit();
+        Toast.makeText(this, "Bienvenido, " + username, Toast.LENGTH_SHORT).show();
+        setTitle("FilmParrot");
     }
 
     @Override
